@@ -1,0 +1,46 @@
+#bloc_page {
+    max-width: 90%;
+    height: 1000px;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: auto;
+    border: 2px solid black;
+}
+
+.alert-success {
+    max-width: 20%;
+}
+
+.alert-danger {
+    max-width: 20%;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    padding-left: 5%;
+    justify-content: center;
+    text-align: justify;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 10%;
+}
+
+.form {
+    padding-left: 20%;
+    padding-top: 3%;
+    padding-bottom: 10%;
+    border-top: 2px solid black;
+}
+
+.footer_basic {
+    display: flex;
+}
+
+

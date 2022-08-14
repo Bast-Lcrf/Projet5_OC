@@ -1,0 +1,84 @@
+<?php
+
+require_once('Model/userManager.php');
+require_once('Model/postManager.php');
+require_once('Model/commentManager.php');
+
+/* ----------  Fonctions systeme de Session  ----------*/
+
+// Hash des mot de passes
+function cryptedPass($pwd)
+{
+$passCrypt = password_hash($pwd, PASSWORD_DEFAULT, ['cost' => 12]);
+    return $passCrypt;
+}
+
+// authentification des utilisateurs
+function logUser($logPseudo, $logPass)
+{
+    $userManager = new UsersManager();
+    $logUser = $userManager->authUser($logPseudo);
+
+    while($data = $logUser->fetch()) {
+        if(password_verify($logPass, $data['pwd'])) {
+            logUser($logPseudo, $logPass);
+        }
+        else {
+            throw new Exception('id inconnu.');
+        }
+    }
+    header('location: index.php');
+}
+
+// inscription des utilisateurs
+function addUser($pseudo, $passCrypt, $lastName, $firstName, $email, $statut) 
+{
+    $userManager = new UsersManager();
+    $affectedLines = $userManager->newUser($pseudo, $passCrypt, $lastName, $firstName, $email, $statut);
+    // var_dump($userManager);
+    if($affectedLines == false) {
+        throw new Exception('impossible de vous inscire pour le moment.');
+    }
+    else {
+        header('location: index.php');
+    }
+}
+
+/* ---------- Fonction gestion des articles ----------*/
+
+// Affiche la liste des articles
+function listArticles() 
+{
+    $postManager = new PostManager();
+    $list = $postManager->getListArticle();
+
+    require('View/Frontend/listArticles.php');
+}
+
+// Affiche le detail d'un article et ses commentaires
+function detailArticle($idArticle)
+{
+    $postManager = new PostManager();
+    $commentManager = new CommentManager();
+
+    $article = $postManager->getArticle($idArticle);
+    $comments = $commentManager->getComments($idArticle);
+
+    require('View/Frontend/detailArticle.php');
+}
+
+/* ---------- Fonction gestion des commentaires ----------*/
+
+// Poster un commentaire
+function addComment($idUser, $idArticle, $author, $comment, $validation)
+{
+    $commentManager = new CommentManager();
+    $affectedLine = $commentManager->postComment($idUser, $idArticle, $author, $comment, $validation);
+    if($affectedLine == false) {
+        throw new Exception('Impossible d\'ajouter de le commentaire.');
+    }
+    else {
+        header('location: index.php?action=detailArticle&id=' . $idArticle);
+    }
+}
+
