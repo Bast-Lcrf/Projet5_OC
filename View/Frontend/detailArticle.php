@@ -41,8 +41,7 @@ if(!isset($_SESSION['pseudo'])): ?>
 <?php
 else: ?>
     <h5>Poster un commentaire :</h5>
-    <?php if(empty($_POST)): ?>
-        <form action="index.php?action=addComment&amp;id=<?= $_GET['id']?>" method="POST">
+        <form action="index.php?action=addComment&amp;id=<?= $_GET['id']?>" method="POST" onsubmit="alert('Votre commentaire est bien envoyé et est en attente de validation')">
                 <div>
                     <label for="comment">Mon Commentaire</lable><br />
                     <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
@@ -50,14 +49,8 @@ else: ?>
                 <div>
                     <br />
                     <input type="submit" value="Envoyer">
-                </div>                    
+                </div>                
         </form>
-    <?php else: ?>
-        <br />
-        <div class="alert alert-success" role="alert">
-            Votre commentaire est en attente de validation
-        </div>
-    <?php endif; ?>
 <?php endif; ?>
 
 <?php $content = ob_get_clean(); ?>

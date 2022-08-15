@@ -1,23 +1,22 @@
-<h4>Nous contacter</h4>
 <form method="POST">
     <div>
         <label for="nom">Nom</label><br />
-        <input type="text" id="nom" name="nom" />
+        <textarea id="nom" name="nom" rows="1" cols="25"></textarea>
     </div>
     <div>
         <label for="prenom">Prenom</label><br />
-        <input type="text" id="prenom" name="prenom" />
+        <textarea id="prenom" name="prenom" rows="1" cols="25"></textarea>
     </div>
     <div>
         <label for="email">Email</label><br />
-        <input type="text" id="emal" name="email" />
+        <textarea id="email" name="email" rows="1" cols="25"></textarea>
     </div>
     <div>
         <label for="message">Votre message</label><br />
-        <textarea id="message" name="message" rows="3" cols="40"></textarea>
+        <textarea id="message" name="message" rows="3" cols="25"></textarea>
     </div>
     <div>
-        <input type="submit" value="nous contacter" name="contact" />
+        <input type="submit" value="Envoyer" name="contact" />
     </div>
 </form>
 

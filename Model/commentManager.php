@@ -23,4 +23,13 @@ class CommentManager extends Manager
 
         return $affectedLine;
     }
+
+    public function validationView()
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT id_user, id_article, author, comment, validation_com, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') 
+            AS date_com_fr FROM Comments WHERE validation_com = 2 ORDER BY date_comment DESC');
+
+        return $req;
+    }
 }

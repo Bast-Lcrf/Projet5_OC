@@ -1,11 +1,17 @@
 #bloc_page {
     max-width: 90%;
-    height: 1000px;
+    height: 1600px;
     padding-top: 2%;
     padding-left: 5%;
     padding-right: 5%;
-    margin: auto;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-bottom: 2%;
     border: 2px solid black;
+}
+
+#content {
+    min-height: 1000px;
 }
 
 .alert-success {
@@ -26,7 +32,7 @@ p {
     text-align: justify;
 }
 
-ul {
+#header_basic ul {
     display: flex;
     justify-content: space-around;
     padding-right: 10%;
@@ -39,8 +45,97 @@ ul {
     border-top: 2px solid black;
 }
 
-.footer_basic {
-    display: flex;
+/* Section footer */
+
+#footer_basic {
+    border-top: 2px solid black;
+    padding-top: 3%;
 }
 
+/* réseaux sociaux */
 
+.navSocial h4 {
+    text-align: center;
+}
+
+.navSocial ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navSocial li {
+    list-style-type: none;
+}
+
+.navSocial img {
+    padding-top: 10%;
+    margin-left: 30%;
+}
+
+/* Formulaire de contact */
+
+.form_contact h4 {
+    text-align: center;
+    padding-right: 10%;
+}
+
+.form_contact form {
+    margin-left: 15%;
+}
+
+.form_contact form input {
+    margin-top: 2%;
+    margin-left: 53%;
+}
+
+/* Liens utiles */
+
+.menu_footer h4 {
+    text-align: center;
+}
+
+.menu_footer li {
+    list-style-type: square;
+    margin-left: 15%;
+    padding-top: 15%;
+}
+
+.menu_footer a {
+    text-decoration: none;
+    color: green;
+}
+
+/* Copyright */
+
+.copyright p, a {
+    margin-top: 2%;
+    text-align: center;
+}
+
+/* Zone Admin */
+
+#admin {
+    margin-top: 5%;
+}
+
+/* formulaire nouvel article */
+
+.formNewPost {
+    padding-top: 3%;
+    border-right: 2px solid black;
+}
+
+.formNewPost h4 {
+    text-align: center;
+}
+
+/* Validation des commentaires */
+/*
+.validationCom {
+    border: 2px solid black;
+} */
+
+.validationCom p{
+    text-align: center;
+}

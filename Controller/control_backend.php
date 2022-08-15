@@ -67,6 +67,19 @@ function detailArticle($idArticle)
     require('View/Frontend/detailArticle.php');
 }
 
+// Ajoute un nouvel article au blog 
+function addArticle($idUser, $title, $author, $header_post, $article)
+{
+    $postManager = new PostManager();
+    $newArticle = $postManager->newArticle($idUser, $title, $author, $header_post, $article);
+    if($newArticle == false) {
+        throw new Exception('Impossible d\'ajouter le billet');
+    }
+    else {
+        listArticles();
+    }
+}
+
 /* ---------- Fonction gestion des commentaires ----------*/
 
 // Poster un commentaire

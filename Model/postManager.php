@@ -23,4 +23,14 @@ class PostManager extends Manager
 
         return $article;
     }
+
+    public function newArticle($idUser, $title, $author, $header_post, $article) // ajoute un nouvel article
+    {
+        $db = $this->dbConnect();
+        $affectedLines = $db->prepare('INSERT INTO Articles(id_user, title, author, header_post, article, date_article)
+            VALUES(?, ?, ?, ?, ?, NOW())');
+        $newArticle = $affectedLines->execute(array($idUser, $title, $author, $header_post, $article));
+
+        return $newArticle;
+    }
 }

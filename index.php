@@ -56,6 +56,20 @@ try {
                 throw new Exception('Aucun identifiant d\'article envoyé.');
             }
         }
+        elseif($_GET['action'] == 'adminZone') // Affiche la zone admin  
+        {
+            restrictedArea();
+            //validView();
+        }
+        elseif($_GET['action'] == 'newArticle') // Nouvel Article posté
+        {
+            if(!empty($_POST['title']) && /*!empty($_POST['author']) &&*/ !empty($_POST['header_post']) && !empty($_POST['article'])) {
+                addArticle($_SESSION['id'], $_POST['title'], $_SESSION['prenom'], $_POST['header_post'], $_POST['article']);
+            }
+            else {
+                throw new Exception('Tous les champs ne sont pas remplis.');
+            }
+        }
     }
     else {
         home();
@@ -66,4 +80,5 @@ catch(Exception $e) {
     require('View/Frontend/home.php');
     require('View/Frontend/listArticles.php');
     require('View/Frontend/detailArticle.php');
+    require('View/Frontend/zoneAdmin.php');
 }
