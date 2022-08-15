@@ -95,3 +95,18 @@ function addComment($idUser, $idArticle, $author, $comment, $validation)
     }
 }
 
+// Commentaire validé par la modération
+function validCom($idComment)
+{
+    $validationManager = new ValidationManager();
+    $validCom = $validationManager->updateCom($idComment);
+    //validView();
+}
+
+// Commentaire supprimé par la modération
+function deleteCom($idComDelete)
+{
+    $validationManager = new ValidationManager();
+    $deleteCom = $validationManager->deleteCom($idComDelete);
+    //validView();
+}

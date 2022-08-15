@@ -9,25 +9,11 @@ function home() // Affiche la page d'accueil
     require('View/Frontend/home.php');
 }
 
-function restrictedArea() // Affiche la zone admin
+// Affiche les commentaires en attente de validation dans la zone admin 
+function validView()
 {
-    function validView()
-    {
-        $commentManager = new CommentManager();
-        $validView = $commentManager->validationView();
-        $data = $validView->fetch();
-        
-        return $data;
-    }
+    $validationManager = new ValidationManager();
+    $validView = $validationManager->validationView();
 
     require('View/Frontend/zoneAdmin.php');
 }
-
-// Affiche les commentaires en attente de validation dans la zone admin 
-/* function validView()
-{
-    $commentManager = new CommentManager();
-    $validView = $commentManager->validationView();
-
-    require('View/Frontend/zoneAdmin.php');
-} */

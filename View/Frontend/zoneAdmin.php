@@ -30,9 +30,24 @@
             </div>
             <div class="col-lg-7 validationCom">
                 <p>Ici que je vais mettre ma validation</p>
-                <?php // validView(); 
-                    while($data) {
-                        
+                <?php
+                    while($data = $validView->fetch()) {
+                        ?>
+                        <div>
+                            <div>
+                                <h5> <?= htmlspecialchars($data['author']); ?></h5>
+                                <p>Commentaire nº<?=$data['id_comment'];?></p>
+                                <p>Commentaire pour <a target="blank" href="index.php?action=detailArticle&amp;id=<?= $data['id_article']; ?>">article nº<?=$data['id_article'];?></a></p>
+                                <p><?= nl2br(htmlspecialchars($data['comment'])); ?></p>
+                                <em>le <?= $data['date_com_fr']; ?></em>
+                            </div>
+                            <div>
+                                <form action="index.php?action=validCom&amp;id=<?= $data['id_comment']; ?>" method="POST">
+                                    <button class="btn btn-primary" type="submit" value="valider" name="valider">Valider</button>
+                                    <button class="btn btn-primary" type="submit" value="supprimer" name="supprimer">Supprimer</button>
+                            </div>
+                        </div>
+                    <?php
                     } ?>
             </div>
         </div>
