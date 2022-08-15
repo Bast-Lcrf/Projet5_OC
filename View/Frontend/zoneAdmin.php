@@ -43,8 +43,8 @@
                             </div>
                             <div>
                                 <form action="index.php?action=validCom&amp;id=<?= $data['id_comment']; ?>" method="POST">
-                                    <button class="btn btn-primary" type="submit" value="valider" name="valider">Valider</button>
-                                    <button class="btn btn-primary" type="submit" value="supprimer" name="supprimer">Supprimer</button>
+                                    <button class="btn btn-success" type="submit" value="valider" name="valider">Valider</button>
+                                    <button class="btn btn-danger" type="submit" value="supprimer" name="supprimer">Supprimer</button>
                             </div>
                         </div>
                     <?php
@@ -60,4 +60,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('View/Frontend/template/template.php'); ?>
+<?php require('View/Frontend/template/template.php'); ?> 

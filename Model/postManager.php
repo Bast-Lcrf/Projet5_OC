@@ -16,7 +16,7 @@ class PostManager extends Manager
     public function getArticle($idArticle) // Affiche le detail d'un article
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id_article, title, author, header_post, article, DATE_FORMAT(date_article, \'%d/%m/%Y à %Hh%imin%ss\') AS date_article_fr
+        $req = $db->prepare('SELECT id_article, id_user, title, author, header_post, article, DATE_FORMAT(date_article, \'%d/%m/%Y à %Hh%imin%ss\') AS date_article_fr
         FROM Articles WHERE id_article = ?');
         $req->execute(array($idArticle));
         $article = $req->fetch(); 
@@ -32,5 +32,14 @@ class PostManager extends Manager
         $newArticle = $affectedLines->execute(array($idUser, $title, $author, $header_post, $article));
 
         return $newArticle;
+    }
+
+    public function updateArticle($updateHeader, $updateArticle, $idArticle)
+    {
+        $db = $this->dbConnect();
+        $update = $db->prepare('UPDATE Articles SET header_post = ?, article = ? WHERE id_article = ?');
+        $updatePost = $update->execute(array($updateHeader, $updateArticle, $idArticle));
+
+        return $updatePost;
     }
 }

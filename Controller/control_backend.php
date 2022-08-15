@@ -80,6 +80,13 @@ function addArticle($idUser, $title, $author, $header_post, $article)
     }
 }
 
+// Modifier un article
+function articleUpdate($updateHeader, $updateArticle, $idArticle)
+{
+    $postManager = new PostManager();
+    $articleUpdate = $postManager->updateArticle($updateHeader, $updateArticle, $idArticle);
+}
+
 /* ---------- Fonction gestion des commentaires ----------*/
 
 // Poster un commentaire
@@ -100,7 +107,6 @@ function validCom($idComment)
 {
     $validationManager = new ValidationManager();
     $validCom = $validationManager->updateCom($idComment);
-    //validView();
 }
 
 // Commentaire supprimé par la modération
@@ -108,5 +114,4 @@ function deleteCom($idComDelete)
 {
     $validationManager = new ValidationManager();
     $deleteCom = $validationManager->deleteCom($idComDelete);
-    //validView();
 }

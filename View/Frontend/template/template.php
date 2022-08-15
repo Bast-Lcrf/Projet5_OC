@@ -11,17 +11,29 @@
 	<body>
 		<div id="bloc_page">
 			<header>
+			<h1>Bienvenue sur le blog des legendes</h1>
 				<div id="header_basic">
-					<h1>Bienvenue sur le blog des legendes</h1>
-						<div>
-							<ul class="menu_header">
-								<li><a href="index.php">Home</a></li>
-								<li><a href="index.php?action=listArticles">Derniers Articles</a></li>
-								<li><a href="index.php?action=destroy">Déconnexion</a></li>
-							</ul>
-						</div>
-						<?php // include('headerMenu.php'); ?>
-				</div>
+						<nav class="navbar navbar-expand-lg bg-light">
+							<div class="container-fluid">
+								<h2 class="navbar-brand" href="#">Navbar</h2>
+									<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+										<span class="navbar-toggler-icon"></span>
+									</button>
+								<div class="collapse navbar-collapse menuTop" id="navbarNav">
+									<ul class="navbar-nav">
+										<li class="nav-item">
+											<a class="nav-link active" aria-current="page" href="index.php">Home</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="index.php?action=listArticles">Articles</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="index.php?action=destroy">Deconnexion</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</nav>
 			</header>
 
 			<section>
@@ -49,6 +61,7 @@
 								<h4>Liens utiles</h4>
 								<ul>
 									<li><a href="index.php">Home</a></li>
+									<li><a href="index.php?action=#">Mon CV</a></li>
 									<li><a href="index.php?action=#">Charte protection des données</a></li>
 									<li><a href="index.php?action=#">Politiques des cookies</a></li>
 								</ul> 

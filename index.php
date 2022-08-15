@@ -69,6 +69,17 @@ try {
                 throw new Exception('Tous les champs ne sont pas remplis.');
             }
         }
+        elseif($_GET['action'] == 'updateArticle') // modifier article
+        {
+            if(!empty($_POST['newHeader'] && $_POST['newArticle'])) {
+                articleUpdate($_POST['newHeader'], $_POST['newArticle'], $_GET['id']);
+            }
+            else {
+                throw new Exception('Tous les champs ne sont pas remplis.');
+            }
+            detailArticle($_GET['id']);
+        } 
+
         elseif($_GET['action'] == 'validCom') // Modération des commentaires
         {
             if(isset($_POST['valider'])) {
