@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-<h3>Les derniers Articles postés</h3>
+<h3><strong>Les derniers Articles</strong></h3>
 
 <?php
 
@@ -10,16 +10,13 @@ while($data = $list->fetch())
 {
 ?>
     <div class="list_billet">
-        <h5>
-            <?= htmlspecialchars($data['title']) ?>
+        <h5>Titre :
+            <?= htmlspecialchars($data['title']) ?> -
             <em>le <?= $data['date_article_fr'] ?></em>
         </h5>
 
-        <p>
-            <?= nl2br(htmlspecialchars($data['header_post'])) ?>
-            <br />
-            <em><a href="index.php?action=detailArticle&amp;id=<?= $data['id_article'] ?>">En voir plus</a></em>
-        </p>
+        <p>Chapô : <?= nl2br(htmlspecialchars($data['header_post'])) ?></p>
+        <p><em><a href="index.php?action=detailArticle&amp;id=<?= $data['id_article'] ?>"><strong>- Lire L'article -</strong></a></em></p>
     </div>
 <?php
 }

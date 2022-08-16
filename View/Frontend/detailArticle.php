@@ -1,18 +1,14 @@
 <?php $title = 'Article du blog'; ?>
 
 <?php ob_start(); ?>
+
+<div class="testNeo">
 <h3><?php $article['title']; ?></h3>
-
-<div>
-    <h5>
-        <?= htmlspecialchars($article['title']) ?>
-    </h5>
-
+    <h5><?= htmlspecialchars($article['title']) ?></h5>
     <p>
         <strong>Chapô</strong> : <?= nl2br(htmlspecialchars($article['header_post'])); ?><br /><br />
         <strong>Contenu</strong> : <?= nl2br(htmlspecialchars($article['article'])) ?>
     </p>
-
     <h5>
         <strong> <?= htmlspecialchars($article['author']) ?> </strong><br />
         <em>Le <?= $article['date_article_fr'] ?></em>
@@ -48,7 +44,7 @@
                         </div>
                     </div>
     <?php endif; ?>
-</div>
+<!--</div>-->
 <br />
 <h5><strong>Section des commentaires : </strong></h5>
 
@@ -94,6 +90,7 @@ else: ?>
             </div>
         </div>
     </div>
+</div>
 <?php endif; ?>
 
 <?php $content = ob_get_clean(); ?>

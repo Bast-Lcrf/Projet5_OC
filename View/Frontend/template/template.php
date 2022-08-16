@@ -11,11 +11,13 @@
 	<body>
 		<div id="bloc_page">
 			<header>
-				<h1>Bienvenue mon blog</h1>
+				<div class="headerPage">
+					<img src="Public/images/svg/coding.svg" alt="logoCoding" width="80px" height="80px"></img>
+					<h1>Bienvenue sur mon Blog</h1>
+				</div>
 					<div id="header_basic">
 						<nav class="navbar navbar-expand-lg bg-light">
 							<div class="container">
-								<!--<h2 class="navbar-brand" href="#">Navbar</h2>-->
 								<div class="collapse navbar-collapse menuNavbar row" id="navbarNavDropdown">
 									<ul class="navbar-nav">
 										<li class="nav-item col-lg-4">
