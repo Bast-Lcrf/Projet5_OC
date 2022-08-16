@@ -5,35 +5,71 @@
 		<title><?= $title ?></title>
 		<link rel="stylesheet" type="text/css" href="public/css/style.css">
 		<link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css">
-		<script src="public/js/bootstrap.min.js"></script>
+		<script src="public/js/bootstrap.bundle.min.js"></script>
 	</head>
 
 	<body>
 		<div id="bloc_page">
 			<header>
-			<h1>Bienvenue sur le blog des legendes</h1>
-				<div id="header_basic">
+				<h1>Bienvenue mon blog</h1>
+					<div id="header_basic">
 						<nav class="navbar navbar-expand-lg bg-light">
-							<div class="container-fluid">
-								<h2 class="navbar-brand" href="#">Navbar</h2>
-									<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-										<span class="navbar-toggler-icon"></span>
-									</button>
-								<div class="collapse navbar-collapse menuTop" id="navbarNav">
+							<div class="container">
+								<!--<h2 class="navbar-brand" href="#">Navbar</h2>-->
+								<div class="collapse navbar-collapse menuNavbar row" id="navbarNavDropdown">
 									<ul class="navbar-nav">
-										<li class="nav-item">
-											<a class="nav-link active" aria-current="page" href="index.php">Home</a>
+										<li class="nav-item col-lg-4">
+										<a class="nav-link active" aria-current="page" href="index.php">Home</a>
 										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="index.php?action=listArticles">Articles</a>
+										<li class="nav-item col-lg-4">
+										<a class="nav-link" href="index.php?action=listArticles">Articles</a>
 										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="index.php?action=destroy">Deconnexion</a>
+										<li class="nav-item dropdown col-lg-4">
+										<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Profil
+										</a>
+										<div class="menuDrop">
+											<ul class="dropdown-menu" style="width: 385px">
+												<li>
+													<?php if(!isset($_SESSION['pseudo'])): ?>
+														<div class="formDrop">
+															<strong>Formulaire de connexion</strong>
+																<?php if(isset($errorMessage)): ?>
+																	<div class="alert alert-danger" role="danger">
+																		<?php echo $errorMessage; ?>
+																	</div><br />
+													<?php endif; ?>
+															<form action="index.php?action=loginVerify" method="POST">
+																	<div class="form-floating">
+																		<textarea class="form-control" placeholder="leave a comment here" id="pseudo" name="pseudo"></textarea>
+																		<label for="pseudo">Pseudo</label><br />
+																	</div>
+																	<div class="form-floating">
+																		<input type="password" class="form-control" placeholder="Password" id="pwd" name="pwd" />
+																		<label for="pwd">Mot de passe</label><br />
+																	</div>
+																	<div>
+																		<button class="btn btn-success" type="submit" value="connexion" name="submit">Envoyer</button>
+																	</div>
+															</form>
+														</div>
+													<?php else: ?>
+															<div class="alert alert-success" role="alert">
+																Bonjour <?php echo $_SESSION['pseudo']; ?>
+															</div>
+													<?php endif; ?>
+												</li>
+												<li><a class="dropdown-item" href="#">Inscription</a></li>
+												<li><a class="dropdown-item" href="#">Mon profil</a></li>
+												<li><hr class="dropdown-divider" href="#"></li>
+												<li><a class="dropdown-item" href="index.php?action=destroy">Deconnexion</a></li>
+											</ul>
+										</div>
 										</li>
 									</ul>
 								</div>
 							</div>
-						</nav>
+						<nav>
 			</header>
 
 			<section>

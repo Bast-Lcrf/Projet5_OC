@@ -13,7 +13,7 @@ try {
                 logUser($_POST['pseudo'], $_POST['pwd']);
             }
             else {
-                throw new Exception("les champs ne sont pas remplis");
+                throw new Exception("Tous les champs ne sont pas remplis");
                 
             }
         }
