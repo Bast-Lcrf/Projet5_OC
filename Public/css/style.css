@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 @font-face {
     font-family: 'Aquire';
     src: url('../font/Aquire-BW0ox.otf') format("opentype");
@@ -8,20 +10,18 @@
 }
 
 html {
-    background-color: white ;
+    background-color: #F8F9FA ;
     font-size: 100%;
+    max-width: 90%;
+    min-height: 1500px;
+    margin-left: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 #bloc_page {
-    max-width: 90%;
-    min-height: 1500px;
-    padding-top: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-top: 2%;
-    margin-left: 5%;
-    margin-bottom: 2%;
-    background-color: white;
+    background-color: #F8F9FA;
+    margin-top: 5%;
 }
 
 /* Haut de page */
@@ -98,6 +98,7 @@ html {
 .list_billet a {
     color: green;
     text-decoration: none;
+    margin-left: 5%;
 }
 
 .list_billet a:hover {
@@ -105,15 +106,108 @@ html {
     border-bottom: 1px solid black;
 }
 
+.list_billet em {
+    font-family: "Raleway", "sans-serif";
+}
+
 /* Contenu détail article */
 
+.detail {
+    font-family: "Aquire", "AquireBold", "sans-serif";
+}
 
+.detail h3 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.detail h4 {
+    font-size: 1.6;
+    margin-left: 2%;
+}
+
+.detail h5 {
+    font-size: 1.5rem;
+    padding-top: 1%;
+    margin-left: 5%;
+}
+
+.detail p {
+    font-family: "Raleway", "sans-serif";
+    font-size: 1.3rem;
+    padding-bottom: 2%;
+    margin-left: 10%;
+    margin-right: 5%;
+}
+
+.detail h6 {
+    font-size: 1.1rem;
+    padding-top: 1%;
+    margin-left: 4%;
+    margin-bottom: 2%;
+}
+
+/* Commentaire détail article */
+
+.detailComSection {
+    font-family: "Aquire", "AquireBold", "sans-serif";
+    max-width: 90%;
+}
+
+.detailComSection h4 {
+    font-size: 1.6rem;
+    margin-left: 10%;
+    margin-bottom: 4%;
+}
+
+.detailComSection h5 {
+    font-size: 1.4rem;
+    margin-left: 15%;
+    margin-bottom: 2%;
+    padding-top: 2%;
+}
+
+.detailComSection p {
+    font-size: 1rem;
+    margin-left: 20%;
+    margin-bottom: 2%;
+    font-family: "Raleway", "sans-serif";
+}
+
+.detailComSection h6 {
+    font-family: "Raleway", "sans-serif";
+    font-size: 1.1rem;
+    padding-left: 3%;
+    margin-left: 15%;
+    margin-bottom: 2%;
+    padding-bottom: 2%;
+}
+
+.msgWarning p {
+    text-align: center;
+    padding-top: 2%;
+}
+
+.btnModifyCom {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20%;
+    padding-bottom: 2%;
+    
+}
+
+.divider {
+    margin-left: 15%;
+    border-bottom: 2px solid black;
+}
 
 /* Section footer */
 
 #footer_basic {
+    background-color: #F8F9FA;
     border-top: 2px solid black;
     padding-top: 3%;
+    margin-top: 5%;
 }
 
 /* réseaux sociaux */

@@ -83,12 +83,21 @@ try {
         elseif($_GET['action'] == 'validCom') // Modération des commentaires
         {
             if(isset($_POST['valider'])) {
-                validCom($_GET['id']);
+                validCom($_GET['idCom']); // Validation
             }
             else {
-                deleteCom($_GET['id']);
+                deleteCom($_GET['idCom']); // Suppression
             }
             validView();
+        }
+        elseif($_GET['action'] == 'updateCom')
+        {
+            if(!empty($_POST['textUpdate'])) {
+                updateCom($_POST['textUpdate'], $_GET['idCom'], $_GET['id']);
+            }
+            else {
+                throw new Exception('Le champs n\'est pas remplis');
+            }
         }
     }
     else {

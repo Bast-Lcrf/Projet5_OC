@@ -31,7 +31,7 @@
 										Profil
 										</a>
 										<div class="menuDrop">
-											<ul class="dropdown-menu" style="width: 385px">
+											<ul class="dropdown-menu bg-light" style="width: 385px">
 												<li>
 													<?php if(!isset($_SESSION['pseudo'])): ?>
 														<div class="formDrop">
@@ -99,7 +99,7 @@
 								<h4>Liens utiles</h4>
 								<ul>
 									<li><a href="index.php">Home</a></li>
-									<li><a href="index.php?action=#">Mon CV</a></li>
+									<li><a href="index.php?action=#">Qui suis-je</a></li>
 									<li><a href="index.php?action=#">Charte protection des données</a></li>
 									<li><a href="index.php?action=#">Politiques des cookies</a></li>
 								</ul> 

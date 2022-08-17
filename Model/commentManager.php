@@ -7,7 +7,7 @@ class CommentManager extends Manager
     public function getComments($idArticle) // Récupère les commentaires associés à son article
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT id_user, id_article, author, comment, validation_com, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\')
+        $comments = $db->prepare('SELECT id_comment, id_user, id_article, author, comment, validation_com, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\')
             AS date_comment_fr FROM Comments WHERE id_article = ? AND validation_com = 1 ORDER BY date_comment DESC');
         $comments->execute(array($idArticle));
 
@@ -50,5 +50,12 @@ class ValidationManager extends Manager
         $db = $this->dbConnect();
         $delete = $db->prepare('DELETE FROM Comments WHERE id_comment = ?');
         $comDelete = $delete->execute(array($idComDelete));
+    }
+
+    public function modifyCom($com, $idCom) // Commentaire modifier par l'utilisateur --> retour validation
+    {
+        $db = $this->dbConnect();
+        $modifyCom = $db->prepare('UPDATE Comments SET comment = ?, validation_com = 2, date_comment = NOW() WHERE id_comment = ?');
+        $newCom = $modifyCom->execute(array($com, $idCom));
     }
 }

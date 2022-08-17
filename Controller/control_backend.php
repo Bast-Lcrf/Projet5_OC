@@ -115,3 +115,12 @@ function deleteCom($idComDelete)
     $validationManager = new ValidationManager();
     $deleteCom = $validationManager->deleteCom($idComDelete);
 }
+
+// Modifier commentaire -> retour Validation 
+function updateCom($com, $idCom, $idArticle)
+{
+    $validationManager = new ValidationManager();
+    $newUpdateCom = $validationManager->modifyCom($com, $idCom);
+
+    header('location: index.php?action=detailArticle&id=' . $idArticle);
+}

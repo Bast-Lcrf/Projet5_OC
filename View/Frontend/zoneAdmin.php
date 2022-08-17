@@ -4,7 +4,9 @@
 
 <p>
 <?php if(!isset($_SESSION['pseudo'])): ?>
+    <div class="alert alert-warning msgWarning" role="alert">
     <p>Page non autorisée pour le commun des mortels, vous devez avoir l'autorisation du maitre des lieux !</p>
+    </div>
 <?php elseif($_SESSION['statut'] == 1): ?>
     <div class="container" id="admin">
         <div class="row">
@@ -29,9 +31,10 @@
                 </form>
             </div>
             <div class="col-lg-7 validationCom">
-                <p>Ici que je vais mettre ma validation</p>
+                <p>Modération des commentaires :</p>
                 <?php
-                    while($data = $validView->fetch()) {
+                    // while($data = $validView->fetch()) {
+                        foreach($validView as $data) {
                         ?>
                         <div>
                             <div>
@@ -42,7 +45,7 @@
                                 <em>le <?= $data['date_com_fr']; ?></em>
                             </div>
                             <div>
-                                <form action="index.php?action=validCom&amp;id=<?= $data['id_comment']; ?>" method="POST">
+                                <form action="index.php?action=validCom&amp;idCom=<?= $data['id_comment']; ?>" method="POST">
                                     <button class="btn btn-success" type="submit" value="valider" name="valider">Valider</button>
                                     <button class="btn btn-danger" type="submit" value="supprimer" name="supprimer">Supprimer</button>
                             </div>
@@ -53,8 +56,11 @@
         </div>
     </div>
 <?php else: ?>
-<!-- ALerte page non autoriser --> 
-    <p>Page non autorisée pour le commun des mortels, vous devez avoir l'autorisation du maitre des lieux !</p>
+<!-- ALerte page non autoriser -->
+    <div class="alert alert-warning msgWarning" role="alert">
+    <p>- Tu n'as rien a faire ici <?php echo $_SESSION['pseudo']; ?> -<br /> 
+    Page non autorisée pour le commun des mortels, vous devez avoir l'autorisation du maitre des lieux !</p>
+    </div>
 <?php endif; ?> 
 </p>
 
