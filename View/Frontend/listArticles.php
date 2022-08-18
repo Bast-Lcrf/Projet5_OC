@@ -16,7 +16,7 @@ while($data = $list->fetch())
         </h5>
 
         <p>Chapô : <?= nl2br(htmlspecialchars($data['header_post'])) ?></p>
-        <p><em><a href="index.php?action=detailArticle&amp;id=<?= $data['id_article'] ?>"><strong>- Lire L'article -</strong></a></em></p>
+        <p><em><a href="index.php?action=detailArticle&amp;id=<?= $data['id_article'] ?>"><strong>- Lire l'article -</strong></a></em></p>
     </div>
 <?php
 }

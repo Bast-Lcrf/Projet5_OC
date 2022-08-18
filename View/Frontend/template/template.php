@@ -61,10 +61,15 @@
 															</div>
 													<?php endif; ?>
 												</li>
-												<li><a class="dropdown-item" href="#">Inscription</a></li>
-												<li><a class="dropdown-item" href="#">Mon profil</a></li>
-												<li><hr class="dropdown-divider" href="#"></li>
-												<li><a class="dropdown-item" href="index.php?action=destroy">Deconnexion</a></li>
+												<?php if(!isset($_SESSION['pseudo'])): ?>
+													<li><hr class="dropdown-divider" href="#"></li>
+													<li><a class="dropdown-item" href="index.php?action=registerPage">Inscription</a></li>
+												<?php endif; ?>
+												<?php if(isset($_SESSION['pseudo'])): ?>
+													<li><a class="dropdown-item" href="#">Mon profil</a></li>
+													<li><hr class="dropdown-divider" href="#"></li>
+													<li><a class="dropdown-item" href="index.php?action=destroy">Deconnexion</a></li>
+												<?php endif; ?>
 											</ul>
 										</div>
 										</li>
@@ -83,19 +88,19 @@
 			<footer>
 				<div class="container" id="footer_basic">
 						<div class="row">
-							<div class="col-lg-4 navSocial">
+							<div class="col-lg-3 navSocial">
 								<h4>Réseaux Sociaux</h4>
 								<ul>
-									<li><a href="#linkedin"><img src="Public/images/svg/linkedin.svg" alt="linkedin" width="100" height="100"/></a></li>
-									<li><a href="https://github.com/Bast-Lcrf" target="blank"><img src="public/images/svg/github.svg" alt="github"width="100" height="100" /></a></li>
-									<li><a href="#instagram"><img src="public/images/svg/Instagram.svg" alt="Instagram" width="100" height="100" /></a></li>
+									<li><img src="Public/images/svg/linkedin.svg" alt="linkedin" width="80" height="80"/><a href="#linkedin"> - Linkedin -</a></li>
+									<li><img src="public/images/svg/github.svg" alt="github" width="80" height="80" /><a href="https://github.com/Bast-Lcrf" target="blank"> - Github - </a></li>
+									<li><img src="public/images/svg/Instagram.svg" alt="Instagram" width="80" height="80" /><a href="#instagram"> - Instagram - </a></li>
 								</ul>
 							</div>
-							<div class="col-lg-4 form_contact">
+							<div class="col-lg-6 form_contact">
 								<h4>Me contacter</h4>
 								<?php include('contact.php'); ?>
 							</div>
-							<div class="col-lg-4 menu_footer">
+							<div class="col-lg-3 menu_footer">
 								<h4>Liens utiles</h4>
 								<ul>
 									<li><a href="index.php">Home</a></li>

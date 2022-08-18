@@ -19,12 +19,17 @@ html {
     padding-right: 2%;
 }
 
+body {
+    /*border-left: thick double black;
+    border-right: thick double black;*/
+}
+
 #bloc_page {
     background-color: #F8F9FA;
     margin-top: 5%;
 }
 
-/* Haut de page */
+/* ------------------------------ Haut de page ------------------------------ */
 
 .headerPage {
     display: flex;
@@ -39,7 +44,7 @@ html {
     font-size: 3.1rem;
 }
 
-/* section Menu Navbar */
+/* ---------- section Menu Navbar ---------- */
 
 #header_basic {
     border-bottom: 2px solid black;
@@ -54,22 +59,27 @@ html {
 
 .menuNavbar a:hover {
     color: black;
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid black;
 }
 
 .formDrop {
+    background-color: white;
     border: 1px solid black;
     margin: 5%;
     padding: 5%;
 }
 
-/* Contenu */
+.formDrop strong {
+    font-family: "Aquire", "sans-serif";
+}
+
+/* ------------------------------ Contenu ------------------------------ */
 
 #content {
     text-align: justify;
     margin-left: 5%;
     width: 90%;
-    min-height: 1000px;
+    min-height: 900px;
     padding-top: 1%;
     margin-top: 3%;
     font-family: "Aquire", "Aquire Bold", "sans-serif";
@@ -78,7 +88,34 @@ html {
     font-family: "Aquire", "AquireBold", "sans-serif";
 }
 
-/* Contenu liste articles */
+/* ---------- Page d'inscription ---------- */
+
+.formInscription {
+    background-color: white;
+    font-family: "Raleway";
+    border: 2px solid black;
+    padding: 2%;
+}
+
+.formInscription h3 {
+    font-family: "Aquire";
+    margin-left: 1%;
+}
+
+.formInscription button {
+    font-family: "Aquire";
+}
+
+.formRegister {
+    margin-top: 5%;
+    padding-bottom: 3%;
+}
+
+.formRegister label {
+    margin-left: 3%;
+}
+
+/* ---------- Contenu liste articles ---------- */
 
 .list_billet {
     max-width: 75%;
@@ -96,7 +133,7 @@ html {
 }
 
 .list_billet a {
-    color: green;
+    color: #289d28;
     text-decoration: none;
     margin-left: 5%;
 }
@@ -110,7 +147,7 @@ html {
     font-family: "Raleway", "sans-serif";
 }
 
-/* Contenu détail article */
+/* ---------- Contenu détail article ---------- */
 
 .detail {
     font-family: "Aquire", "AquireBold", "sans-serif";
@@ -147,7 +184,7 @@ html {
     margin-bottom: 2%;
 }
 
-/* Commentaire détail article */
+/* ---------- Commentaire détail article ---------- */
 
 .detailComSection {
     font-family: "Aquire", "AquireBold", "sans-serif";
@@ -201,19 +238,25 @@ html {
     border-bottom: 2px solid black;
 }
 
-/* Section footer */
+/* ------------------------------ Section footer ------------------------------ */
+
+footer {
+    background-color: #F8F9FA;
+}
 
 #footer_basic {
-    background-color: #F8F9FA;
     border-top: 2px solid black;
     padding-top: 3%;
     margin-top: 5%;
 }
 
-/* réseaux sociaux */
+/* ---------- réseaux sociaux ---------- */
 
 .navSocial h4 {
+    font-family: "Aquire", "AquireBold", "sans-serif";
     text-align: center;
+    padding-bottom: 15%;
+    padding-top: 10%;
 }
 
 .navSocial ul {
@@ -228,29 +271,62 @@ html {
 
 .navSocial img {
     padding-top: 10%;
-    margin-left: 30%;
+    margin-bottom: 10%;
+    margin-left: 10%;
 }
 
-/* Formulaire de contact */
+.navSocial a {
+    text-decoration: none;
+    font-family: "Aquire", "sans-serif";
+    color: black;
+    font-size: 1rem;
+}
+
+.navSocial a:hover {
+    color: #289d28;
+    border-bottom: 1px solid #289d28;
+}
+
+/* ---------- Formulaire de contact ---------- */
+
+.form_contact {
+    background-color: white;
+    border: 2px solid black;
+    border-right: 2px solid black;
+    padding-left: 5%;
+    padding-right: 5%;
+}
 
 .form_contact h4 {
+    font-family: "Aquire", "AquireBold", "sans-serif";
     text-align: center;
-    padding-right: 10%;
+    padding-bottom: 2%;
+    padding-top: 5%;
 }
 
-.form_contact form {
-    margin-left: 15%;
+.form_contact input {
+    margin-bottom: 3%;
 }
 
-.form_contact form input {
-    margin-top: 2%;
-    margin-left: 53%;
+.formContactButton {
+    margin-top: 3%;
+    margin-bottom: 5%;
 }
 
-/* Liens utiles */
+.formContactButtonA {
+    margin-left: 10%;
+}
+
+/* ---------- Liens utiles ---------- */
+
+.menu_footer {
+    font-family: "Aquire", "AquireBold", "sans-serif";
+}
 
 .menu_footer h4 {
     text-align: center;
+    padding-top: 15%;
+    padding-bottom: 10%;
 }
 
 .menu_footer li {
@@ -261,47 +337,86 @@ html {
 
 .menu_footer a {
     text-decoration: none;
-    color: green;
+    color: black;
 }
 
-/* Copyright */
+.menu_footer a:hover {
+    color: #289d28;
+    border-bottom: 1px solid #289d28;
+}
+
+/* ---------- Copyright ---------- */
 
 .copyright p, a {
-    margin-top: 2%;
+    margin-top: 4%;
     text-align: center;
 }
 
-/* Zone Admin */
+/* ------------------------------ Zone Admin ------------------------------ */
 
 #admin {
     margin-top: 5%;
 }
 
-/* formulaire nouvel article */
+/* ---------- Formulaire nouvel article ---------- */
 
 .formNewPost {
+    font-family: "Raleway", "sans-serif";
+    border: 2px solid black;
     padding-top: 3%;
-    border-right: 2px solid black;
+    background-color: white;
 }
 
 .formNewPost h4 {
+    font-family: "Aquire", "AquireBold", "sans-serif";
     text-align: center;
+    padding-bottom: 2%;
 }
 
-/* Validation des commentaires */
-/*
-.validationCom {
-    border: 2px solid black;
-} */
+.formNewPost input {
+    margin-bottom: 4%;
+}
 
-.validationCom p{
+.formNewPost label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.formNewPost button {
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+/* ---------- Modération des commentaires ---------- */
+
+.commentModeration {
+
+}
+
+.commentModeration h4 {
     text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
-#accordionExample {
-    padding-left: 20%;
+.commentModeration h5 {
+    margin-left: 10%;
 }
+ .commentModeration p, em {
+    margin-left: 15%;
+    padding-bottom: 2%;
+ }
 
-#accordionFlushExample {
-    padding-left: 20%;
-}
+ .commentButtonModeration {
+    margin-top: 2%;
+    margin-left: 25%;
+ }
+
+ .dividerCommentModeration {
+    border-bottom: 2px solid black;
+    padding-bottom: 4%;
+    padding-top: 4%;
+ }
+
+/* crash test */
+

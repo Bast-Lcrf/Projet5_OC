@@ -23,6 +23,9 @@ try {
             session_destroy();
             header('location: index.php');
         }
+        elseif($_GET['action'] == 'registerPage') { // Affiche la page d'inscription
+            registerPage();
+        }
         elseif($_GET['action'] == 'register') // inscription des utilisateurs
         {
             if(!empty($_POST['pseudo']) && !empty($_POST['pwd']) && !empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['email']) && !empty($_POST['statut'])) {
@@ -30,6 +33,7 @@ try {
             }
             else {
                 throw new Exception('Tous les champs ne sont pas remplis.');
+                require_once('View/Frontend/inscription.php');
             }
         }
         elseif($_GET['action'] == 'listArticles') // Affiche la liste des derniers articles 
@@ -106,8 +110,8 @@ try {
 }
 catch(Exception $e) {
     $errorMessage = $e->getMessage();
-    require('View/Frontend/home.php');
-    require('View/Frontend/listArticles.php');
-    require('View/Frontend/detailArticle.php');
-    require('View/Frontend/zoneAdmin.php');
+    require_once('View/Frontend/home.php');
+    /*require_once('View/Frontend/listArticles.php');
+    require_once('View/Frontend/detailArticle.php');
+    require_once('View/Frontend/zoneAdmin.php');*/
 }

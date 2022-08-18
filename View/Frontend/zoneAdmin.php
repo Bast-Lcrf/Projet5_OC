@@ -13,30 +13,30 @@
             <div class="col-lg-5 formNewPost">
                 <h4>Nouvel Article :</h4>
                 <form action="index.php?action=newArticle" method="POST">
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Titre :</label>
-                        <input type="text" class="form-control" id="title" aria-describedby="title" name="title"/>
+                    <div class="lg-3 form-floating">
+                        <input type="text" class="form-control" id="floatingTitle" placeholder="text" name="title"/>
+                        <label for="floatingTitle">Titre :</label>
                     </div>
-                    <div class="mb-3">
-                        <label for="header_post" class="form-label">Chapô :</label>
-                        <input type="text" class="form-control" id="header_post" aria-describedby="header_post" name="header_post"/>
+                    <div class="lg-3 form-floating">
+                        <input type="text" class="form-control" id="header_post" placeholder="text" name="header_post"/>
+                        <label for="floatingHeader_post">Chapô :</label>
                     </div>
-                    <div class="mb-3">
-                        <label for="article" class="form-label">Article :</label>
-                        <textarea class="form-control" id="article" name="article" rows="3"></textarea>
+                    <div class="lg-3 form-floating">
+                        <textarea class="form-control" id="floatingArticle" placeholder="Leave a comment here" name="article" style="height: 500px"></textarea>
+                        <label for="floatingArticle">Article :</label>
                     </div>
-                    <div class="mb-3">
-                        <button class="btn btn-primary" type="submit">Envoyer</button>
+                    <div class="lg-3">
+                        <button class="btn btn-success" type="submit">Envoyer</button>
                     </div>
                 </form>
             </div>
-            <div class="col-lg-7 validationCom">
-                <p>Modération des commentaires :</p>
+            <div class="col-lg-7 commentModeration">
+                <h4>Modération des commentaires :</h4>
                 <?php
                     // while($data = $validView->fetch()) {
                         foreach($validView as $data) {
                         ?>
-                        <div>
+                        <div class="dividerCommentModeration">
                             <div>
                                 <h5> <?= htmlspecialchars($data['author']); ?></h5>
                                 <p>Commentaire nº<?=$data['id_comment'];?></p>
@@ -44,7 +44,7 @@
                                 <p><?= nl2br(htmlspecialchars($data['comment'])); ?></p>
                                 <em>le <?= $data['date_com_fr']; ?></em>
                             </div>
-                            <div>
+                            <div class="commentButtonModeration">
                                 <form action="index.php?action=validCom&amp;idCom=<?= $data['id_comment']; ?>" method="POST">
                                     <button class="btn btn-success" type="submit" value="valider" name="valider">Valider</button>
                                     <button class="btn btn-danger" type="submit" value="supprimer" name="supprimer">Supprimer</button>

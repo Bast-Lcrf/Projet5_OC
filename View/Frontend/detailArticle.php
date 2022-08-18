@@ -50,17 +50,23 @@
 <h4><strong>Section des commentaires : </strong></h4>
 
 <?php
-    while($comment = $comments->fetch())
+    while($comment = $comments->fetch()) // Affiche les comentaires
     {
     ?>
         <h5><strong><?= htmlspecialchars($comment['author']) ?></strong></h5>
         <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
         <h6>le <?= $comment['date_comment_fr'] ?></h6>
+         <!-- formulaire de modification de commentaire avec restrictions par utilisateur et modérateur -->
         <div class="divider">
             <?php if(isset($_SESSION['pseudo'])): ?>
                 <div class="">
                     <?php switch($_SESSION) {
                         case $_SESSION['statut'] == 1; ?>
+                        <?php if(isset($errorMessage)): ?>
+                            <div class="w-50 alert alert-danger" role="alert">
+                                <strong><?php echo $errorMessage; ?></strong>
+                            </div>
+                        <?php endif; ?>
                             <div class="accordion btnModifyCom" id="accordionUpdateCom">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="heading">
@@ -83,6 +89,11 @@
                             </div>                     
                     <?php break; 
                         case $_SESSION['id'] == $comment['id_user']; ?>
+                        <?php if(isset($errorMessage)): ?>
+                            <div class="w-50 alert alert-danger" role="alert">
+                                <strong><?php echo $errorMessage; ?></strong>
+                            </div>
+                        <?php endif; ?>
                             <div class="accordion btnModifyCom" id="accordionUpdateCom">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading">
