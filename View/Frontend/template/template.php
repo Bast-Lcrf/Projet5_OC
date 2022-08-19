@@ -14,6 +14,8 @@
 				<div class="headerPage">
 					<img src="Public/images/svg/coding.svg" alt="logoCoding" width="80px" height="80px"></img>
 					<h1>Bienvenue sur mon Blog</h1>
+					<button type="button" class="btn btn-light">Light</button>
+					<button type="button" class="btn btn-dark">Dark</button>
 				</div>
 					<div id="header_basic">
 						<nav class="navbar navbar-expand-lg bg-light">
@@ -88,7 +90,7 @@
 			<footer>
 				<div class="container" id="footer_basic">
 						<div class="row">
-							<div class="col-lg-3 navSocial">
+							<div class="col-12 col-lg-3 navSocial">
 								<h4>Réseaux Sociaux</h4>
 								<ul>
 									<li><img src="Public/images/svg/linkedin.svg" alt="linkedin" width="80" height="80"/><a href="#linkedin"> - Linkedin -</a></li>
@@ -96,11 +98,11 @@
 									<li><img src="public/images/svg/Instagram.svg" alt="Instagram" width="80" height="80" /><a href="#instagram"> - Instagram - </a></li>
 								</ul>
 							</div>
-							<div class="col-lg-6 form_contact">
+							<div class="col-12 col-lg-6 form_contact">
 								<h4>Me contacter</h4>
 								<?php include('contact.php'); ?>
 							</div>
-							<div class="col-lg-3 menu_footer">
+							<div class="col-12 col-lg-3 menu_footer">
 								<h4>Liens utiles</h4>
 								<ul>
 									<li><a href="index.php">Home</a></li>

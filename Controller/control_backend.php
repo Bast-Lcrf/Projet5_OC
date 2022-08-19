@@ -4,7 +4,7 @@ require_once('Model/userManager.php');
 require_once('Model/postManager.php');
 require_once('Model/commentManager.php');
 
-/* ----------  Fonctions systeme de Session  ----------*/
+/* --------------------  Fonctions systeme de Session  -------------------- */
 
 // Hash des mot de passes
 function cryptedPass($pwd)
@@ -35,7 +35,7 @@ function addUser($pseudo, $passCrypt, $lastName, $firstName, $email, $statut)
 {
     $userManager = new UsersManager();
     $affectedLines = $userManager->newUser($pseudo, $passCrypt, $lastName, $firstName, $email, $statut);
-    // var_dump($userManager);
+
     if($affectedLines == false) {
         throw new Exception('impossible de vous inscire pour le moment.');
     }
@@ -44,7 +44,7 @@ function addUser($pseudo, $passCrypt, $lastName, $firstName, $email, $statut)
     }
 }
 
-/* ---------- Fonction gestion des articles ----------*/
+/* -------------------- Fonction gestion des articles -------------------- */
 
 // Affiche la liste des articles
 function listArticles() 
@@ -87,7 +87,16 @@ function articleUpdate($updateHeader, $updateArticle, $idArticle)
     $articleUpdate = $postManager->updateArticle($updateHeader, $updateArticle, $idArticle);
 }
 
-/* ---------- Fonction gestion des commentaires ----------*/
+// Supprimer un article et ses commentaires associés
+function deleteArticle($idArticle)
+{
+    $postManager = new PostManager();
+    $commentManager = new CommentManager();
+    $deleteArticle = $postManager->deleteArticle($idArticle);
+    $deleteComFromArticle = $commentManager->deleteCommentFromArticle($idArticle);
+}
+
+/* -------------------- Fonction gestion des commentaires -------------------- */
 
 // Poster un commentaire
 function addComment($idUser, $idArticle, $author, $comment, $validation)

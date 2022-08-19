@@ -33,7 +33,6 @@ try {
             }
             else {
                 throw new Exception('Tous les champs ne sont pas remplis.');
-                require_once('View/Frontend/inscription.php');
             }
         }
         elseif($_GET['action'] == 'listArticles') // Affiche la liste des derniers articles 
@@ -83,7 +82,11 @@ try {
             }
             detailArticle($_GET['id']);
         } 
-
+        elseif($_GET['action'] == 'deleteArticle') // Supprime un article
+        {
+            deleteArticle($_GET['id']);
+            header('Location: index.php');
+        }
         elseif($_GET['action'] == 'validCom') // Modération des commentaires
         {
             if(isset($_POST['valider'])) {

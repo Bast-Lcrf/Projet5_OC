@@ -23,6 +23,13 @@ class CommentManager extends Manager
 
         return $affectedLine;
     }
+
+    public function deleteCommentFromArticle($idArticle) // Supprime les commentaires d'un article lors de sa suppression
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM Comments WHERE id_article = ?');
+        $deleteComFromArticle = $req->execute(array($idArticle));
+    }
 }
 
 class ValidationManager extends Manager 
