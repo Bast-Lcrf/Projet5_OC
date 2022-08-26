@@ -20,10 +20,10 @@
         <br />
             <div class="row">
                 <div class="col-lg-6">
-                    <button class="btn btn-outline-warning" type="reset" style="width: 250px">Reset</button>
+                    <button class="btn btn-outline-warning formContactButtonReset" type="reset" style="width: 80%">Reset</button>
                 </div>
                 <div class="col-lg-6">
-                    <button class="btn btn-outline-success formContactButtonA" type="submit" style="width: 250px">Envoyer</button>
+                    <button class="btn btn-outline-success formContactButtonSubmit" type="submit" style="width: 80%">Envoyer</button>
                 </div>
             </div>
         </div>

@@ -26,7 +26,7 @@
                             </div>
                             <div class="col-lg-4 form-floating formRegister">
                                 <input type="text" class="form-control" id="floatingfirstname" placeholder="text" name="firstName" />
-                                <label for="floatingfirstname" >Prenom</label>
+                                <label for="floatingfirstname" >Prénom</label>
                             </div>
                         </div>
                         <div class="row">
@@ -40,10 +40,10 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-6"> 
-                                <button class="btn btn-outline-warning" type="reset" style="width: 500px">Reset</button>
+                                <button class="btn btn-outline-warning" type="reset" style="width: 100%">Reset</button>
                             </div>
                             <div class="col-lg-6">
-                                <button class="btn btn-outline-success" type="submit" style="width: 500px">Envoyer</button>
+                                <button class="btn btn-outline-success" type="submit" style="width: 100%">Envoyer</button>
                             </div>
                         </div>
                     </div>

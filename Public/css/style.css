@@ -1,3 +1,7 @@
+/* Style CSS Blog Projet 5 V.2 */
+
+/* Définition des polices */ 
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 @font-face {
@@ -8,6 +12,10 @@
     font-family: "Aquire Bold";
     src: url('../font/AquireBold-8Ma60.otf') format("opentype");
 }
+
+/* -------------------------------------------------- */
+
+/* ---------- Élements principaux ---------- */
 
 html {
     background-color: #F8F9FA ;
@@ -20,8 +28,8 @@ html {
 }
 
 body {
-    /*border-left: thick double black;
-    border-right: thick double black;*/
+    border-left: thick double black;
+    border-right: thick double black;
 }
 
 #bloc_page {
@@ -38,11 +46,19 @@ body {
     font-family: "Aquire", "sans-serif";
 }
 
+.headerPage img {
+    margin-left: 2%;
+}
+
+.headerPage button {
+    margin-right: 2%;
+}
+
 .headerPage h1 {
     padding-top: 1%;
     margin-left: 10%;
     margin-right: 10%;
-    font-size: 3.1rem;
+    font-size: 3rem;
 }
 
 /* ---------- section Menu Navbar ---------- */
@@ -73,6 +89,8 @@ body {
 .formDrop strong {
     font-family: "Aquire", "sans-serif";
 }
+
+
 
 /* ------------------------------ Contenu ------------------------------ */
 
@@ -245,6 +263,10 @@ body {
     
 }
 
+.buttonComment {
+    margin-left: 25%;
+}
+
 .divider {
     margin-left: 15%;
     border-bottom: 2px solid black;
@@ -304,7 +326,6 @@ footer {
 .form_contact {
     background-color: white;
     border: 2px solid black;
-    border-right: 2px solid black;
     padding-left: 5%;
     padding-right: 5%;
 }
@@ -325,7 +346,11 @@ footer {
     margin-bottom: 5%;
 }
 
-.formContactButtonA {
+.formContactButtonSubmit {
+    margin-left: 10%;
+}
+
+.formContactButtonReset {
     margin-left: 10%;
 }
 

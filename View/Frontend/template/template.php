@@ -43,7 +43,7 @@
 																		<?php echo $errorMessage; ?>
 																	</div><br />
 													<?php endif; ?>
-															<form action="index.php?action=loginVerify" method="POST">
+															<form action="index.php?action=loginVerify&amp;id=" method="POST">
 																	<div class="form-floating">
 																		<textarea class="form-control" placeholder="leave a comment here" id="pseudo" name="pseudo"></textarea>
 																		<label for="pseudo">Pseudo</label><br />
@@ -90,23 +90,23 @@
 			<footer>
 				<div class="container" id="footer_basic">
 						<div class="row">
-							<div class="col-12 col-lg-3 navSocial">
+							<div class="col-12 col-sm-12 col-md-12 col-lg-3 navSocial">
 								<h4>Réseaux Sociaux</h4>
 								<ul>
 									<li><img src="Public/images/svg/linkedin.svg" alt="linkedin" width="80" height="80"/><a href="#linkedin"> - Linkedin -</a></li>
-									<li><img src="public/images/svg/github.svg" alt="github" width="80" height="80" /><a href="https://github.com/Bast-Lcrf" target="blank"> - Github - </a></li>
+									<li><img src="public/images/svg/github.svg" alt="github" width="80" height="80" /><a href="https://github.com/Bast-Lcrf/projet5-Blog" target="blank"> - Github - </a></li>
 									<li><img src="public/images/svg/Instagram.svg" alt="Instagram" width="80" height="80" /><a href="#instagram"> - Instagram - </a></li>
 								</ul>
 							</div>
-							<div class="col-12 col-lg-6 form_contact">
+							<div class="col-12 col-sm-12 col-md-12 col-lg-6 form_contact">
 								<h4>Me contacter</h4>
 								<?php include('contact.php'); ?>
 							</div>
-							<div class="col-12 col-lg-3 menu_footer">
+							<div class="col-12 col-sm-12 col-md-12 col-lg-3 menu_footer">
 								<h4>Liens utiles</h4>
 								<ul>
 									<li><a href="index.php">Home</a></li>
-									<li><a href="index.php?action=#">Qui suis-je</a></li>
+									<li><a href="index.php?#">Qui suis-je</a></li>
 									<li><a href="index.php?action=#">Charte protection des données</a></li>
 									<li><a href="index.php?action=#">Politiques des cookies</a></li>
 								</ul> 

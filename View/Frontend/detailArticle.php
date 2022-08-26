@@ -139,10 +139,10 @@ if(!isset($_SESSION['pseudo'])): ?>
     </div>
 <?php
 else: ?>
-    <div class="w-75 accordion accordion-flush" id="accordionFlushExample">
+    <div class="w-50 accordion accordion-flush buttonComment" id="accordionFlushExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            <button class="accordion-button collapsed" style="width: 100%" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                     <strong>Ajouter Commentaire</strong>
                 </button>
             </h2>

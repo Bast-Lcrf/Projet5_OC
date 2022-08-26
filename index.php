@@ -114,7 +114,7 @@ try {
 catch(Exception $e) {
     $errorMessage = $e->getMessage();
     require_once('View/Frontend/home.php');
-    /*require_once('View/Frontend/listArticles.php');
+    require_once('View/Frontend/listArticles.php');
     require_once('View/Frontend/detailArticle.php');
-    require_once('View/Frontend/zoneAdmin.php');*/
+    require_once('View/Frontend/zoneAdmin.php');
 }

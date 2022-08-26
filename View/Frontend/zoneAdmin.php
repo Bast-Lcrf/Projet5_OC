@@ -33,7 +33,6 @@
             <div class="col-lg-7 commentModeration">
                 <h4>Modération des commentaires :</h4>
                 <?php
-                    // while($data = $validView->fetch()) {
                         foreach($validView as $data) {
                         ?>
                         <div class="dividerCommentModeration">
@@ -48,6 +47,7 @@
                                 <form action="index.php?action=validCom&amp;idCom=<?= $data['id_comment']; ?>" method="POST">
                                     <button class="btn btn-success" type="submit" value="valider" name="valider">Valider</button>
                                     <button class="btn btn-danger" type="submit" value="supprimer" name="supprimer">Supprimer</button>
+                                </form>
                             </div>
                         </div>
                     <?php
