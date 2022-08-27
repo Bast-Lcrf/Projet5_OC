@@ -75,11 +75,11 @@
                             <div class="accordion btnModifyCom" id="accordionUpdateCom">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="heading">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUpdate" aria-expanded="false" aria-controls="collapseUpdate">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUpdateCom<?= $comment['id_comment']; ?>" aria-expanded="false" aria-controls="collapseUpdate">
                                             <strong>Modifier Commentaire</strong>
                                         </button>
                                     </h2>
-                                    <div id="collapseUpdate" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionUpdateCom">
+                                    <div id="collapseUpdateCom<?= $comment['id_comment']; ?>" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionUpdateCom">
                                         <div class="accordion-body">
                                             <form action="index.php?action=updateCom&amp;idCom=<?= $comment['id_comment']; ?>&amp;id=<?= $_GET['id']; ?>" method="POST" onsubmit="alert('Votre commentaire à bien été modifier, il est en attente de validation par la modération, merci de votre compréhension.')">
                                                 <div class="form-floating">
