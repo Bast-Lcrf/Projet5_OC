@@ -1,8 +1,9 @@
 <?php $title = 'Liste des Articles'; ?>
 
 <?php ob_start(); ?>
-
-<h3><strong>Les derniers Articles</strong></h3>
+<div class=listBilletTitle>
+    <h3>Les derniers Articles</h3>
+</div>
 
 <?php
 
@@ -11,8 +12,7 @@ while($data = $list->fetch())
 ?>
     <div class="list_billet">
         <h5>Titre :
-            <?= htmlspecialchars($data['title']) ?> -
-            <em>le <?= $data['date_article_fr'] ?></em>
+            <?= htmlspecialchars($data['title']) ?> - <em>le <?= $data['date_article_fr'] ?></em>
         </h5>
 
         <p>Chapô : <?= nl2br(htmlspecialchars($data['header_post'])) ?></p>

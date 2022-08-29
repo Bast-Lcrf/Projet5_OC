@@ -34,7 +34,19 @@ body {
 
 #bloc_page {
     background-color: #F8F9FA;
-    margin-top: 5%;
+    margin-top: 4%;
+}
+
+@media screen and (max-width: 992px) {
+    html {
+        max-width: 900px;
+        background-color: lightblue;
+        margin-left: 5%;  
+    }
+
+    h3 {
+        font-size: 4rem;
+    }
 }
 
 /* ------------------------------ Haut de page ------------------------------ */
@@ -61,22 +73,101 @@ body {
     font-size: 3rem;
 }
 
+@media screen and (max-width: 992px) {
+    .headerPage img {
+        margin-top: 4%;
+        width: 60px;
+        height: 60px;
+    }
+
+    .headerPage h1 {
+        padding-top: 5%;
+        font-size: 2.3rem;
+    }
+}
+
 /* ---------- section Menu Navbar ---------- */
 
-#header_basic {
+#header_Nav {
     border-bottom: 2px solid black;
-    padding-bottom: 3%;
+    padding-left: 1%;
 }
 
-.menuNavbar a {
-    font-family: "Aquire", "sans-serif";
-    font-size: 1.2em;
+.navbar {
+    background: #F8F9FA;
+    padding: 3%;
+    min-height: 12vh;
+}
+
+.navbar .navbar-brand a {
+    padding: 1rem 0;
+    display: block;
+    text-decoration: none;
+}
+
+.navbar-brand {
+    font-family: "Aquire", sans-serif;
+    font-size: 2.5rem;
     color: black;
 }
 
-.menuNavbar a:hover {
+.navbar-brand:hover {
     color: black;
-    border-bottom: 3px solid black;
+    border-top: 2px solid black;
+}
+
+.navbar-toggler span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border: 1px;
+    background: black;
+}
+
+.navbar-toggler span + span {
+    margin-top: 4px;
+    width: 18px;
+    margin-left: 4px;
+}
+
+.navbar-toggler span + span + span {
+    width: 10px;
+    margin-left: 12px;
+}
+
+.nav-item {
+    margin-left: 5%;
+    padding: 0% 18%;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    color: black;
+    font-family: "Aquire", sans-serif;
+    font-size: 1.4rem;
+    position: relative;
+    text-align: start;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+    border-top: 2px solid black;
+}
+
+.navbar-nav button {
+    visibility: hidden;
+}
+
+.dropdown-menu {
+    width: 320px;
+    padding-right: 5%;
+}
+
+.dropdown-menu button {
+    visibility: visible;
+}
+
+.dropdown-item {
+    font-family: "Aquire", sans-serif;
+    font-size: 1.1rem;
 }
 
 .formDrop {
@@ -89,8 +180,11 @@ body {
 .formDrop strong {
     font-family: "Aquire", "sans-serif";
 }
+ 
 
-
+/*@media screen and (max-width: 992px) {
+    
+}*/
 
 /* ------------------------------ Contenu ------------------------------ */
 
@@ -134,6 +228,17 @@ body {
     margin-left: 3%;
 }
 
+@media screen and (max-width: 992px) {
+    .formInscription input {
+        margin-left: 2%;
+        max-width: 700px;
+    }
+
+    .formInscription button {
+        margin: 3%;
+    }
+}
+
 /* ---------- Contenu liste articles ---------- */
 
 .list_billet {
@@ -154,7 +259,7 @@ body {
 .list_billet a {
     color: #289d28;
     text-decoration: none;
-    margin-left: 5%;
+    /*margin-left: 5%;*/
 }
 
 .list_billet a:hover {
@@ -164,6 +269,20 @@ body {
 
 .list_billet em {
     font-family: "Raleway", "sans-serif";
+}
+
+@media screen and (max-width: 992px) {
+    .listBilletTitle h3 {
+        font-size: 1.5rem;
+    }
+
+    .list_billet h5 {
+        font-size: 1.2rem;
+    }
+
+    .list_billet p {
+        font-size: 1rem;
+    }
 }
 
 /* ---------- Contenu détail article ---------- */
@@ -212,6 +331,30 @@ body {
 .deleteArticle {
     margin-left: 25%;
     margin-top: 1%;
+}
+
+@media screen and (max-width: 992px) {
+    .detail h3 {
+        font-size: 1.8rem;
+    }
+
+    .detail h4 {
+        font-size: 1.5rem;
+    }
+
+    .detail h5 {
+        font-size: 1.3rem;
+    }
+
+    .updateArticle {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .deleteArticle {
+        margin-left: 5%;
+    }
 }
 
 /* ---------- Commentaire détail article ---------- */
@@ -267,9 +410,17 @@ body {
     margin-left: 25%;
 }
 
+.textAddComment {
+    font-family: "Raleway", sans-serif;
+}
+
 .divider {
     margin-left: 15%;
     border-bottom: 2px solid black;
+}
+
+@media screen and (max-width: 992px) {
+
 }
 
 /* ------------------------------ Section footer ------------------------------ */
@@ -319,6 +470,35 @@ footer {
 .navSocial a:hover {
     color: #289d28;
     border-bottom: 1px solid #289d28;
+}
+
+@media screen and (max-width: 992px) {
+    .navSocial {
+        margin-bottom: 10%;
+    }
+
+    .navSocial h4 {
+        text-align: center;
+        padding-top: 4%;
+        padding-bottom: 2;
+    }
+
+    .navSocial img {
+        margin-right: 50%;
+        width: 100px;
+        height: 100px;
+    }
+
+    .navSocial ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+
+    .navSocial a {
+        margin-left: 10%;
+    }
 }
 
 /* ---------- Formulaire de contact ---------- */
@@ -382,10 +562,24 @@ footer {
     border-bottom: 1px solid #289d28;
 }
 
+@media screen and (max-width: 992px) {
+    .menu_footer h4 {
+        padding-bottom: 0%;
+    }
+
+    .menu_footer li {
+        list-style-type: square;
+        margin-left: 25%;
+        padding-top: 8%;
+        padding-bottom: 2%;
+    }
+}
+
 /* ---------- Copyright ---------- */
 
 .copyright p, a {
     margin-top: 4%;
+    margin-bottom: 4%;
     text-align: center;
 }
 

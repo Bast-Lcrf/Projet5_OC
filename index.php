@@ -10,11 +10,10 @@ try {
         if($_GET['action'] == 'loginVerify') // authentification des utilisateurs
         {
             if(!empty($_POST['pseudo']) && !empty($_POST['pwd'])) {
-                logUser($_POST['pseudo'], $_POST['pwd']);
+                logUser(htmlentities($_POST['pseudo']),htmlentities($_POST['pwd']));
             }
             else {
                 throw new Exception("Tous les champs ne sont pas remplis");
-                
             }
         }
         elseif($_GET['action'] == 'destroy') // deconnexion 
@@ -117,4 +116,5 @@ catch(Exception $e) {
     require_once('View/Frontend/listArticles.php');
     require_once('View/Frontend/detailArticle.php');
     require_once('View/Frontend/zoneAdmin.php');
+    require_once('View/Frontend/inscription.php');
 }

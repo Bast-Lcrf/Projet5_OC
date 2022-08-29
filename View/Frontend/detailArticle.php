@@ -150,7 +150,7 @@ else: ?>
                 <div class="accordion-body">
                     <form action="index.php?action=addComment&amp;id=<?= $_GET['id']?>" method="POST" onsubmit="alert('Votre commentaire est bien envoyé et est en attente de validation')">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="leave a comment here" id="comment" name="comment" style="height: 170px"></textarea>
+                                <textarea class="form-control textAddComment" placeholder="leave a comment here" id="comment" name="comment" style="height: 170px"></textarea>
                                 <label for="comment">Mon Commentaire</label>
                             </div>
                             <div>

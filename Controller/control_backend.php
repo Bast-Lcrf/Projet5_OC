@@ -27,7 +27,7 @@ function logUser($logPseudo, $logPass)
             throw new Exception('id inconnu.');
         }
     }
-    // header('location: index.php');
+    //header('location: ' . $_SERVER['PHP_SELF']);
 }
 
 // inscription des utilisateurs

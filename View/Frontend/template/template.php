@@ -3,9 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<title><?= $title ?></title>
+		<!--- Style CSS -->
 		<link rel="stylesheet" type="text/css" href="public/css/style.css">
+		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css">
-		<script src="public/js/bootstrap.bundle.min.js"></script>
 	</head>
 
 	<body>
@@ -14,71 +15,78 @@
 				<div class="headerPage">
 					<img src="Public/images/svg/coding.svg" alt="logoCoding" width="80px" height="80px"></img>
 					<h1>Bienvenue sur mon Blog</h1>
-					<button type="button" class="btn btn-light">Light</button>
-					<button type="button" class="btn btn-dark">Dark</button>
+					<!--<button type="button" class="btn btn-light">Light</button>
+					<button type="button" class="btn btn-dark">Dark</button>-->
 				</div>
-					<div id="header_basic">
-						<nav class="navbar navbar-expand-lg bg-light">
-							<div class="container">
-								<div class="collapse navbar-collapse menuNavbar row" id="navbarNavDropdown">
-									<ul class="navbar-nav">
-										<li class="nav-item col-lg-4">
-										<a class="nav-link active" aria-current="page" href="index.php">Home</a>
-										</li>
-										<li class="nav-item col-lg-4">
-										<a class="nav-link" href="index.php?action=listArticles">Articles</a>
-										</li>
-										<li class="nav-item dropdown col-lg-4">
-										<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<div id="header_Nav">
+						<nav class="navbar navbar-expand-lg header_nav">
+							<div class="container-fluid">
+								<a class="navbar-brand" href="index.php">L.B - Blog</a>
+								<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span></span>
+								<span></span>
+								<span></span>
+								</button>
+								<div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+								<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+									<li class="nav-item">
+									<a class="nav-link active" aria-current="page" href="index.php">Home</a>
+									</li>
+									<li class="nav-item">
+									<a class="nav-link" href="index.php?action=listArticles">Articles</a>
+									</li>
+									<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 										Profil
-										</a>
-										<div class="menuDrop">
-											<ul class="dropdown-menu bg-light" style="width: 385px">
-												<li>
-													<?php if(!isset($_SESSION['pseudo'])): ?>
-														<div class="formDrop">
-															<strong>Formulaire de connexion</strong>
-																<?php if(isset($errorMessage)): ?>
-																	<div class="alert alert-danger" role="danger">
-																		<?php echo $errorMessage; ?>
-																	</div><br />
-													<?php endif; ?>
-															<form action="index.php?action=loginVerify&amp;id=" method="POST">
-																	<div class="form-floating">
-																		<textarea class="form-control" placeholder="leave a comment here" id="pseudo" name="pseudo"></textarea>
-																		<label for="pseudo">Pseudo</label><br />
-																	</div>
-																	<div class="form-floating">
-																		<input type="password" class="form-control" placeholder="Password" id="pwd" name="pwd" />
-																		<label for="pwd">Mot de passe</label><br />
-																	</div>
-																	<div>
-																		<button class="btn btn-success" type="submit" value="connexion" name="submit">Envoyer</button>
-																	</div>
-															</form>
+									</a>
+									<ul class="dropdown-menu">
+										<li>
+											<?php if(!isset($_SESSION['pseudo'])): ?>
+												<div class="formDrop">
+													<strong>Formulaire de connexion</strong>
+														<?php if(isset($errorMessage)): ?>
+															<div class="alert alert-danger" role="danger">
+																<?php echo $errorMessage; ?>
+															</div><br />
+											<?php endif; ?>
+												<form action="index.php?action=loginVerify" method="POST">
+														<div class="form-floating">
+															<textarea class="form-control" placeholder="leave a comment here" id="pseudo" name="pseudo"></textarea>
+															<label for="pseudo">Pseudo</label><br />
 														</div>
-													<?php else: ?>
-															<div class="alert alert-success" role="alert">
-																Bonjour <?php echo $_SESSION['pseudo']; ?>
-															</div>
-													<?php endif; ?>
-												</li>
-												<?php if(!isset($_SESSION['pseudo'])): ?>
-													<li><hr class="dropdown-divider" href="#"></li>
-													<li><a class="dropdown-item" href="index.php?action=registerPage">Inscription</a></li>
-												<?php endif; ?>
-												<?php if(isset($_SESSION['pseudo'])): ?>
-													<li><a class="dropdown-item" href="#">Mon profil</a></li>
-													<li><hr class="dropdown-divider" href="#"></li>
-													<li><a class="dropdown-item" href="index.php?action=destroy">Deconnexion</a></li>
-												<?php endif; ?>
-											</ul>
-										</div>
+														<div class="form-floating">
+															<input type="password" class="form-control" placeholder="Password" id="pwd" name="pwd" />
+															<label for="pwd">Mot de passe</label><br />
+														</div>
+														<div>
+															<button class="btn btn-success" type="submit" value="connexion" name="submit">Envoyer</button>
+														</div>
+												</form>
+											</div>
+										<?php else: ?>
+												<div class="alert alert-success" role="alert">
+													Bonjour <?php echo $_SESSION['pseudo']; ?>
+												</div>
+										<?php endif; ?>
 										</li>
+										<?php if(!isset($_SESSION['pseudo'])): ?>
+											<li><hr class="dropdown-divider" href="#"></li>
+											<li><a class="dropdown-item" href="index.php?action=registerPage">Inscription</a></li>
+										<?php endif; ?>
+										<?php if(isset($_SESSION['pseudo'])): ?>
+											<li><a class="dropdown-item" href="#">Mon profil</a></li>
+											<li><hr class="dropdown-divider" href="#"></li>
+											<li><a class="dropdown-item" href="index.php?action=destroy">Deconnexion</a></li>
+										<?php endif; ?>
 									</ul>
+								</ul>
+								<ul class="navbar-nav ms-auto">
+									<button class="btn">Test</button>
+								</ul>
 								</div>
 							</div>
-						<nav>
+						</nav>
+					</div>
 			</header>
 
 			<section>
@@ -125,5 +133,7 @@
 				</div>
 			</footer>
 		</div>
+		<!-- Bootstrap JavaScript  -->
+		<script src="public/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>
