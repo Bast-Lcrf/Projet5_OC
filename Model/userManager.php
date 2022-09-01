@@ -5,24 +5,29 @@ require_once('Model/manager.php');
 class UsersManager extends Manager
 {
     // authentification des utilisateurs
-    public function authUser($logPseudo)
+    public function authUser($logPseudo, $logPass)
     {
         $db = $this->dbConnect();
         $auth = $db->prepare('SELECT id_user, pseudo, pwd, lastName, firstName, statut FROM Users WHERE pseudo = ?');
-        $result = $auth->execute(array($logPseudo));
+        $auth->execute(array($logPseudo));
         $row = $auth->rowCount();
         
         $data = $auth->fetch();
-        
-        if ($row == 1) {
-            $_SESSION['pseudo'] = $data['pseudo'];
-            $_SESSION['nom'] = $data['lastName'];
-            $_SESSION['prenom'] = $data['firstName'];
-            $_SESSION['statut'] = $data['statut'];
-            $_SESSION['id'] = $data['id_user'];
+
+        if($logPseudo == $data['pseudo']) {
+            if (password_verify($logPass, $data['pwd'])) {
+                $_SESSION['pseudo'] = $data['pseudo'];
+                $_SESSION['nom'] = $data['lastName'];
+                $_SESSION['prenom'] = $data['firstName'];
+                $_SESSION['statut'] = $data['statut'];
+                $_SESSION['id'] = $data['id_user'];
+            }
+            else {
+                throw new Exception('Mot de passe incorrect');
+            }
         }
         else {
-            throw new Exception('identifiant inconnu');
+            throw new Exception('Pseudo incorrect');
         }
 
         header('location: index.php'); 

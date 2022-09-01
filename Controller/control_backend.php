@@ -6,7 +6,7 @@ require_once('Model/commentManager.php');
 
 /* --------------------  Fonctions systeme de Session  -------------------- */
 
-// Hash des mot de passes
+// Hash des mot de passes 
 function cryptedPass($pwd)
 {
 $passCrypt = password_hash($pwd, PASSWORD_DEFAULT, ['cost' => 12]);
@@ -17,17 +17,7 @@ $passCrypt = password_hash($pwd, PASSWORD_DEFAULT, ['cost' => 12]);
 function logUser($logPseudo, $logPass)
 {
     $userManager = new UsersManager();
-    $logUser = $userManager->authUser($logPseudo);
-
-    while($data = $logUser->fetch()) {
-        if(password_verify($logPass, $data['pwd'])) {
-            logUser($logPseudo, $logPass);
-        }
-        else {
-            throw new Exception('id inconnu.');
-        }
-    }
-    //header('location: ' . $_SERVER['PHP_SELF']);
+    $userManager->authUser($logPseudo, $logPass);
 }
 
 // inscription des utilisateurs

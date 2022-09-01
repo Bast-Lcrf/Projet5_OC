@@ -10,7 +10,7 @@ try {
         if($_GET['action'] == 'loginVerify') // authentification des utilisateurs
         {
             if(!empty($_POST['pseudo']) && !empty($_POST['pwd'])) {
-                logUser(htmlentities($_POST['pseudo']),htmlentities($_POST['pwd']));
+                logUser(htmlspecialchars($_POST['pseudo']),htmlspecialchars($_POST['pwd']));
             }
             else {
                 throw new Exception("Tous les champs ne sont pas remplis");
