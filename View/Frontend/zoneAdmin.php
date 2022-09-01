@@ -40,7 +40,7 @@
                                 <h5> <?= htmlspecialchars($data['author']); ?></h5>
                                 <p>Commentaire nº<?=$data['id_comment'];?></p>
                                 <p>Commentaire pour <a target="blank" href="index.php?action=detailArticle&amp;id=<?= $data['id_article']; ?>">article nº<?=$data['id_article'];?></a></p>
-                                <p><?= nl2br(htmlspecialchars($data['comment'])); ?></p>
+                                <p class="commentaireModeration"><?= nl2br(htmlspecialchars($data['comment'])); ?></p>
                                 <em>le <?= $data['date_com_fr']; ?></em>
                             </div>
                             <div class="commentButtonModeration">
@@ -58,8 +58,8 @@
 <?php else: ?>
 <!-- ALerte page non autoriser -->
     <div class="alert alert-warning msgWarning" role="alert">
-    <p>- Tu n'as rien a faire ici <?php echo $_SESSION['pseudo']; ?> -<br /> 
-    Page non autorisée pour le commun des mortels, vous devez avoir l'autorisation du maitre des lieux !</p>
+    <p>- Vous n'avez rien a faire ici <?php echo $_SESSION['pseudo']; ?> -<br /> 
+    Vous n'êtes pas autorisée à consulter l'administration, vous devez avoir l'autorisation du maitre des lieux !</p>
     </div>
 <?php endif; ?> 
 </p>

@@ -7,104 +7,126 @@ require('Controller/control_backend.php');
 
 try {
     if(isset($_GET['action'])) {
-        if($_GET['action'] == 'loginVerify') // authentification des utilisateurs
-        {
-            if(!empty($_POST['pseudo']) && !empty($_POST['pwd'])) {
-                logUser(htmlspecialchars($_POST['pseudo']),htmlspecialchars($_POST['pwd']));
+        // authentification des utilisateurs
+            if($_GET['action'] == 'loginVerify') 
+            {
+                if(!empty($_POST['pseudo']) && !empty($_POST['pwd'])) {
+                    logUser(htmlspecialchars($_POST['pseudo']),htmlspecialchars($_POST['pwd']));
+                }
+                else {
+                    throw new Exception("Tous les champs ne sont pas remplis");
+                }
             }
-            else {
-                throw new Exception("Tous les champs ne sont pas remplis");
+        
+        // deconnexion 
+            elseif($_GET['action'] == 'destroy') 
+            {
+                session_unset();
+                session_destroy();
+                header('location: index.php');
             }
-        }
-        elseif($_GET['action'] == 'destroy') // deconnexion 
-        {
-            session_unset();
-            session_destroy();
-            header('location: index.php');
-        }
-        elseif($_GET['action'] == 'registerPage') { // Affiche la page d'inscription
-            registerPage();
-        }
-        elseif($_GET['action'] == 'register') // inscription des utilisateurs
-        {
-            if(!empty($_POST['pseudo']) && !empty($_POST['pwd']) && !empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['email']) && !empty($_POST['statut'])) {
-                addUser($_POST['pseudo'], cryptedPass($_POST['pwd']), $_POST['lastName'], $_POST['firstName'], $_POST['email'], $_POST['statut']);
+
+        // Affiche la page d'inscription
+            elseif($_GET['action'] == 'registerPage') { 
+                registerPage();
             }
-            else {
-                throw new Exception('Tous les champs ne sont pas remplis.');
-            }
-        }
-        elseif($_GET['action'] == 'listArticles') // Affiche la liste des derniers articles 
-        {
-            listArticles();
-        }
-        elseif($_GET['action'] == 'detailArticle') // Affiche le detail d'un article avec ses commentaires
-        {
-            if(isset($_GET['id']) && $_GET['id'] > 0) {
-                detailArticle($_GET['id']);
-            }
-        }
-        elseif($_GET['action'] == 'addComment') // Ajoute un commentaire
-        {
-            if(isset($_GET['id']) && $_GET['id'] > 0) {
-                if(!empty($_POST['comment'])) {
-                    addComment($_SESSION['id'], $_GET['id'], $_SESSION['pseudo'], $_POST['comment'], $validation=2);
+
+        // inscription des utilisateurs
+            elseif($_GET['action'] == 'register') 
+            {
+                if(!empty($_POST['pseudo']) && !empty($_POST['pwd']) && !empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['email']) && !empty($_POST['statut'])) {
+                    addUser($_POST['pseudo'], cryptedPass($_POST['pwd']), $_POST['lastName'], $_POST['firstName'], $_POST['email'], $_POST['statut']);
                 }
                 else {
                     throw new Exception('Tous les champs ne sont pas remplis.');
                 }
             }
-            else {
-                throw new Exception('Aucun identifiant d\'article envoyé.');
+
+        // Affiche la liste des derniers articles
+            elseif($_GET['action'] == 'listArticles')  
+            {
+                listArticles();
             }
-        }
-        elseif($_GET['action'] == 'adminZone') // Affiche la zone admin  
-        {
-            validView();
-        }
-        elseif($_GET['action'] == 'newArticle') // Nouvel Article posté
-        {
-            if(!empty($_POST['title']) && !empty($_POST['header_post']) && !empty($_POST['article'])) {
-                addArticle($_SESSION['id'], $_POST['title'], $_SESSION['prenom'], $_POST['header_post'], $_POST['article']);
+
+        // Affiche le detail d'un article avec ses commentaires
+            elseif($_GET['action'] == 'detailArticle') 
+            {
+                if(isset($_GET['id']) && $_GET['id'] > 0) {
+                    detailArticle($_GET['id']);
+                }
             }
-            else {
-                throw new Exception('Tous les champs ne sont pas remplis.');
+
+        // Ajoute un commentaire   
+            elseif($_GET['action'] == 'addComment') 
+            {
+                if(isset($_GET['id']) && $_GET['id'] > 0) {
+                    if(!empty($_POST['comment'])) {
+                        addComment($_SESSION['id'], $_GET['id'], $_SESSION['pseudo'], $_POST['comment'], $validation=2);
+                    }
+                    else {
+                        throw new Exception('Tous les champs ne sont pas remplis.');
+                    }
+                }
+                else {
+                    throw new Exception('Aucun identifiant d\'article envoyé.');
+                }
             }
-        }
-        elseif($_GET['action'] == 'updateArticle') // modifier article
-        {
-            if(!empty($_POST['newHeader'] && $_POST['newArticle'])) {
-                articleUpdate($_POST['newHeader'], $_POST['newArticle'], $_GET['id']);
+
+        // Affiche la zone admin 
+            elseif($_GET['action'] == 'adminZone')  
+            {
+                validView();
             }
-            else {
-                throw new Exception('Tous les champs ne sont pas remplis.');
+
+        // Nouvel Article posté
+            elseif($_GET['action'] == 'newArticle') 
+            {
+                if(!empty($_POST['title']) && !empty($_POST['header_post']) && !empty($_POST['article'])) {
+                    addArticle($_SESSION['id'], $_POST['title'], $_SESSION['prenom'], $_POST['header_post'], $_POST['article']);
+                }
+                else {
+                    throw new Exception('Tous les champs ne sont pas remplis.');
+                }
             }
-            detailArticle($_GET['id']);
-        } 
-        elseif($_GET['action'] == 'deleteArticle') // Supprime un article
-        {
-            deleteArticle($_GET['id']);
-            header('Location: index.php');
-        }
-        elseif($_GET['action'] == 'validCom') // Modération des commentaires
-        {
-            if(isset($_POST['valider'])) {
-                validCom($_GET['idCom']); // Validation
+
+        // modifier article
+            elseif($_GET['action'] == 'updateArticle') 
+            {
+                if(!empty($_POST['newHeader'] && $_POST['newArticle'])) {
+                    articleUpdate($_POST['newHeader'], $_POST['newArticle'], $_GET['id']);
+                }
+                else {
+                    throw new Exception('Tous les champs ne sont pas remplis.');
+                }
+                detailArticle($_GET['id']);
+            } 
+
+        // Supprime un article
+            elseif($_GET['action'] == 'deleteArticle') 
+            {
+                deleteArticle($_GET['id']);
+                header('Location: index.php');
             }
-            else {
-                deleteCom($_GET['idCom']); // Suppression
+
+        // Modération des commentaires
+            elseif($_GET['action'] == 'validCom') 
+            {
+                if(isset($_POST['valider'])) {
+                    validCom($_GET['idCom']); // Validation
+                }
+                else {
+                    deleteCom($_GET['idCom']); // Suppression
+                }
+                validView();
             }
-            validView();
-        }
-        elseif($_GET['action'] == 'updateCom')
-        {
-            if(!empty($_POST['textUpdate'])) {
-                updateCom($_POST['textUpdate'], $_GET['idCom'], $_GET['id']);
+
+        // Modifier commentaire
+            elseif($_GET['action'] == 'updateCom')  
+            {
+                if(!empty($_POST['textUpdate'])) {
+                    updateCom($_POST['textUpdate'], $_GET['idCom'], $_GET['id']);
+                }
             }
-            else {
-                throw new Exception('Le champs n\'est pas remplis');
-            }
-        }
     }
     else {
         home();

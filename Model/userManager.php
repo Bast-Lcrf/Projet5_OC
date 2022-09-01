@@ -10,7 +10,7 @@ class UsersManager extends Manager
         $db = $this->dbConnect();
         $auth = $db->prepare('SELECT id_user, pseudo, pwd, lastName, firstName, statut FROM Users WHERE pseudo = ?');
         $auth->execute(array($logPseudo));
-        $row = $auth->rowCount();
+        $auth->rowCount();
         
         $data = $auth->fetch();
 

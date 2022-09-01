@@ -15,8 +15,11 @@
 				<div class="headerPage">
 					<img src="Public/images/svg/coding.svg" alt="logoCoding" width="80px" height="80px"></img>
 					<h1>Bienvenue sur mon Blog</h1>
-					<!--<button type="button" class="btn btn-light">Light</button>
-					<button type="button" class="btn btn-dark">Dark</button>-->
+					<?php if(isset($_SESSION['pseudo'])): ?>
+						<div class="alert alert-success btnLog" role="alert">
+							Bonjour <?php echo $_SESSION['prenom']; ?>
+						</div>
+					<?php endif; ?>
 				</div>
 					<div id="header_Nav">
 						<nav class="navbar navbar-expand-lg header_nav">
@@ -63,10 +66,8 @@
 														</div>
 												</form>
 											</div>
-										<?php else: ?>
-												<div class="alert alert-success" role="alert">
-													Bonjour <?php echo $_SESSION['pseudo']; ?>
-												</div>
+										
+												
 										<?php endif; ?>
 										</li>
 										<?php if(!isset($_SESSION['pseudo'])): ?>

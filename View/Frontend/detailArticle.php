@@ -14,7 +14,7 @@
         <em>Le <?= $article['date_article_fr'] ?></em>
     </h6>
     <?php if(!isset($_SESSION['pseudo'])): ?>
-                <?php elseif($_SESSION['id'] == $article['id_user']): ?>
+                <?php elseif($_SESSION['statut'] == 1): ?>
                     <div class="w-75 accordion updateArticle" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
@@ -26,11 +26,11 @@
                                 <div class="accordion-body">
                                     <form action="index.php?action=updateArticle&amp;id=<?=$_GET['id'];?>" method="POST">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="leave a comment here" id="floatingHeader" name="newHeader" style="height: 70px"></textarea><br />
+                                            <textarea class="form-control adminUpdateArticle" placeholder="leave a comment here" id="floatingHeader" name="newHeader" style="height: 70px"></textarea><br />
                                             <label for="floatingHeader">Modifier chapô</label>
                                         </div>
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="leave a comment here" id="floatingArticle" name="newArticle" style="height: 150px"></textarea>
+                                            <textarea class="form-control adminUpdateArticle" placeholder="leave a comment here" id="floatingArticle" name="newArticle" style="height: 150px"></textarea>
                                             <label for="floatingArticle">Modifier Article</label>
                                         </div>
                                         <div>
@@ -67,58 +67,50 @@
                 <div class="">
                     <?php switch($_SESSION) {
                         case $_SESSION['statut'] == 1; ?>
-                        <?php if(isset($errorMessage)): ?>
-                            <div class="w-50 alert alert-danger" role="alert">
-                                <strong><?php echo $errorMessage; ?></strong>
-                            </div>
-                        <?php endif; ?>
-                            <div class="accordion btnModifyCom" id="accordionUpdateCom">
+                            <div class="accordion btnModifyCom" id="accordionModifyAdmin">
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUpdateCom<?= $comment['id_comment']; ?>" aria-expanded="false" aria-controls="collapseUpdate">
-                                            <strong>Modifier Commentaire</strong>
+                                    <h2 class="accordion-header" id="headingBtnModify">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUpdateCom<?= $comment['id_comment']; ?>" aria-expanded="false" aria-controls="collapseOne">
+                                            Modifier Commentaire
                                         </button>
                                     </h2>
-                                    <div id="collapseUpdateCom<?= $comment['id_comment']; ?>" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionUpdateCom">
+                                    <div id="collapseUpdateCom<?= $comment['id_comment']; ?>" class="accordion-collapse collapse" aria-labelledby="headingBtnModify" data-bs-parent="#accordionModifyAdmin">
                                         <div class="accordion-body">
                                             <form action="index.php?action=updateCom&amp;idCom=<?= $comment['id_comment']; ?>&amp;id=<?= $_GET['id']; ?>" method="POST" onsubmit="alert('Votre commentaire à bien été modifier, il est en attente de validation par la modération, merci de votre compréhension.')">
                                                 <div class="form-floating">
-                                                    <textarea class="form-control" placeholder="leave a comment here" id="floatingUpdate" name="textUpdate" style="height: 100px"></textarea><br />
-                                                    <label for="floatingUpdate">Modifier Commentaire</label>
+                                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingUpdate" name="textUpdate" style="height: 150px"></textarea><br />
+                                                    <label for="floatingUpdate">Modifier commentaire ici</label>
                                                 </div>
+                                                <button class="btn btn-outline-warning" type="reset">Reset</button>
                                                 <button class="btn btn-outline-success" type="submit">Envoyer</button>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
-                            </div>                     
+                            </div>                    
                     <?php break; 
                         case $_SESSION['id'] == $comment['id_user']; ?>
-                        <?php if(isset($errorMessage)): ?>
-                            <div class="w-50 alert alert-danger" role="alert">
-                                <strong><?php echo $errorMessage; ?></strong>
-                            </div>
-                        <?php endif; ?>
-                            <div class="accordion btnModifyCom" id="accordionUpdateCom">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUpdate" aria-expanded="false" aria-controls="collapseUpdate" style="width: 500px">
-                                                <strong>Modifier mon Commentaire</strong>
-                                            </button>
-                                        </h2>
-                                        <div id="collapseUpdate" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionUpdateCom">
-                                            <div class="accordion-body">
-                                                <form action="index.php?action=updateCom&amp;idCom=<?= $comment['id_comment']; ?>&amp;id=<?= $_GET['id']; ?>" method="POST" onsubmit="alert('Votre commentaire à bien été modifier, il est en attente de validation par la modération, merci de votre compréhension.')">
-                                                    <div class="form-floating">
-                                                        <textarea class="form-control" placeholder="leave a comment here" id="floatingUpdate" name="textUpdate" style="height: 100px"></textarea><br />
-                                                        <label for="floatingUpdate">Modifier Commentaire</label>
-                                                    </div>
-                                                    <button class="btn btn-outline-success" type="submit">Envoyer</button>
-                                                </form>
-                                            </div>
+                            <div class="accordion btnModifyCom" id="accordionModifyClient">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingBtnModify">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUpdateCom<?= $comment['id_comment']; ?>" aria-expanded="false" aria-controls="collapseOne">
+                                            Modifier Commentaire
+                                        </button>
+                                    </h2>
+                                    <div id="collapseUpdateCom<?= $comment['id_comment']; ?>" class="accordion-collapse collapse" aria-labelledby="headingBtnModify" data-bs-parent="#accordionModifyClient">
+                                        <div class="accordion-body">
+                                            <form action="index.php?action=updateCom&amp;idCom=<?= $comment['id_comment']; ?>&amp;id=<?= $_GET['id']; ?>" method="POST" onsubmit="alert('Votre commentaire à bien été modifier, il est en attente de validation par la modération, merci de votre compréhension.')">
+                                                <div class="form-floating">
+                                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingUpdate" name="textUpdate" style="height: 150px"></textarea><br />
+                                                    <label for="floatingUpdate">Modifier commentaire ici</label>
+                                                </div>
+                                                <button class="btn btn-outline-warning" type="reset">Reset</button>
+                                                <button class="btn btn-outline-success" type="submit">Envoyer</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
+                            </div>  
                     <?php break;
                             default; 
                             break;  
@@ -139,30 +131,30 @@ if(!isset($_SESSION['pseudo'])): ?>
     </div>
 <?php
 else: ?>
-    <div class="w-50 accordion accordion-flush buttonComment" id="accordionFlushExample">
+    <!-- Formulaire pour poster un commentaire si connexion -->
+    <div class="accordion btnAddComment" id="accordionAdd">
         <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" style="width: 100%" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    <strong>Ajouter Commentaire</strong>
+            <h2 class="accordion-header" id="headingBtnModify">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdd" aria-expanded="false" aria-controls="collapseOne">
+                     Ajouter Commentaire
                 </button>
             </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div id="collapseAdd" class="accordion-collapse collapse" aria-labelledby="headingBtnModify" data-bs-parent="#accordionAdd">
                 <div class="accordion-body">
                     <form action="index.php?action=addComment&amp;id=<?= $_GET['id']?>" method="POST" onsubmit="alert('Votre commentaire est bien envoyé et est en attente de validation')">
-                            <div class="form-floating">
-                                <textarea class="form-control textAddComment" placeholder="leave a comment here" id="comment" name="comment" style="height: 170px"></textarea>
-                                <label for="comment">Mon Commentaire</label>
-                            </div>
-                            <div>
-                                <br />
-                                <button class="btn btn-outline-warning" type="reset">Reset</button>
-                                <button class="btn btn-outline-success" type="submit">Envoyer</button>
-                            </div>                
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingUpdate" name="comment" style="height: 150px"></textarea><br />
+                            <label for="floatingUpdate">Ajouter commentaire ici</label>
+                        </div>
+                        <div class="btnAdd">
+                            <button class="btn btn-outline-warning" type="reset">Reset</button>
+                            <button class="btn btn-outline-success" type="submit">Envoyer</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 <?php endif; ?>
 
 <?php $content = ob_get_clean(); ?>
