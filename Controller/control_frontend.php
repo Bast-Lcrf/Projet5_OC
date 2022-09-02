@@ -18,6 +18,12 @@ require_once('Model/commentManager.php');
         require('View/Frontend/inscription.php');
     }
 
+// Affiche la page qui me presente
+    function WhoIAm()
+    {
+        require('View/Frontend/whoIAm.php');
+    }
+
 // Affiche la liste des articles
     function listArticles() 
     {

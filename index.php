@@ -43,6 +43,12 @@ try {
                 }
             }
 
+        // Affiche la page qui me presente
+            elseif($_GET['action'] == "me")
+            {
+                WhoIAm();
+            }
+
         // Affiche la liste des derniers articles
             elseif($_GET['action'] == 'listArticles')  
             {

@@ -115,7 +115,7 @@
 								<h4>Liens utiles</h4>
 								<ul>
 									<li><a href="index.php">Home</a></li>
-									<li><a href="index.php?#">Qui suis-je</a></li>
+									<li><a href="index.php?action=me">Qui suis-je</a></li>
 									<li><a href="index.php?action=#">Charte protection des données</a></li>
 									<li><a href="index.php?action=#">Politiques des cookies</a></li>
 								</ul> 
