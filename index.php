@@ -2,7 +2,6 @@
 
 session_start();
 // [Set Cookies here] //
-// test Main
 
 require('Controller/control_frontend.php');
 require('Controller/control_backend.php');
