@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+// [Set Cookies here] //
 
 require('Controller/control_frontend.php');
 require('Controller/control_backend.php');
