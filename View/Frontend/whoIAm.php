@@ -10,8 +10,8 @@
         </div>
         <div class="col-8">
             <p> 
-            Bonjour, je m'appelle Bastien et j'ai 32 ans. Mes années lycées ont été compliqué parce qu'une personne de ma famille 
-            était malade et je devais prendre soin d'elle. Cela a duré jusqu'en 2016, mes 26 ans. Après deux ans à tenter de 
+            Bonjour, je m'appelle Bastien et j'ai 32 ans. Mes années lycées ont été compliquées parce qu'une personne de ma famille 
+            était malade et je devais prendre soin d'elle. Cela a duré jusqu'en 2014, mes 24 ans. Après quatre ans à tenter de 
             retourner à la vie active, j'ai enfin trouvé un travail, loin de chez moi certes, mais au moins, j'avais un vrai premier job. 
             Le Parc Astérix !
             </p>
@@ -21,11 +21,11 @@
         <div class="col-12">
             <p><br />
             Après deux ans de travail saisonnier sur le Parc, j'ai décidé de changer de voie pour me diriger vers un métier qui me 
-            plaisais plus. En effet, je n'ai pas l'âme d'un commercial et la crise sanitaire liée au Covid m'a poussé à me remettre 
-            en question. Je suis donc actuellement en formation Symfony/php avec OpenClassRooms et je m'amuse beaucoup de découvrir 
-            toutes les subtilités des langages que j'ai appris, tous les jours, j'apprends quelque chose de nouveaux et j'ai besoin 
-            de ces stimuli dans ma vie pour ne pas m'ennuyer. C'est cette quête contre l'ennui que je mène chaque jour. J'ai beaucoup 
-            d'idée de développement de site, souvent mauvaise, mais je reste céatif dans ma façon de voir les choses. Avant, quand 
+            plaisait plus. En effet, je n'ai pas l'âme d'un commercial et la crise sanitaire liée au Covid m'a poussé à me remettre 
+            en question. Je suis donc actuellement en formation Symfony/php avec OpenClassRooms et j'ai beaucoup d'interêt à découvrir 
+            toutes les subtilités des langages que j'ai appris. Tous les jours j'apprends quelque chose de nouveaux et j'ai besoin 
+            de ces stimulis dans ma vie pour ne pas m'ennuyer. C'est cette quête contre l'ennui que je mène chaque jour. J'ai beaucoup 
+            d'idée de développement de site, certes pas toujours bonne, mais c'est ce qui me permet de rester créatif dans ma façon de voir les choses. Avant, quand 
             j'avais un trop-plein d'énergie créative, je prenais mes crayons et dessinais des portraits. Maintenant, le CSS a remplacé 
             mes crayons et mes pages web me servent de feuille blanche pour y dessiner mes idées farfelues sur le net. Cependant, 
             c'est dans le PHP et la logique des fontions que je m'épanouis le plus, c'est dans ce domaine que j'espère 
