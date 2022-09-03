@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 <div class="detail">
-<h3><?php $article['title']; ?></h3>
+    <h3><?php $article['title']; ?></h3>
     <h3> - <?= htmlspecialchars($article['title']) ?> - </h3>
     <h4><strong>Chapô</strong> :</h4>
     <p><?= nl2br(htmlspecialchars($article['header_post'])); ?></p>
@@ -18,7 +18,7 @@
                     <div class="w-75 accordion updateArticle" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
-                                <button style="width:500px" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                     <strong>Modifier Article</strong>
                                 </button>
                             </h2>
@@ -42,12 +42,12 @@
                                 </div>
                             </div>
                         </div>
-                    <div class="deleteArticle">
-                        <form action="index.php?action=deleteArticle&amp;id=<?=$_GET['id'];?>" method="POST">
-                            <button class="btn btn-danger" type="submit" style="width: 200px">Supprimer Article</button>
-                        </form>
+                        <div class="deleteArticle">
+                            <form action="index.php?action=deleteArticle&amp;id=<?=$_GET['id'];?>" method="POST">
+                                <button class="btn btn-danger" type="submit">Supprimer Article</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
     <?php endif; ?>
 </div>
 <div class="detailComSection">

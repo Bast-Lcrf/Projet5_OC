@@ -36,7 +36,8 @@ try {
             elseif($_GET['action'] == 'register') 
             {
                 if(!empty($_POST['pseudo']) && !empty($_POST['pwd']) && !empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['email']) && !empty($_POST['statut'])) {
-                    addUser($_POST['pseudo'], cryptedPass($_POST['pwd']), $_POST['lastName'], $_POST['firstName'], $_POST['email'], $_POST['statut']);
+                    addUser(htmlspecialchars($_POST['pseudo']), htmlspecialchars(cryptedPass($_POST['pwd'])), htmlspecialchars($_POST['lastName']), htmlspecialchars($_POST['firstName']), htmlspecialchars($_POST['email']), htmlspecialchars($_POST['statut']));
+                    logUser(htmlspecialchars($_POST['pseudo']),htmlspecialchars($_POST['pwd']));
                 }
                 else {
                     throw new Exception('Tous les champs ne sont pas remplis.');
@@ -127,7 +128,7 @@ try {
                 validView();
             }
 
-        // Modifier commentaire
+        // Modifier commentaire -> retour validation
             elseif($_GET['action'] == 'updateCom')  
             {
                 if(!empty($_POST['textUpdate'])) {

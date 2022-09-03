@@ -80,6 +80,10 @@ body {
 }
 
 @media screen and (max-width: 992px) {
+    .headerPage {
+        margin-bottom: 0%;
+    }
+
     .headerPage img {
         margin-top: 4%;
         width: 60px;
@@ -334,6 +338,14 @@ body {
     margin-left: 10%;
 }
 
+.updateArticle .accordion-button {
+    width: 500px;
+}
+
+.updateArticle .btn-danger {
+    width: 200px;
+}
+
 .adminUpdateArticle {
     font-family: "Raleway", sans-serif;
 }
@@ -360,6 +372,15 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+    }
+
+    .updateArticle .accordion-button {
+        width: 350px;
+    }
+
+    .updateArticle .btn-danger {
+        min-width: 200px;
+        margin-left: 20%;
     }
 
     .deleteArticle {

@@ -103,7 +103,7 @@
 								<h4>Réseaux Sociaux</h4>
 								<ul>
 									<li><img src="Public/images/svg/linkedin.svg" alt="linkedin" width="80" height="80"/><a href="#linkedin"> - Linkedin -</a></li>
-									<li><img src="public/images/svg/github.svg" alt="github" width="80" height="80" /><a href="https://github.com/Bast-Lcrf/projet5-Blog" target="blank"> - Github - </a></li>
+									<li><img src="public/images/svg/github.svg" alt="github" width="80" height="80" /><a href="https://github.com/Bast-Lcrf/projet5_OC" target="blank"> - Github - </a></li>
 									<li><img src="public/images/svg/Instagram.svg" alt="Instagram" width="80" height="80" /><a href="#instagram"> - Instagram - </a></li>
 								</ul>
 							</div>
