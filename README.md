@@ -1,5 +1,4 @@
 # projet5-Blog
-***
 Blog project as part of the symfony/php training with OpenClassrooms.
 
 ## Table of contents
@@ -9,7 +8,6 @@ Blog project as part of the symfony/php training with OpenClassrooms.
 4. [Collaboration](#collaboration)
 
 ## General Info
-***
 Project status : not quite done.
 
 This project is a simple blog as part of my training, but with some issues to solve.
@@ -33,7 +31,6 @@ At the moment, you can't do it directly on the blog. But I can add it to the pro
 Not working on Nest hub / Nest hub max.
 
 ## Technologies
-***
 A list of technologies used within the project:
 * [PHP]: Version 7.4.12
 * [HTML]: Version 5.2
@@ -41,6 +38,5 @@ A list of technologies used within the project:
 * [BOOTSTRAP](https://getbootstrap.com/docs/5.2/getting-started/introduction/): Version 5.2.1
 
 ## Installation
-***
 This way is easy to do
 
