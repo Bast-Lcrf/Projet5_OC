@@ -32,11 +32,21 @@ Not working on Nest hub / Nest hub max.
 
 ## Technologies
 A list of technologies used within the project:
-* [PHP]: Version 7.4.12
-* [HTML]: Version 5.2
-* [CSS]
-* [BOOTSTRAP](https://getbootstrap.com/docs/5.2/getting-started/introduction/): Version 5.2.1
+* [PHP](https://www.php.net/): Version 7.4.12
+* [Apache](https://www.apachelounge.com/download/VC15/): Version 2.0 
+* [MySQL](https://downloads.mysql.com/archives/installer/): Version 5.7.32
+* [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/): Version 5.2.1
 
 ## Installation
-This way is easy to do
+* Clone or download the repository, and put files into your environment,
+```
+git clone https://github.com/Bast-Lcrf/Projet5_OC
+```
+* Import database with datas : file _'database.sql'_,
+* Connect you : 
+```
+Pseudo : Admin
+Password : pass
+```
+ 
 
