@@ -38,11 +38,11 @@ class PostManager extends Manager
         }
 
     // Modification d'un article
-        public function updateArticle($updateHeader, $updateArticle, $idArticle)
+        public function updateArticle($updateTitle, $updateHeader, $updateArticle, $idArticle)
         {
             $db = $this->dbConnect();
-            $update = $db->prepare('UPDATE Articles SET header_post = ?, article = ? WHERE id_article = ?');
-            $updatePost = $update->execute(array($updateHeader, $updateArticle, $idArticle));
+            $update = $db->prepare('UPDATE Articles SET title = ?, header_post = ?, article = ?, date_article = NOW() WHERE id_article = ?');
+            $updatePost = $update->execute(array($updateTitle, $updateHeader, $updateArticle, $idArticle));
 
             return $updatePost;
         }

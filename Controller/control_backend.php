@@ -50,10 +50,10 @@ require_once('Model/commentManager.php');
     }
 
 // Modifier un article
-    function articleUpdate($updateHeader, $updateArticle, $idArticle)
+    function articleUpdate($updateTitle, $updateHeader, $updateArticle, $idArticle)
     {
         $postManager = new PostManager();
-        $postManager->updateArticle($updateHeader, $updateArticle, $idArticle);
+        $postManager->updateArticle($updateTitle, $updateHeader, $updateArticle, $idArticle);
     }
 
 // Supprimer un article et ses commentaires associés

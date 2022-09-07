@@ -40,7 +40,7 @@ body {
 @media screen and (max-width: 992px) {
     html {
         max-width: 900px;
-        background-color: lightblue;
+        /*background-color: lightblue;*/
         margin-left: 5%;  
     }
 
@@ -120,9 +120,10 @@ body {
 }
 
 .navbar-brand {
+    padding: 0% 2%;
     font-family: "Aquire", sans-serif;
     font-size: 2.5rem;
-    color: black;
+    color: black;   
 }
 
 .navbar-brand:hover {
@@ -473,6 +474,10 @@ body {
     margin: auto;
     font-family: "Raleway", sans-serif;
     font-size: 1.2rem;
+}
+
+.whoIAm .col-4 p {
+    margin-left: 0%;
 }
 
 .whoIAm .col-8 {

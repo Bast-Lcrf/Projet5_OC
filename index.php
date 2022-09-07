@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-// [Set Cookies here] //
+
 
 require('Controller/control_frontend.php');
 require('Controller/control_backend.php');
@@ -60,7 +60,7 @@ try {
             elseif($_GET['action'] == 'detailArticle') 
             {
                 if(isset($_GET['id']) && $_GET['id'] > 0) {
-                    detailArticle($_GET['id']);
+                    detailArticle(htmlspecialchars($_GET['id']));
                 }
             }
 
@@ -69,7 +69,7 @@ try {
             {
                 if(isset($_GET['id']) && $_GET['id'] > 0) {
                     if(!empty($_POST['comment'])) {
-                        addComment($_SESSION['id'], $_GET['id'], $_SESSION['pseudo'], $_POST['comment'], $validation=2);
+                        addComment($_SESSION['id'], htmlspecialchars($_GET['id']), htmlspecialchars($_SESSION['pseudo']), htmlspecialchars($_POST['comment']), $validation=2);
                     }
                     else {
                         throw new Exception('Tous les champs ne sont pas remplis.');
@@ -90,7 +90,7 @@ try {
             elseif($_GET['action'] == 'newArticle') 
             {
                 if(!empty($_POST['title']) && !empty($_POST['header_post']) && !empty($_POST['article'])) {
-                    addArticle($_SESSION['id'], $_POST['title'], $_SESSION['prenom'], $_POST['header_post'], $_POST['article']);
+                    addArticle($_SESSION['id'], htmlspecialchars($_POST['title']), $_SESSION['prenom'], htmlspecialchars($_POST['header_post']), htmlspecialchars($_POST['article']));
                 }
                 else {
                     throw new Exception('Tous les champs ne sont pas remplis.');
@@ -100,30 +100,30 @@ try {
         // modifier article
             elseif($_GET['action'] == 'updateArticle') 
             {
-                if(!empty($_POST['newHeader'] && $_POST['newArticle'])) {
-                    articleUpdate($_POST['newHeader'], $_POST['newArticle'], $_GET['id']);
+                if(!empty($_POST['newTitle'] && !empty($_POST['newHeader']) && !empty($_POST['newArticle']))) {
+                    articleUpdate(htmlspecialchars($_POST['newTitle']), htmlspecialchars($_POST['newHeader']), htmlspecialchars($_POST['newArticle']), htmlspecialchars($_GET['id']));
                 }
                 else {
                     throw new Exception('Tous les champs ne sont pas remplis.');
                 }
-                detailArticle($_GET['id']);
+                detailArticle(htmlspecialchars($_GET['id']));
             } 
 
         // Supprime un article
             elseif($_GET['action'] == 'deleteArticle') 
             {
-                deleteArticle($_GET['id']);
-                header('Location: index.php');
+                deleteArticle(htmlspecialchars($_GET['id']));
+                listArticles();
             }
 
         // Modération des commentaires
             elseif($_GET['action'] == 'validCom') 
             {
                 if(isset($_POST['valider'])) {
-                    validCom($_GET['idCom']); // Validation
+                    validCom(htmlspecialchars($_GET['idCom'])); // Validation
                 }
                 else {
-                    deleteCom($_GET['idCom']); // Suppression
+                    deleteCom(htmlspecialchars($_GET['idCom'])); // Suppression
                 }
                 validView();
             }
@@ -132,7 +132,7 @@ try {
             elseif($_GET['action'] == 'updateCom')  
             {
                 if(!empty($_POST['textUpdate'])) {
-                    updateCom($_POST['textUpdate'], $_GET['idCom'], $_GET['id']);
+                    updateCom(htmlspecialchars($_POST['textUpdate']), htmlspecialchars($_GET['idCom']), htmlspecialchars($_GET['id']));
                 }
             }
     }

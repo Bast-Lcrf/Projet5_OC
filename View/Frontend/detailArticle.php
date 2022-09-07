@@ -26,6 +26,10 @@
                                 <div class="accordion-body">
                                     <form action="index.php?action=updateArticle&amp;id=<?=$_GET['id'];?>" method="POST">
                                         <div class="form-floating">
+                                            <textarea class="form-control adminUpdateArticle" placeholder="leave a comment here" id="floatingHeader" name="newTitle" style="height: 70px"></textarea><br />
+                                            <label for="floatingHeader">Modifier Titre</label>
+                                        </div>
+                                        <div class="form-floating">
                                             <textarea class="form-control adminUpdateArticle" placeholder="leave a comment here" id="floatingHeader" name="newHeader" style="height: 70px"></textarea><br />
                                             <label for="floatingHeader">Modifier chapô</label>
                                         </div>
