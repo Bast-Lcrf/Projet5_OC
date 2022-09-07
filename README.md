@@ -9,6 +9,7 @@ Blog project as part of the symfony/php training with OpenClassrooms.
 
 ## General Info
 Project status : not quite done.
+
 Not working on Nest hub / Nest hub max.
 
 This project is a simple blog as part of my training, but with some issues to solve.
