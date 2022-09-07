@@ -32,10 +32,10 @@ Not working on Nest hub / Nest hub max.
 
 ## Technologies
 A list of technologies used within the project:
-* [PHP](https://www.php.net/): Version 7.4.12
-* [Apache](https://www.apachelounge.com/download/VC15/): Version 2.0 
-* [MySQL](https://downloads.mysql.com/archives/installer/): Version 5.7.32
-* [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/): Version 5.2.1
+* [PHP 7.4.12](https://www.php.net/)
+* [Apache 2.0](https://www.apachelounge.com/download/VC15/)
+* [MySQL 5.7.32](https://downloads.mysql.com/archives/installer/)
+* [Bootstrap 5.2.1](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 
 ## Installation
 * Clone or download the repository, and put files into your environment,
