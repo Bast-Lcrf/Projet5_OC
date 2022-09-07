@@ -5,12 +5,11 @@ Blog project as part of the symfony/php training with OpenClassrooms.
 1. [General Info](#general-info)
 2. [Technologies](#technologies)
 3. [Installation](#installation)
-4. [Collaboration](#collaboration)
 
 ## General Info
-Project status : not quite done.
+**Project status : not quite done.**
 
-Not working on Nest hub / Nest hub max.
+**Not working on Nest hub / Nest hub max.**
 
 This project is a simple blog as part of my training, but with some issues to solve.
 I created a home page, a page that lists the blog posts, the page that details the post with their comments.
@@ -38,7 +37,7 @@ A list of technologies used within the project :
 * [Bootstrap 5.2.1](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 
 ## Installation
-* Clone or download the repository, and put files into your environment,
+* **Clone or download the repository**, and put files into your environment,
 ```
 git clone https://github.com/Bast-Lcrf/Projet5_OC
 ```
