@@ -4,11 +4,9 @@ Blog project as part of the symfony/php training with OpenClassrooms.
 
 ## Table of contents
 1. [General Info](#general-info)
-2. [Technologies](@technologies)
-3. [Installation](@installation)
-4. [Collaboration](@collaboration)
-
-***
+2. [Technologies](#technologies)
+3. [Installation](#installation)
+4. [Collaboration](#collaboration)
 
 ## General Info
 ***
@@ -34,8 +32,6 @@ At the moment, you can't do it directly on the blog. But I can add it to the pro
 
 Not working on Nest hub / Nest hub max.
 
-***
-
 ## Technologies
 ***
 A list of technologies used within the project:
@@ -43,8 +39,6 @@ A list of technologies used within the project:
 * [HTML]: Version 5.2
 * [CSS]
 * [BOOTSTRAP](https://getbootstrap.com/docs/5.2/getting-started/introduction/): Version 5.2.1
-
-***
 
 ## Installation
 ***
