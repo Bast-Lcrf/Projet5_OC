@@ -9,6 +9,7 @@ Blog project as part of the symfony/php training with OpenClassrooms.
 
 ## General Info
 Project status : not quite done.
+Not working on Nest hub / Nest hub max.
 
 This project is a simple blog as part of my training, but with some issues to solve.
 I created a home page, a page that lists the blog posts, the page that details the post with their comments.
@@ -28,10 +29,8 @@ When they create an account, they are logged in and their statut is 2.
 if you want to change this value, you have to go into phpmyadmin and change it directly on the database.
 At the moment, you can't do it directly on the blog. But I can add it to the profile page if you want. Then you can upgrade all the ones you want as admin.
 
-Not working on Nest hub / Nest hub max.
-
 ## Technologies
-A list of technologies used within the project:
+A list of technologies used within the project :
 * [PHP 7.4.12](https://www.php.net/)
 * [Apache 2.0](https://www.apachelounge.com/download/VC15/)
 * [MySQL 5.7.32](https://downloads.mysql.com/archives/installer/)
