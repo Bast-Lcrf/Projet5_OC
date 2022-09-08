@@ -10,7 +10,6 @@ class UsersManager extends Manager
         $db = $this->dbConnect();
         $auth = $db->prepare('SELECT id_user, pseudo, pwd, lastName, firstName, statut FROM Users WHERE pseudo = ?');
         $auth->execute(array($logPseudo));
-        //$auth->rowCount();
         
         $data = $auth->fetch();
 
@@ -30,7 +29,7 @@ class UsersManager extends Manager
             throw new Exception('Pseudo incorrect');
         }
 
-        header('location: index.php'); 
+        home(); 
     }
 
     // inscription utilisateurs

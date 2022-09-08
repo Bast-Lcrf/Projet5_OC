@@ -26,17 +26,17 @@ require_once('Model/commentManager.php');
         $userManager = new UsersManager();
         $affectedLines = $userManager->newUser($pseudo, $passCrypt, $lastName, $firstName, $email, $statut);
 
-        if($affectedLines == false) {
+        if($affectedLines === false) {
             throw new Exception('impossible de vous inscire pour le moment.');
         }
         else {
-            header('location: index.php');
+            home();
         }
     }
 
 /* -------------------- Fonction gestion des articles -------------------- */
 
-// Nombre d'articles dans la base 
+// Nombre d'articles dans la base de données
     function articleCount()
     {
         $postManager = new PostManager();
@@ -50,7 +50,7 @@ require_once('Model/commentManager.php');
     {
         $postManager = new PostManager();
         $newArticle = $postManager->newArticle($idUser, $title, $author, $header_post, $article);
-        if($newArticle == false) {
+        if($newArticle === false) {
             throw new Exception('Impossible d\'ajouter le billet');
         }
         else {
@@ -81,7 +81,7 @@ require_once('Model/commentManager.php');
     {
         $commentManager = new CommentManager();
         $affectedLine = $commentManager->postComment($idUser, $idArticle, $author, $comment, $validation);
-        if($affectedLine == false) {
+        if($affectedLine === false) {
             throw new Exception('Impossible d\'ajouter de le commentaire.');
         }
         else {

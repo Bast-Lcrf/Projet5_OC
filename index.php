@@ -60,7 +60,7 @@ try {
             elseif($_GET['action'] == 'destroy') {
                 session_unset();
                 session_destroy();
-                header('location: index.php');
+                home();
             }
 
         // inscription des utilisateurs

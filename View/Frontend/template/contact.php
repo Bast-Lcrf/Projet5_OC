@@ -30,23 +30,8 @@
     </form>
 </div>
 
-<?php /*if(isset($_POST['message'])) {
-    $nom = $_POST['prenom'] . ' ' . $_POST['nom'];
-    $retour = mail('bastlcrf.dev@gmail.com', 'Envoie depuis la page de contact', htmlspecialchars($_POST['message']), 
-                htmlspecialchars($_POST['email']), $nom);
-                if ($retour) {
-                    ?>
-                    <div class="alert alert-success" role="alert">
-                        Votre message a bien été envoyé 
-                    </div>
-                    <?php
-                }
-}*/
-?>
 <?php if(isset($_POST['message'])) {
     $nom = htmlspecialchars($_POST['prenom']) . ' ' . htmlspecialchars($_POST['nom']);
-    /*$retour = mail('bastlcrf.dev@gmail.com', 'Envoie depuis la page de contact', htmlspecialchars($_POST['message']),
-                    htmlspecialchars($_POST['email'], $nom));*/
             if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['message'])) {
                 mail('bastlcrf.dev@gmail.com', 'Envoie depuis la page de contact', htmlspecialchars($_POST['message']),
                 htmlspecialchars($_POST['email']), $nom);
