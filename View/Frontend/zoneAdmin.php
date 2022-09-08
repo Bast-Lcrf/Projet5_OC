@@ -3,6 +3,12 @@
 <?php ob_start(); ?>
 
 <p>
+<?php if(isset($errorMessage)): ?>
+    <div class="alert alert-danger" role="alert">
+        <strong><?php echo $errorMessage; ?></strong>
+    </div>
+<?php endif; ?>
+
 <?php if(!isset($_SESSION['pseudo'])): ?>
     <div class="alert alert-warning msgWarning" role="alert">
     <p>Page non autorisée pour le commun des mortels, vous devez avoir l'autorisation du maitre des lieux !</p>

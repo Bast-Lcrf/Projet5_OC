@@ -65,9 +65,7 @@
 															<button class="btn btn-success" type="submit" value="connexion" name="submit">Envoyer</button>
 														</div>
 												</form>
-											</div>
-										
-												
+											</div>			
 										<?php endif; ?>
 										</li>
 										<?php if(!isset($_SESSION['pseudo'])): ?>

@@ -36,6 +36,15 @@ require_once('Model/commentManager.php');
 
 /* -------------------- Fonction gestion des articles -------------------- */
 
+// Nombre d'articles dans la base 
+    function articleCount()
+    {
+        $postManager = new PostManager();
+        $nombreArticles = $postManager->nbArticle();
+
+        return $nombreArticles;
+    }
+
 // Ajoute un nouvel article au blog 
     function addArticle($idUser, $title, $author, $header_post, $article)
     {

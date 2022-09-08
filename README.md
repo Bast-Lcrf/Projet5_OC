@@ -1,5 +1,5 @@
 # projet5-Blog
-Blog project as part of the symfony/php training with OpenClassrooms.
+Blog project as part of my symfony/php training with OpenClassrooms.
 
 ## Table of contents
 1. [General Info](#general-info)

@@ -4,6 +4,17 @@ require_once('Model/manager.php');
 
 class PostManager extends Manager
 {
+    // Compte le nombre d'article existant
+        public function nbArticle()
+        {
+            $db = $this->dbConnect();
+            $count = $db->query('SELECT * FROM Articles');
+
+            $nbArtilces = $count->rowCount();
+            return $nbArtilces;
+        }
+
+
     // afiche la liste des articles
         public function getListArticle() 
         {

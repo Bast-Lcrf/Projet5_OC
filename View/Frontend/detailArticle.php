@@ -2,6 +2,12 @@
 
 <?php ob_start(); ?>
 
+<?php if(isset($errorMessage)): ?>
+            <div class="alert alert-danger" role="alert">
+                <strong><?php echo $errorMessage; ?></strong>
+            </div>
+<?php else: ?>
+    
 <div class="detail">
     <h3><?php $article['title']; ?></h3>
     <h3> - <?= htmlspecialchars($article['title']) ?> - </h3>
@@ -14,44 +20,50 @@
         <em>Le <?= $article['date_article_fr'] ?></em>
     </h6>
     <?php if(!isset($_SESSION['pseudo'])): ?>
-                <?php elseif($_SESSION['statut'] == 1): ?>
-                    <div class="w-75 accordion updateArticle" id="accordionExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    <strong>Modifier Article</strong>
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <form action="index.php?action=updateArticle&amp;id=<?=$_GET['id'];?>" method="POST">
-                                        <div class="form-floating">
-                                            <textarea class="form-control adminUpdateArticle" placeholder="leave a comment here" id="floatingHeader" name="newTitle" style="height: 70px"></textarea><br />
-                                            <label for="floatingHeader">Modifier Titre</label>
-                                        </div>
-                                        <div class="form-floating">
-                                            <textarea class="form-control adminUpdateArticle" placeholder="leave a comment here" id="floatingHeader" name="newHeader" style="height: 70px"></textarea><br />
-                                            <label for="floatingHeader">Modifier chapô</label>
-                                        </div>
-                                        <div class="form-floating">
-                                            <textarea class="form-control adminUpdateArticle" placeholder="leave a comment here" id="floatingArticle" name="newArticle" style="height: 150px"></textarea>
-                                            <label for="floatingArticle">Modifier Article</label>
-                                        </div>
-                                        <div>
-                                            <br />
-                                            <button class="btn btn-outline-warning" type="reset">Reset</button>
-                                            <button class="btn btn-outline-success" type="submit">Envoyer</button>
-                                        </div>
-                                    </form>
+                <?php elseif($_SESSION['statut'] == 1):
+                        if(isset($errorMessage)): ?>
+                        <div class="alert alert-danger" role="alert">
+                            <strong><?php echo $errorMessage; ?></strong>
+                        </div>
+                    <?php else: ?>
+                        <div class="w-75 accordion updateArticle" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        <strong>Modifier Article</strong>
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <form action="index.php?action=updateArticle&amp;id=<?=$_GET['id'];?>" method="POST">
+                                            <div class="form-floating">
+                                                <textarea class="form-control adminUpdateArticle" placeholder="leave a comment here" id="floatingHeader" name="newTitle" style="height: 70px"></textarea><br />
+                                                <label for="floatingHeader">Modifier Titre</label>
+                                            </div>
+                                            <div class="form-floating">
+                                                <textarea class="form-control adminUpdateArticle" placeholder="leave a comment here" id="floatingHeader" name="newHeader" style="height: 70px"></textarea><br />
+                                                <label for="floatingHeader">Modifier chapô</label>
+                                            </div>
+                                            <div class="form-floating">
+                                                <textarea class="form-control adminUpdateArticle" placeholder="leave a comment here" id="floatingArticle" name="newArticle" style="height: 150px"></textarea>
+                                                <label for="floatingArticle">Modifier Article</label>
+                                            </div>
+                                            <div>
+                                                <br />
+                                                <button class="btn btn-outline-warning" type="reset">Reset</button>
+                                                <button class="btn btn-outline-success" type="submit">Envoyer</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="deleteArticle">
+                                <form action="index.php?action=deleteArticle&amp;id=<?=$_GET['id'];?>" method="POST">
+                                    <button class="btn btn-danger" type="submit">Supprimer Article</button>
+                                </form>
+                            </div>
                         </div>
-                        <div class="deleteArticle">
-                            <form action="index.php?action=deleteArticle&amp;id=<?=$_GET['id'];?>" method="POST">
-                                <button class="btn btn-danger" type="submit">Supprimer Article</button>
-                            </form>
-                        </div>
-                    </div>
+                    <?php endif; ?>
     <?php endif; ?>
 </div>
 <div class="detailComSection">
@@ -159,6 +171,7 @@ else: ?>
             </div>
         </div>
     </div> 
+<?php endif; ?>
 <?php endif; ?>
 
 <?php $content = ob_get_clean(); ?>

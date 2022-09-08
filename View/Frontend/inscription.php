@@ -5,7 +5,7 @@
 <div class="formInscription">
     <h3>Formulaire d'inscription</h3>
         <?php if(isset($errorMessage)): ?>
-            <div class="w-50 alert alert-danger" role="alert">
+            <div class="alert alert-danger" role="alert">
                 <strong><?php echo $errorMessage; ?></strong>
             </div>
         <?php endif; ?>

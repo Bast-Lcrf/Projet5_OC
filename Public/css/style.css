@@ -40,7 +40,6 @@ body {
 @media screen and (max-width: 992px) {
     html {
         max-width: 900px;
-        /*background-color: lightblue;*/
         margin-left: 5%;  
     }
 
@@ -210,6 +209,7 @@ body {
 
 .alert-success, .alert-danger {
     font-family: "Aquire", "AquireBold", "sans-serif";
+    text-align: center;
 }
 
 /* ---------- Page d'inscription ---------- */
