@@ -3,6 +3,7 @@
 namespace src\Controller;
 
 require('src/Entity/Comments.php');
+require('src/Entity/Articles.php');
 require('src/Manager/ArticlesManager.php');
 require('src/Manager/CommentsManager.php');
 
@@ -10,18 +11,21 @@ use Exception;
 use src\Manager\ArticlesManager;
 use src\Manager\CommentsManager;
 use src\Entity\Comments;
+use src\Entity\Articles;
 
 class PageController
 {
     private ArticlesManager $articleManager;
     private CommentsManager $commentsManager;
     private Comments $comments;
+    private Articles $articles;
 
     public function __construct()
     {
         $this->articleManager = new ArticlesManager;
         $this->commentsManager = new CommentsManager;
         $this->comments = new Comments;
+        $this->articles = new Articles;
     }
 
 /* ---------------------------------------- Section affichage ---------------------------------------- */
@@ -43,18 +47,19 @@ class PageController
     /**
      * Affiche l'article complet et les commentaire associés
      */
-    public function fullArticle($idArticle) {
+    public function fullArticle(int $idArticle) {
         $detailArticle = $this->articleManager->readArticle($idArticle);
         $commentsDetailArticle = $this->commentsManager->readComments($idArticle);
         require('public/templates/detailArticle.php');
     }
 
     /**
-     * Supprime un article via son identifiant
+     * Supprime un objet article via son identifiant
      * et redirige vers l'acceuil
      */
-    public function deleteArticle($idArticle) {
-        $this->articleManager->deleteArticle($idArticle);
+    public function deleteArticle(int $idArticle) {
+        $this->articles->setIdArticle($idArticle);
+        $this->articleManager->deleteArticle($this->articles);
         header('Location: index.php');
     }
 
@@ -85,7 +90,7 @@ class PageController
      * création d'un objet Comments envoyer à CommentsManager pour l'insertion en BDD
      * Objet envoyer à la modération via ValidationCom
      */
-    public function addNewCom($commentForm, $idArticle) {
+    public function addNewCom(string $commentForm,int $idArticle) {
         $this->comments->setIdUser($_SESSION['idUser']);
         $this->comments->setIdArticle($idArticle);
         $this->comments->setAuthor($_SESSION['pseudo']);
@@ -104,7 +109,7 @@ class PageController
     /**
      * Modification d'un objet commentaire
      */
-    public function updateComment($comment, $idComment, $idArticle) {
+    public function updateComment(string $comment,int $idComment,int $idArticle) {
         $this->comments->setComment($comment);
         $this->comments->setIdComment($idComment);
 
@@ -120,7 +125,7 @@ class PageController
     /**
      * Suppression d'un objet commentaire via son identifiant
      */
-    public function deleteComment($idComment, $idArticle) {
+    public function deleteComment(int $idComment,int $idArticle) {
         $this->comments->setIdComment($idComment);
         $deleteIsOk = $this->commentsManager->deleteComment($this->comments);
 

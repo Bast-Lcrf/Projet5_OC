@@ -22,7 +22,6 @@ class Manager
             return $this->pdo;
         } catch (PDOException $e) {
             print "Erreur !: " . $e->getMessage() . "<br />";
-            exit();
         }
     }
 }

@@ -180,7 +180,7 @@ class Users
     }
 
     /**
-     * @param int $statut
+     * @param string $statut
      * 
      * @return Users
      */
@@ -192,7 +192,7 @@ class Users
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getStatut()
     {

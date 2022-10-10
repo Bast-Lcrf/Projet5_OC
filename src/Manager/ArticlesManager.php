@@ -119,13 +119,13 @@ class ArticlesManager extends Manager
      * 
      * @return bool     True en cas de succés, false en cas d'erreur
      */
-    public function deleteArticle($idArticles)
+    public function deleteArticle(Articles $articles)
     {
         $this->pdo = $this->dbConnect();
         $this->pdoStatement = $this->pdo->prepare('DELETE FROM Articles WHERE idArticle = ?');
 
         // Liaison du paramètre et Execution de la requête
-        return $this->pdoStatement->execute(array($idArticles));
+        return $this->pdoStatement->execute(array($articles->getIdArticle()));
 
     }
 }

@@ -38,7 +38,7 @@ class CommentsManager extends Manager
      * 
      * @return bool|Comments|NULL   False en cas d'erreur, un ou plusieurs objet Comments si un id article existe, NULL si aucune correspondance n'est trouvé
      */
-    public function readComments($idArticle)
+    public function readComments(int $idArticle)
     {
         $this->pdo = $this->dbConnect();
         $this->pdoStatement = $this->pdo->prepare('SELECT idComment, idUser, idArticle, author, comment, validationCom, 

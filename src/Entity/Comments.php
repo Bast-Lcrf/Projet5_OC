@@ -87,7 +87,7 @@ class Comments
     }
 
     /**
-     * @param int $id_article
+     * @param int $idArticle
      * 
      * @return Comments
      */

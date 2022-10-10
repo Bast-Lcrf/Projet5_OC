@@ -7,14 +7,14 @@ class Articles
 /* ------------------------------ Initialisation des paramètres ------------------------------ */
 
     /**
-     * @var int $id_article     Identifiant de l'article(généré automatiquement par le SGBDR)
+     * @var int $idArticle     Identifiant de l'article(généré automatiquement par le SGBDR)
      */
-    private $id_article;
+    private $idArticle;
     
     /**
-     * @var int $id_user        Identifiant de l'utilisateur pour le relier l'article a l'auteur
+     * @var int $idUser        Identifiant de l'utilisateur pour le relier l'article a l'auteur
      */
-    private $id_user;
+    private $idUser;
 
     /**
      * @var string $title       Titre de l'article
@@ -27,9 +27,9 @@ class Articles
     private $author;
 
     /**
-     * @var string $header_post Chapô de l'article
+     * @var string $headerPost Chapô de l'article
      */
-    private $header_post;
+    private $headerPost;
 
     /**
      * @var string $article     Contenu de l'article
@@ -37,12 +37,25 @@ class Articles
     private $article;
 
     /**
-     * @var string $date_article    Date de création de l'article ou de sa modification
+     * @var string $dateArticle    Date de création de l'article ou de sa modification
      */
-    private $date_article;
+    private $dateArticle;
 
 
 /* ------------------------------ les Fonctions (getters and setters) ------------------------------ */
+
+    /**
+     * @param int $idArticles
+     * Setter utile uniquement pour récupérer l'identifiant d'un article déjà posté.
+     * Ce setter n'est en aucun cas utilisable pour ajouter un articles, la BDD se charge de l'incrémentation.
+     * @return Articles
+     */
+    public function setIdArticle($idArticle)
+    {
+        $this->idArticle = $idArticle;
+
+        return $this;
+    }
 
     /**
      * @return int 
@@ -53,13 +66,13 @@ class Articles
     }
 
     /**
-     * @param int $id_user
+     * @param int $idUser
      * 
      * @return Articles
      */
     public function setIdUser($idUser)
     {
-        $this->id_user = $idUser;
+        $this->idUser = $idUser;
 
         return $this;
     }
@@ -113,7 +126,7 @@ class Articles
     }
 
     /**
-     * @param string $header_post
+     * @param string $headerPost
      * 
      * @return Articles
      */

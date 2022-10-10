@@ -23,11 +23,11 @@ class UsersController
         $this->user = new Users;
     }
 
-    public function authUser($pseudo, $pwd) {
+    public function authUser(string $pseudo, string $pwd) {
         $this->userManager->setUser($pseudo, $pwd);
     }
 
-    public function createUserAccount($pseudo, $pwd, $lastName, $firstName, $email, $statut) {
+    public function createUserAccount(string $pseudo, string $pwd, string $lastName, string $firstName, string $email, string $statut) {
 
         $this->user->setPseudo($pseudo);
         $this->user->setPwd($pwd);
@@ -35,7 +35,7 @@ class UsersController
         $this->user->setFirstName($firstName);
         $this->user->setEmail($email);
         $this->user->setStatut($statut);
-        
+
         $saveIsOk = $this->userManager->save($this->user);
 
         if($saveIsOk) {
