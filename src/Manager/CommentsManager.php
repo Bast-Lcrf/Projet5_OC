@@ -67,7 +67,9 @@ class CommentsManager extends Manager
     }
 
     /**
+     * Récupère un objet Comments via la valeur de ValidationCom
      * 
+     * @return bool true en cas de succés, false en cas d'erreur
      */
     public function readCommentsModeration()
     {

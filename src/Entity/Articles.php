@@ -45,7 +45,7 @@ class Articles
 /* ------------------------------ les Fonctions (getters and setters) ------------------------------ */
 
     /**
-     * @param int $idArticles
+     * @param int $idArticle
      * Setter utile uniquement pour récupérer l'identifiant d'un article déjà posté.
      * Ce setter n'est en aucun cas utilisable pour ajouter un articles, la BDD se charge de l'incrémentation.
      * @return Articles

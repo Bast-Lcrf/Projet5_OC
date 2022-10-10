@@ -24,7 +24,7 @@ class UsersController
     }
 
     public function authUser(string $pseudo, string $pwd) {
-        $this->userManager->setUser($pseudo, $pwd);
+        return $this->userManager->setUser($pseudo, $pwd);
     }
 
     public function createUserAccount(string $pseudo, string $pwd, string $lastName, string $firstName, string $email, string $statut) {
@@ -39,7 +39,7 @@ class UsersController
         $saveIsOk = $this->userManager->save($this->user);
 
         if($saveIsOk) {
-            header('Location: index.php');
+            return header('Location: index.php');
         } else {
             throw new Exception('Erreur : Impossible de vous inscrire pour le moment');
         }

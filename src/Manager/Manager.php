@@ -11,6 +11,8 @@ class Manager
 
     /**
      * Connexion à la base de données
+     * 
+     * @return PDO
      */
     protected function dbConnect()
     {
