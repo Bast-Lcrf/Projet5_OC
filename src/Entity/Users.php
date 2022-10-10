@@ -7,9 +7,9 @@ class Users
 /* ------------------------------ Initialisation des paramètres ------------------------------ */
 
     /** 
-     * @var int $id                 identifiant de l'utilisateur(généré automatiquement par le SGBDR)
+     * @var int $idUser                 identifiant de l'utilisateur(généré automatiquement par le SGBDR)
      * */
-    private $id;
+    private $idUser;
 
 
     /** 
@@ -52,11 +52,6 @@ class Users
      * @var string $date_signin     Date de création du compte de l'utilisateur 
      * */
     private $date_signin;
-/*
-    /**
-     * @var array $session      Session de l'utilisateur
-    
-    private $session;*/
 
     
 /* ------------------------------ les Fonctions (getters and setters) ------------------------------ */
@@ -65,13 +60,13 @@ class Users
      * Uniquement utiliser pour setup un objet Users session avec l'id de la base de données
      * L'ID est toujours geré par le SGBDR
      * 
-     * @param int $id_user
+     * @param int $idUser
      * 
      * @return Users
      */
-    public function setId($id)
+    public function setId($idUser)
     {
-        $this->id = $id;
+        $this->id = $idUser;
 
         return $this;
     }
@@ -81,7 +76,7 @@ class Users
      */
     public function getId()
     {
-        return $this->id;
+        return $this->idUser;
     }
     
     /**
@@ -205,7 +200,7 @@ class Users
     }
 
     /**
-     * @param string $date_signin
+     * @param string $dateSignin
      * 
      * @return Users
      */

@@ -44,10 +44,10 @@ class UsersManager extends Manager
      * @param string $pseudo    objet de type Users
      * @param string $pwd       objet de type Users
      * 
-     * @return bool|Users$_SESSION|NULL  false si une erreur survient, un objet Users si un utilisateur est trouvé,
+     * @return bool|$_SESSION|NULL  false si une erreur survient, un objet Users si un utilisateur est trouvé,
      *                          NULL si aucune correspondance n'est trouvé.
      */
-    public function setUser($pseudo, $pwd) 
+    public function setUser(string $pseudo,string $pwd)
     {
         $this->pdo = $this->dbConnect();
         $this->pdoStatement = $this->pdo->prepare('SELECT * FROM Users WHERE pseudo = ?');

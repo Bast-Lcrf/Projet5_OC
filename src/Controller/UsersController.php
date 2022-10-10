@@ -35,8 +35,7 @@ class UsersController
         $this->user->setFirstName($firstName);
         $this->user->setEmail($email);
         $this->user->setStatut($statut);
-        var_dump($this->user);
-
+        
         $saveIsOk = $this->userManager->save($this->user);
 
         if($saveIsOk) {
