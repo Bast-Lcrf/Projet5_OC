@@ -1,0 +1,13 @@
+{
+    "name": "Blog Project_5 PHP",
+    "short_name": "Blog_P5",
+    "dir": "ltr",
+    "lang": "fr",
+    "display": "standalone",
+    "orientation": "landscape",
+    "prefer_related_applications": "false",
+    "related_applications": [{
+      "platform": "web"
+    }]
+  }
+  
