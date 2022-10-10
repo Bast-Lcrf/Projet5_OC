@@ -28,21 +28,7 @@ class PageController
         $this->articles = new Articles;
     }
 
-/* ---------------------------------------- Section affichage ---------------------------------------- */
-
-    /**
-     * Affiche la page d'accueil
-     */
-    public function homePage() {
-        require('public/templates/home.php');
-    }
-
-    /**
-     * Affiche la liste des articles
-     */
-    public function getListArticles() {
-        require('public/templates/listArticles.php');
-    }
+/* ---------------------------------------- Section ? ---------------------------------------- */
 
     /**
      * Affiche l'article complet et les commentaire associés
@@ -61,27 +47,6 @@ class PageController
         $this->articles->setIdArticle($idArticle);
         $this->articleManager->deleteArticle($this->articles);
         header('Location: index.php');
-    }
-
-    /**
-     * Affiche la page d'inscription
-     */
-    public function getRegister() {
-        require('public/templates/register.php');
-    }
-
-    /**
-     * Affiche la page de connexion
-     */
-    public function getLogin() {
-        require('public/templates/login.php');
-    }
-
-    /**
-     * Affiche le dashboard admin
-     */
-    public function getDashboard() {
-        require('public/templates/dashboard.php');
     }
 
 /* ---------------------------------------- Section Commentaires ---------------------------------------- */

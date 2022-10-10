@@ -28,9 +28,9 @@ class Index
     public function router($get, $post) {
         try {
             if(isset($get['home'])) {
-                $this->pageController->homePage();
+                require('public/templates/home.php');
             } elseif(isset($get['listArticles'])) {
-                $this->pageController->getListArticles();
+                require('public/templates/listArticles.php');
             } elseif(isset($get['detailArticle'])) {
                 if(isset($get['id']) && ($get['id'] > 0) && ($get['id'] <= $this->articlesManager->nbArticles())) {
                     $this->pageController->fullArticle(htmlspecialchars($get['id']));
@@ -56,9 +56,9 @@ class Index
             } elseif(isset($get['dashboard'])) {
                 $this->pageController->getDashboard();
             } elseif(isset($get['register'])) {
-                $this->pageController->getRegister();
+                require('public/templates/register.php');
             } elseif(isset($get['logIn'])) {
-                $this->pageController->getLogin();
+                require('public/templates/login.php');
             } elseif(isset($get['loginUser'])) {
                 if(!empty($post)) {
                 $this->usersController->authUser($post['pseudo'], $post['pwd']);
@@ -77,7 +77,7 @@ class Index
                 header('Location: index.php');
             }
             else {
-                $this->pageController->homePage();
+                require('public/templates/home.php');
             }
         } catch (Exception $e) {
            echo 'Erreur :' . $e->getMessage();
