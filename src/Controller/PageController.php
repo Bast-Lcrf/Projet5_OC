@@ -34,14 +34,14 @@ class PageController
      * Affiche la page d'accueil
      */
     public function homePage() {
-        return require('public/templates/home.php');
+        require('public/templates/home.php');
     }
 
     /**
      * Affiche la liste des articles
      */
     public function getListArticles() {
-        return require('public/templates/listArticles.php');
+        require('public/templates/listArticles.php');
     }
 
     /**
@@ -50,7 +50,7 @@ class PageController
     public function fullArticle(int $idArticle) {
         $detailArticle = $this->articleManager->readArticle($idArticle);
         $commentsDetailArticle = $this->commentsManager->readComments($idArticle);
-        return require('public/templates/detailArticle.php');
+        require('public/templates/detailArticle.php');
     }
 
     /**
@@ -60,28 +60,28 @@ class PageController
     public function deleteArticle(int $idArticle) {
         $this->articles->setIdArticle($idArticle);
         $this->articleManager->deleteArticle($this->articles);
-        return header('Location: index.php');
+        header('Location: index.php');
     }
 
     /**
      * Affiche la page d'inscription
      */
     public function getRegister() {
-        return require('public/templates/register.php');
+        require('public/templates/register.php');
     }
 
     /**
      * Affiche la page de connexion
      */
     public function getLogin() {
-        return require('public/templates/login.php');
+        require('public/templates/login.php');
     }
 
     /**
      * Affiche le dashboard admin
      */
     public function getDashboard() {
-        return require('public/templates/dashboard.php');
+        require('public/templates/dashboard.php');
     }
 
 /* ---------------------------------------- Section Commentaires ---------------------------------------- */
@@ -100,7 +100,8 @@ class PageController
         $saveIsOk = $this->commentsManager->createComment($this->comments);
 
         if($saveIsOk) {
-            return header('Location: index.php?detailArticle&id=' . $idArticle);
+            return true;
+            header('Location: index.php?detailArticle&id=' . $idArticle);
         } else {
             throw new Exception('Erreur: Impossible de poster un commentaire pour le moment');
         }
@@ -116,7 +117,8 @@ class PageController
         $updateIsOk = $this->commentsManager->updateComment($this->comments);
 
         if($updateIsOk) {
-            return header('Location: index.php?detailArticle&id=' . $idArticle);
+            return true;
+            header('Location: index.php?detailArticle&id=' . $idArticle);
         } else {
             throw new Exception('Une erreur s\'est produite, la mise à jour du commentaire n\'est pas effective, veuiller réessayer plus tard.');
         }
@@ -130,7 +132,8 @@ class PageController
         $deleteIsOk = $this->commentsManager->deleteComment($this->comments);
 
         if($deleteIsOk) {
-            return header('Location: index.php?detailArticle&id=' . $idArticle);
+            return true;
+            header('Location: index.php?detailArticle&id=' . $idArticle);
         } else {
             throw new Exception('Une erreur s\'est produite, le commentaire n\'a pu etre supprimer.');
         }
