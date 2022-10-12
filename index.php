@@ -81,6 +81,8 @@ class Index
                 } else {
                     $this->pageController->deleteCom($get['idCom']); // suppression commentaire
                 }
+            } elseif(isset($get['newArticle'])) {
+                $this->pageController->addNewArticle($post['title'], $post['headerPost'], $post['article']);
             }
             else {
                 require('public/templates/home.php');

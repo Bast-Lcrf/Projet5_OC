@@ -559,7 +559,8 @@ body {
 
 .commentsArticle p, h6 {
     margin-left: 25%;
-    font-size: 40px;
+    font-size: 35px;
+    font-family: 'Raleway', sans-serif;
 }
 
 .commentsArticle h6 {
@@ -757,35 +758,26 @@ body {
 }
 
 .box_moderationCom .nbCom p {
-    padding-top: 10%;
+    font-size: 20px;
+    padding-top: 9%;
     padding-left: 15%;
-    opacity: 1;
 }
 
 .box_moderationCom .nbCom h1 {
     font-family: 'Raleway', sans-serif;
-    font-size: 100px;
+    font-size: 110px;
     padding-right: 20%;
     padding-left: 5%;
-} 
+}
 
 .box_moderationCom:hover {
-    width: 500px;
+    box-shadow: -10px -10px 0px pink;
+    transform: translateX(10px);
 }
 
 .box_moderationCom:hover a {
-    color: #010A20;
-}
-
-.box_moderationCom:hover p {
-    padding-top: 5%;
-    padding-left: 2%;
-    padding-right: 15%;
-    font-size: 25px;
-}
-
-.box_moderationCom:hover h1 {
-    padding-right: 5%;
+    color: #11101d;
+    margin-bottom: 1%;
 }
 
 .box_formNewArticle {
@@ -812,6 +804,8 @@ body {
 
 .box_formNewArticle:hover {
     width: 500px;
+    box-shadow: -10px -10px 0px pink;
+    transform: translateX(10px);
 }
 
 .box_formNewArticle:hover i {
@@ -823,14 +817,25 @@ body {
     opacity: 1;
 }
 
+/* ----- section modération des commentaires ----- */
+
 .backgroundCommentsAdmin {
     background: url('../images/moderation.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    min-height: 50vh;
     width: 90%;
     margin-left: 10px;
     margin-top: 1%;
+}
+
+.backgroundCommentsAdmin .alert-warning {
+    width: 450px;
+    margin-top: 5%;
+    margin-left: 10%;
+    font-size: 30px;
+    text-align: center;
 }
 
 .backgroundCommentsAdmin h1 {
@@ -874,7 +879,51 @@ body {
     margin-left: 24%;
 }
 
+/* ----- Section Ajouter nouvel article -----*/
 
+.backgroundNewArticle {
+    background: url('../images/globeDigital.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    width: 90%;
+    margin-left: 10px;
+    margin-top: 1%;
+}
+
+.newArticle {
+    margin-right: 50%;
+    margin-left: 5%;
+    padding: 5% 0%;
+}
+
+.newArticle h1 {
+    text-align: center;
+    color: burlywood;
+}
+
+.newArticle .form-floating {
+    padding-bottom: 1%;
+}
+
+.newArticle textarea {
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+}
+
+.newArticle label {
+    color: black;
+}
+
+.buttonAddArticle button {
+    width: 250px;
+    margin-left: 2%;
+}
+
+.buttonAddArticle .btn-success {
+    margin-left: 0%;
+}
 
 /* ---------------------------------------- Footer ---------------------------------------- */
 

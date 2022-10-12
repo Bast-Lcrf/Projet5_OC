@@ -144,4 +144,24 @@ class PageController
             throw new Exception('Une erreur est survenue, le commentaire n\'a pas été supprimé.');
         }
     }
+
+    /**
+     * Ajoute un nouvel article
+     */
+    public function addNewArticle(string $title, string $headerPost, string $article) {
+        $this->articles->setIdUser($_SESSION['idUser']);
+        $this->articles->setTitle($title);
+        $this->articles->setAuthor($_SESSION['pseudo'] );
+        $this->articles->setHeaderPost($headerPost);
+        $this->articles->setArticle($article);
+
+        $newArticleIsOk = $this->articleManager->createArticle($this->articles);
+
+        if($newArticleIsOk) {
+            header('Location: index.php?listArticles');
+            return true;
+        } else {
+            throw new Exception('Une erreur est survenue, l\'article n\'a pas été ajouter');
+        }
+    }
 }

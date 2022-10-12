@@ -36,7 +36,7 @@ class CommentsManager extends Manager
      * 
      * @param Comments $comments    Objet de type Comments
      * 
-     * @return bool|PDOStatement|NULL   False en cas d'erreur, un ou plusieurs objet Comments si un id article existe, NULL si aucune correspondance n'est trouvé
+     * @return bool|\PDOStatement|NULL   False en cas d'erreur, un ou plusieurs objet Comments si un id article existe, NULL si aucune correspondance n'est trouvé
      */
     public function readComments(int $idArticle)
     {
