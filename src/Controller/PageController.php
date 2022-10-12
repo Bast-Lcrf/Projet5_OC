@@ -60,13 +60,13 @@ class PageController
         $this->comments->setIdArticle($idArticle);
         $this->comments->setAuthor($_SESSION['pseudo']);
         $this->comments->setComment($commentForm);
-        $this->comments->setValidationCom('notValid');
+        $this->comments->setValidationCom(2);
 
         $saveIsOk = $this->commentsManager->createComment($this->comments);
 
         if($saveIsOk) {
-            return true;
             header('Location: index.php?detailArticle&id=' . $idArticle);
+            return true;
         } else {
             throw new Exception('Erreur: Impossible de poster un commentaire pour le moment');
         }
@@ -82,8 +82,8 @@ class PageController
         $updateIsOk = $this->commentsManager->updateComment($this->comments);
 
         if($updateIsOk) {
-            return true;
             header('Location: index.php?detailArticle&id=' . $idArticle);
+            return true;
         } else {
             throw new Exception('Une erreur s\'est produite, la mise à jour du commentaire n\'est pas effective, veuiller réessayer plus tard.');
         }
@@ -97,8 +97,8 @@ class PageController
         $deleteIsOk = $this->commentsManager->deleteComment($this->comments);
 
         if($deleteIsOk) {
-            return true;
             header('Location: index.php?detailArticle&id=' . $idArticle);
+            return true;
         } else {
             throw new Exception('Une erreur s\'est produite, le commentaire n\'a pu etre supprimer.');
         }
@@ -108,10 +108,40 @@ class PageController
 
     /**
      * Affiche les commentaires en attente de modération sur la page dashboard réservé au admin
-     */ /*
+     */
     public function getDashboard() {
-        $moderationCom = $this->commentsManager->readCommentsModeration();
+        $commentForModeration = $this->commentsManager->readCommentsModeration();
+        $nbComForModeration = $this->commentsManager->nbCommentModeration();
         require('public/templates/dashboard.php');
-    } */
+    }
 
+    /**
+     * Valide un commentaire depuis le dashboard
+     */
+    public function validCom(int $idComment) {
+        $this->comments->setIdComment($idComment);
+        $validIsOK = $this->commentsManager->validationCom($this->comments);
+
+        if($validIsOK) {
+            header('Location: index.php?dashboard');
+            return true;
+        } else {
+            throw new Exception('Une erreur est survenue, le commentaire n\'a pas été ajouter');
+        }
+    }
+
+    /**
+     * Supprime un copmmentaire depuis le dashboard
+     */
+    public function deleteCom(int $idComment) {
+        $this->comments->setIdComment($idComment);
+        $deleteIsOk = $this->commentsManager->deleteComment($this->comments);
+
+        if($deleteIsOk) {
+            header('Location: index.php?dashboard');
+            return true;
+        } else {
+            throw new Exception('Une erreur est survenue, le commentaire n\'a pas été supprimé.');
+        }
+    }
 }

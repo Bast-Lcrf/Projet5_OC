@@ -32,9 +32,9 @@ class Comments
     private $comment;
 
     /**
-     * @var string $validationCom   Valeur qui défini la place du commentaire, geré par la modération.
-     *                              Soit valid, le commentaire est sur le site.
-     *                              Soit notValid, le commentaire est en attente de modération par un admin.
+     * @var int $validationCom   Valeur qui défini la place du commentaire, geré par la modération.
+     *                              Soit 1, le commentaire est sur le site.
+     *                              Soit 2, le commentaire est en attente de modération par un admin.
      */
     private $validationCom;
 
@@ -147,7 +147,7 @@ class Comments
     }
 
     /**
-     * @param string $validationCom
+     * @param int $validationCom
      * 
      * @return Comments
      */
@@ -159,7 +159,7 @@ class Comments
     }
 
     /**
-     * @return string
+     * @return int
      */
     public function getValidationCom()
     {

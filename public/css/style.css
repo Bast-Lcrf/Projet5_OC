@@ -726,12 +726,155 @@ body {
 }
 
 .dashboard .dashboard_box {
-    padding: 26% 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5% 10%;
+    color: #010A20;
 }
 
-.dashboard_box .box_moderationCom {
-    color: white;
+.dashboard_box .box_moderationCom, .box_formNewArticle {
+    width: 250px;
+    border-radius: 12px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    background-color: #5CD3ED;
 }
+
+.box_moderationCom {
+    padding-top: 1%;
+    height: 150px;
+}
+
+.box_moderationCom a {
+    text-decoration: none;
+    color: #11101d;
+}
+
+.box_moderationCom .nbCom {
+    display: flex;
+    justify-content: center;
+}
+
+.box_moderationCom .nbCom p {
+    padding-top: 10%;
+    padding-left: 15%;
+    opacity: 1;
+}
+
+.box_moderationCom .nbCom h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 100px;
+    padding-right: 20%;
+    padding-left: 5%;
+} 
+
+.box_moderationCom:hover {
+    width: 500px;
+}
+
+.box_moderationCom:hover a {
+    color: #010A20;
+}
+
+.box_moderationCom:hover p {
+    padding-top: 5%;
+    padding-left: 2%;
+    padding-right: 15%;
+    font-size: 25px;
+}
+
+.box_moderationCom:hover h1 {
+    padding-right: 5%;
+}
+
+.box_formNewArticle {
+    width: 150px;
+    height: 100px;
+}
+
+.box_formNewArticle a {
+    display: flex;
+    text-decoration: none;
+}
+
+.box_formNewArticle i {
+    color: #010A20;
+    padding-left: 15%;
+    font-size: 100px;
+}
+
+.box_formNewArticle h1 {
+    opacity: 0;
+    padding-top: 6%;
+    color: #010A20;
+}
+
+.box_formNewArticle:hover {
+    width: 500px;
+}
+
+.box_formNewArticle:hover i {
+    padding-left: 4.5%;
+}
+
+.box_formNewArticle:hover h1 {
+    padding-left: 3%;
+    opacity: 1;
+}
+
+.backgroundCommentsAdmin {
+    background: url('../images/moderation.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 90%;
+    margin-left: 10px;
+    margin-top: 1%;
+}
+
+.backgroundCommentsAdmin h1 {
+    margin-left: 5%;
+    color: whitesmoke;
+    padding-top: 2%;
+}
+
+.backgroundCommentsAdmin .commentsAdmin {
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 50%;
+    color: whitesmoke;
+    padding-bottom: 2%;
+    border-bottom: 2px solid lightblue;
+}
+
+.commentsAdmin p {
+    font-size: 25px;
+}
+
+.commentsAdmin h2, p, h3, h4, a {
+    font-family: 'Raleway', sans-serif;
+}
+
+.commentsAdmin a {
+    text-decoration: none;
+    color: burlywood;
+}
+
+.commentsAdmin a:hover {
+    border-bottom: 2px solid burlywood;
+    color: burlywood;
+}
+
+.commentsAdmin .commentButtonModeration {
+    margin-top: 5%;
+}
+
+.commentsAdmin .commentButtonModeration .btn-success {
+    margin-left: 24%;
+}
+
+
 
 /* ---------------------------------------- Footer ---------------------------------------- */
 

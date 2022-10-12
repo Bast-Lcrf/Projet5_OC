@@ -86,7 +86,7 @@ class ArticlesManager extends Manager
     }
 
     /**
-     * Compte le nombre d'articles en BDD
+     * Compte le nombres d'articles en BDD
      * 
      * @return int  Nombre d'article dans la BDD
      */

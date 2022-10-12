@@ -144,7 +144,7 @@
                             <h3>Liens Utiles</h3>
                             <ul>
                                 <li><a href="index.php">Accueil</a></li>
-                                <li><a href="#">Mon CV</a></li>
+                                <li><a href="public/images/CV.pdf" target="blank">Mon CV</a></li>
                                 <li><a href="index.php?listArticles">Les Articles</a></li>
                                 <li><a href="index.php?logOut">Déconnexion</a></li>
                             </ul>

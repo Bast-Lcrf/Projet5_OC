@@ -43,7 +43,7 @@ class CommentsManager extends Manager
         $this->pdo = $this->dbConnect();
         $this->pdoStatement = $this->pdo->prepare('SELECT idComment, idUser, idArticle, author, comment, validationCom, 
                                                     DATE_FORMAT(dateComment, \'%d/%m/%Y à %Hh%imin%ss\') AS dateCommentFr
-                                                    FROM Comments WHERE idArticle = ? ORDER BY dateComment DESC');
+                                                    FROM Comments WHERE idArticle = ? AND validationCom = 1 ORDER BY dateComment DESC');
         
         $executeIsOk = $this->pdoStatement->execute(array($idArticle));
 
@@ -67,19 +67,33 @@ class CommentsManager extends Manager
     }
 
     /**
-     * Récupère un objet Comments via la valeur de ValidationCom
-     * 
+     * Récupère un objet Comments via la valeur de validationCom
+     * Les valeurs de validationCom sont : 1 pour commentaire valider, 2 pour commentaire en attente de modération.
      * @return bool true en cas de succés, false en cas d'erreur
      */
     public function readCommentsModeration()
     {
         $this->pdo = $this->dbConnect();
-        $this->pdoStatement = $this->pdo->prepare('SELECT * FROM Comments WHERE validationCom = notValid ');
+        $this->pdoStatement = $this->pdo->query('SELECT idComment, idUser, idArticle, author, comment, validationCom,
+                                                    DATE_FORMAT(dateComment, \'%d/%m/%Y à %Hh%imin%ss\') AS dateCommentFr
+                                                    FROM Comments WHERE validationCom = 2 ORDER BY dateComment DESC');
         return $this->pdoStatement;
     }
 
     /**
-     * Met à jours un objet Comments à partir de son identifiant
+     * Compte le nombres de commentaire en attente de modération
+     */
+    public function nbCommentModeration()
+    {
+        $this->pdo = $this->dbConnect();
+        $this->pdoStatement = $this->pdo->query('SELECT * FROM Comments WHERE validationCom = 2');
+        $nbComWaiting = $this->pdoStatement->rowCount();
+        return $nbComWaiting;
+    }
+
+    /**
+     * Met à jours un objet Comments à partir de son identifiant,
+     * update du texte poster / modifier par l'utilisateur.
      * 
      * @param Comments $comments    Objet de type Comments
      * 
@@ -88,9 +102,24 @@ class CommentsManager extends Manager
     public function updateComment(Comments $comments)
     {
         $this->pdo = $this->dbConnect();
-        $this->pdoStatement = $this->pdo->prepare('UPDATE Comments SET comment = ?, validationCom = notValid, dateComment = NOW() 
+        $this->pdoStatement = $this->pdo->prepare('UPDATE Comments SET comment = ?, validationCom = 2, dateComment = NOW() 
                                                         WHERE idComment = ?');
         return $this->pdoStatement->execute(array($comments->getComment(), $comments->getIdComment()));
+    }
+
+    /**
+     * Met à jours un objet Comments à partir de son identifiant,
+     * update de la valeur validationCom par l'admin pour l'afficher sur le site
+     * 
+     * @param Comments $comments    Objet de type Comments
+     * 
+     * @return bool     True en cas de succés, false en cas d'erreur
+     */
+    public function validationCom(Comments $comments)
+    {
+        $this->pdo = $this->dbConnect();
+        $this->pdoStatement = $this->pdo->prepare('UPDATE Comments SET validationCom = 1 WHERE idComment = ?');
+        return $this->pdoStatement->execute(array($comments->getIdComment()));
     }
 
     /**

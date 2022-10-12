@@ -75,6 +75,12 @@ class Index
                 session_unset();
                 session_destroy();
                 header('Location: index.php');
+            } elseif(isset($get['validCom'])) {
+                if($post['valid']) {
+                    $this->pageController->validCom($get['idCom']); // validation commentaire
+                } else {
+                    $this->pageController->deleteCom($get['idCom']); // suppression commentaire
+                }
             }
             else {
                 require('public/templates/home.php');
