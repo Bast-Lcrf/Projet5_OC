@@ -82,6 +82,8 @@ class CommentsManager extends Manager
 
     /**
      * Compte le nombres de commentaire en attente de modération
+     * 
+     * @return int $nbComWaiting
      */
     public function nbCommentModeration()
     {

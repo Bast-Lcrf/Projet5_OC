@@ -6,6 +6,16 @@ use Exception;
 
 class ContactController
 {
+    /**
+     * Récupères les données du formulaire de contact, et les envoie avec la fonction mail()
+     * 
+     * @param string $lastName
+     * @param string $firstName
+     * @param string $email
+     * @param string $messageForm
+     * 
+     * @return bool true en cas de succés -> affiche la page de succés, false en cas d'erreur
+     */
     public function getContactForm(string $lastName, string $firstName, string $email, string $messageForm) {
         $name = htmlspecialchars(strtoupper($lastName)) . " " . htmlspecialchars($firstName);
         $mail = htmlspecialchars($email);

@@ -43,8 +43,7 @@ class UsersManager extends Manager
      * 
      * @param Users $users    objet de type Users
      * 
-     * @return bool|$_SESSION|NULL  false si une erreur survient, un objet Users si un utilisateur est trouvé,
-     *                          NULL si aucune correspondance n'est trouvé.
+     * @return array|bool|NULL       Un array $_SESSION si un utilisateur est trouvé, false en cas d'erreur, NULL si aucune corespondance
      */
     public function setUser(Users $users)
     {
