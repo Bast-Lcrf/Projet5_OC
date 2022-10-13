@@ -39,8 +39,8 @@ class UsersController
         $saveIsOk = $this->userManager->save($this->user);
 
         if($saveIsOk) {
-            return true;
             header('Location: index.php');
+            return true;
         } else {
             throw new Exception('Erreur : Impossible de vous inscrire pour le moment');
         }

@@ -38,7 +38,7 @@
                 <h2>Auteur : <?php echo htmlspecialchars($data['author']); ?></h2>
                 <p>Commentaire : <?php echo htmlspecialchars($data['comment']); ?></p>
                 <h3>Le : <?php echo $data['dateCommentFr']; ?></h3>
-                <h4>Commentaire pour <a target="blank" href="index.php?detailArticle&id=<?php echo $data['idArticle']; ?>">l'article </a>Nº:<?php echo $data['idArticle']; ?></h4>
+                <h4>Commentaire pour <a target="blank" href="index.php?detailArticle&id=<?php echo $data['idArticle']; ?>">l'article </a>Nº : <?php echo $data['idArticle']; ?></h4>
                 <div class="commentButtonModeration">
                     <form action="index.php?validCom&amp;idCom=<?= $data['idComment']; ?>" method="POST">
                         <button style="width: 200px;" class="btn btn-danger" type="submit" value="supprimer" name="delete">Supprimer</button>

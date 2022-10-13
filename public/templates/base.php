@@ -114,7 +114,7 @@
         <footer>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 col-lg-4">
+                    <div class="col-md-12 col-lg-3">
                         <div class="nav_social">
                             <h3>Réseaux Sociaux</h3>
                             <ul>
@@ -133,13 +133,36 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-4">
+                    <div class="col-md-12 col-lg-6">
                         <div class="form_contact">
                             <h3>Me Contacter</h3>
-                            <?php // Formulaire du contact ici ?>
+                            <form action="index.php?contact" method="POST">
+                                <div class="form_FullName">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingLastname" placeholder="text" name="lastName">
+                                        <label for="floatingLastname">Nom</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingFirstname" placeholder="text" name="firstName">
+                                        <label for="floatingFirstname">Prénom</label>
+                                    </div>
+                                </div>
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" name="email">
+                                        <label for="floatingEmail">Email</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="floatingMessage" placeholder="Leave a comment here" name="messageContact"></textarea>
+                                        <label for="floatingMessage">Message</label>
+                                    </div>
+                                    <div class="buttonFormContact">
+                                        <button class="btn btn-warning" type="reset">Reset</button>
+                                        <button class="btn btn-success" type="submit">Envoyer</button>
+                                    </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-4">
+                    <div class="col-md-12 col-lg-3">
                         <div class="links_footer">
                             <h3>Liens Utiles</h3>
                             <ul>

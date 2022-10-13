@@ -3,10 +3,12 @@
 session_start();
 
 require('src/Controller/PageController.php');
-require('src/Globals/Globals.php');
+require('src/Controller/ContactController.php');
 require('src/Controller/UsersController.php');
+require('src/Globals/Globals.php');
 
 use src\Globals\Globals;
+use src\Controller\ContactController;
 use src\Controller\PageController;
 use src\Controller\UsersController;
 use src\Manager\ArticlesManager;
@@ -14,12 +16,14 @@ use src\Manager\ArticlesManager;
 
 class Index 
 {
+    private ContactController $contactController;
     private PageController $pageController;
     private UsersController $usersController;
     private ArticlesManager $articlesManager;
 
     public function __construct()
     {
+        $this->contactController = new ContactController();
         $this->pageController = new PageController();
         $this->usersController = new UsersController();
         $this->articlesManager = new ArticlesManager();
@@ -40,16 +44,16 @@ class Index
             } elseif(isset($get['deleteArticle'])) {
                 $this->pageController->deleteArticle($get['id']);
             } elseif(isset($get['addNewComment'])) {
-                if(!empty($post) && !empty($get)) {
+                if(!empty($post['comment']) && !empty($get['id'])) {
                     $this->pageController->addNewCom($post['comment'], $get['id']);
                 } else {
-                    throw new Exception('Le commentaire ne peux etre ajouter');
+                    throw new Exception('Le commentaire ne peux pas etre ajouter');
                 }
             } elseif(isset($get['updateCom'])) {
-                if(!empty($post) && !empty($get)) {
+                if(!empty($post['textUpdateCom']) && !empty($get['idCom']) && !empty($get['id'])) {
                     $this->pageController->updateComment($post['textUpdateCom'], $get['idCom'], $get['id']);
                 } else {
-                    throw new Exception('Une erreur est survenue');
+                    throw new Exception('Veuillez remplir le champ de modification avant de valider');
                 }
             } elseif(isset($get['deleteComment'])) {
                 $this->pageController->deleteComment($get['idCom'], $get['id']);
@@ -60,14 +64,14 @@ class Index
             } elseif(isset($get['logIn'])) {
                 require('public/templates/login.php');
             } elseif(isset($get['loginUser'])) {
-                if(!empty($post)) {
+                if(!empty($post['pseudo'] && !empty($post['pwd']))) {
                 $this->usersController->authUser($post['pseudo'], $post['pwd']);
                 } else {
                     throw new Exception('Tous les champs ne sont pas remplis');
                 }
             } elseif(isset($get['newUserRegister'])) {
-                if(!empty($post)) {
-                $this->usersController->createUserAccount(htmlspecialchars($post['pseudo']), htmlspecialchars($post['pwd']),htmlspecialchars($post['lastName']),htmlspecialchars($post['firstName']), htmlspecialchars($post['email']),htmlspecialchars($post['statut']));
+                if(!empty($post['pseudo']) && !empty($post['pwd']) && !empty($post['lastName']) && !empty($post['firstName']) && !empty($post['email']) && !empty($post['statut'])) {
+                    $this->usersController->createUserAccount(htmlspecialchars($post['pseudo']), htmlspecialchars($post['pwd']),htmlspecialchars($post['lastName']),htmlspecialchars($post['firstName']), htmlspecialchars($post['email']),htmlspecialchars($post['statut']));
                 } else {
                     throw new Exception('Tous les champs ne sont pas remplis');
                 }
@@ -83,12 +87,19 @@ class Index
                 }
             } elseif(isset($get['newArticle'])) {
                 $this->pageController->addNewArticle($post['title'], $post['headerPost'], $post['article']);
+            } elseif (isset($get['contact'])) {
+                if(!empty($post['lastName'] && !empty($post['firstName']) && !empty($post['email']) && !empty($post['messageContact']))) {
+                    $this->contactController->getContactForm($post['lastName'], $post['firstName'], $post['email'], $post['messageContact']);
+                } else {
+                    throw new Exception('Tous les champs ne sont pas remplis.');
+                }
             }
             else {
                 require('public/templates/home.php');
             }
         } catch (Exception $e) {
-           echo 'Erreur :' . $e->getMessage();
+            $errorMessage = $e->getMessage();
+            require('public/templates/error.php');
         }
     }
 }

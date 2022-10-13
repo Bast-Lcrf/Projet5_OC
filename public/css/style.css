@@ -231,36 +231,6 @@ body {
     letter-spacing: 2px;
     margin-left: 5px;
 }
-/*
-.profile #log_out {
-    position: absolute;
-    left: 50%;
-    bottom: 5px;
-    transform: translateX(-50%);
-    min-width: 50px;
-    line-height: 50px;
-    font-size: 28px;
-    border-radius: 12px;
-    text-align: center;
-    transition: all 0.4s ease;
-    background: #1d1b31;
-}
-/*
-.profile #log_out:hover {
-    color: #1d1b31;
-    background: #fff;
-}
-
-.sidebar.active .profile #log_out:hover {
-    color: #1d1b31;
-    background: #fff;
-}
-/*
-.sidebar.active .profile #log_out {
-    left: 88%;
-    background: none;
-    padding-right: 2%;
-}*/
 
 .sidebar .profile_user {
     position: absolute;
@@ -305,6 +275,67 @@ body {
     font-size: 30px;
     padding-top: 3%;
     padding-left: 15px;
+}
+/* ---------------------------------------- error.php ---------------------------------------- */
+
+.errorBackground {
+    background: url('../images/Danger-Wallpaper-Background.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    height: 100vh;
+    width: 90%;
+    margin-top: 0.5%;
+    margin-left: 10px;
+    padding-top: 125px;
+    overflow: hidden;
+}
+
+.errorBackground h1 {
+    color: red;
+    margin-left: 10%;
+    margin-top: 5%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.errorBackground .alert-danger {
+    margin: 5% 25%;
+    text-align: center;
+    font-size: 40px;
+}
+
+/* ---------------------------------------- success.php ---------------------------------------- */
+
+.successBackground {
+    background: url('../images/successBackground.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    height: 100vh;
+    width: 90%;
+    margin-top: 0.5%;
+    margin-left: 10px;
+    padding-top: 125px;
+    overflow: hidden;
+}
+
+.successBackground h1 {
+    color: lightgreen;
+    text-shadow: 1px 1px 1px whitesmoke;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.successBackground .alert-success {
+    text-align: center;
+    font-size: 40px;
+    width: auto;
+    max-height: 250px;
+    margin-top: 4%;
+    margin-left: 35%;
+    margin-right: 25%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 100px green;
 }
 
 /* ---------------------------------------- Home Content ---------------------------------------- */
@@ -396,7 +427,7 @@ body {
     background-size: cover;
     height: 100vh;
     width: 90%;
-    margin-top: 1%;
+    margin-top: 0.5%;
     margin-left: 10px;
     margin-bottom: 1%;
 }
@@ -479,7 +510,7 @@ body {
     min-height: 100vh;
     width: 90%;
     margin-left: 10px;
-    margin-top: 1%;
+    margin-top: 0.5%;
     padding: 5% 5%;
 }
 
@@ -634,7 +665,7 @@ body {
     background-size: cover;
     height: 80%;
     width: 90%;
-    margin-top: 1%;
+    margin-top: 0.5%;
     margin-left: 10px;
     padding-top: 125px;
     overflow: hidden;
@@ -723,7 +754,7 @@ body {
     height: 100vh;
     width: 90%;
     margin-left: 10px;
-    margin-top: 1%;
+    margin-top: 0.5%;
 }
 
 .dashboard .dashboard_box {
@@ -771,7 +802,7 @@ body {
 }
 
 .box_moderationCom:hover {
-    box-shadow: -10px -10px 0px pink;
+    box-shadow: -10px -10px 0px #03C609;
     transform: translateX(10px);
 }
 
@@ -804,7 +835,7 @@ body {
 
 .box_formNewArticle:hover {
     width: 500px;
-    box-shadow: -10px -10px 0px pink;
+    box-shadow: -10px -10px 0px #03C609;
     transform: translateX(10px);
 }
 
@@ -945,7 +976,7 @@ footer {
 footer .container {
     padding-top: 3%;
     padding-bottom: 2%;
-    padding-left: 15%;
+    padding-left: 5%;
 }
 
 footer .container .row {
@@ -963,13 +994,22 @@ footer .container .row {
 
 /* ---------------------------------------- menu social media ---------------------------------------- */ 
 
+.nav_social {
+    width: 300px;
+    height: 350px;
+}
+
+.nav_social ul {
+    margin-top: 10%;
+}
+
 .row .nav_social li {
     display: flex;
     flex-direction: row;
     align-items: center;
     border-radius: 12px;
     width: 160px;
-    padding-bottom: 5%;
+    padding-bottom: 15%;
 }
 
 .row .nav_social li i {
@@ -990,7 +1030,63 @@ footer .container .row {
 
 /* ---------------------------------------- Form contact footer ---------------------------------------- */
 
+.form_contact {
+    margin-left: 5%;
+    width: 550px;
+    height: 350px;
+}
+
+.form_contact h3 {
+    text-align: center;
+}
+
+.form_contact .form_FullName {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form_contact .form_FullName input {
+    width: 269px;
+}
+
+.form_contact .form-floating {
+    padding-top: 2%;
+    color: #010A20;
+}
+
+.form_contact .form-floating input {
+    height: 80px;
+}
+
+.form_contact .form-floating textarea {
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    height: 150px;
+    max-height: 200px;
+}
+
+.form_contact .buttonFormContact {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form_contact .buttonFormContact button {
+    margin-top: 2%;
+    width: 270px;
+    font-size: 20px;
+}
+
 /* ---------------------------------------- Liens utile footer ---------------------------------------- */
+
+.links_footer {
+    width: 300px;
+    height: 350px;
+    margin-left: 20%;
+}
+
+.links_footer ul {
+    margin-top: 10%;
+}
 
 .links_footer li {
     display: flex;
@@ -998,7 +1094,8 @@ footer .container .row {
     align-items: center;
     border-radius: 12px;
     width: 160px;
-    padding-bottom: 6%;
+    height: 50px;
+    margin-bottom: 15%;
 }
 
 .links_footer li a {
@@ -1015,6 +1112,7 @@ footer .container .row {
 
 footer .copyright {
     color: burlywood;
-    margin-left: 18%;
+    margin-top: 10%;
+    margin-left: 24%;
     font-size: 17px;
 }

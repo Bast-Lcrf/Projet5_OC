@@ -136,4 +136,18 @@ class CommentsManager extends Manager
         return $this->pdoStatement->execute(array($comments->getIdComment()));
 
     }
+
+    /**
+     * Supprime un Objet Comments à partir de l'identifiant d'un objet Articles
+     * 
+     * @param Comments $comments    objet de type Comments
+     * 
+     * @return bool     true en cas de succés, false en cas d'erreur
+     */
+    public function deleteComFromArticle(Comments $comments)
+    {
+        $this->pdo = $this->dbConnect();
+        $this->pdoStatement = $this->pdo->prepare('DELETE FROM Comments WHERE idArticle = ?');
+        return $this->pdoStatement->execute(array($comments->getIdArticle()));
+    }
 }
