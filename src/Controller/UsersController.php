@@ -23,10 +23,40 @@ class UsersController
         $this->user = new Users;
     }
 
+    /**
+     * Identifie et connecte l'utilisateur 
+     * 
+     * @param string $pseudo
+     * @param string $pwd
+     * 
+     * @return bool     true en cas de succés -> redirect vers la page d'accueil, false en cas d'erreur
+     */
     public function authUser(string $pseudo, string $pwd) {
-        return $this->userManager->setUser($pseudo, $pwd);
+        $this->user->setPseudo($pseudo);
+        $this->user->setPwd($pwd);
+        $userIsOk = $this->userManager->setUser($this->user);
+
+        if($userIsOk) {
+            header('Location: index.php');
+            return true;
+        }
+        else {
+            throw new Exception('Une erreur est survenue, veuillez réessayer.');
+        }
     }
 
+    /**
+     * Créer un objet Users et l'envoie a usersManager pour insertion en BDD
+     * 
+     * @param string $pseudo
+     * @param string $pwd
+     * @param string $lastName
+     * @param string $firstName
+     * @param string $email
+     * @param string $statut
+     * 
+     * @return bool     true en cas de succés -> redirect vers l'accueil, false en cas d'erreur
+     */
     public function createUserAccount(string $pseudo, string $pwd, string $lastName, string $firstName, string $email, string $statut) {
 
         $this->user->setPseudo($pseudo);

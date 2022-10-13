@@ -41,21 +41,20 @@ class UsersManager extends Manager
     /**
      * Récupère un objet Users à partir de son pseudo et de son mot de passe
      * 
-     * @param string $pseudo    objet de type Users
-     * @param string $pwd       objet de type Users
+     * @param Users $users    objet de type Users
      * 
      * @return bool|$_SESSION|NULL  false si une erreur survient, un objet Users si un utilisateur est trouvé,
      *                          NULL si aucune correspondance n'est trouvé.
      */
-    public function setUser(string $pseudo,string $pwd)
+    public function setUser(Users $users)
     {
         $this->pdo = $this->dbConnect();
         $this->pdoStatement = $this->pdo->prepare('SELECT * FROM Users WHERE pseudo = ?');
-        $this->pdoStatement->execute(array($pseudo));
+        $this->pdoStatement->execute(array($users->getPseudo()));
         $data = $this->pdoStatement->fetch();
 
-        if($pseudo == $data['pseudo']) {
-            $pass = password_verify($pwd, $data['pwd']);
+        if($users->getPseudo() == $data['pseudo']) {
+            $pass = password_verify($users->getPwd(), $data['pwd']);
             
             if($pass === false) {
                 return NULL;
