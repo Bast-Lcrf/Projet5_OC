@@ -641,6 +641,10 @@ body {
     width: 500px;
 }
 
+.formModifyComment label {
+    color: #11101d;
+}
+
 .form_comment .formDeleteCom {
     padding-top: 1%;
 }

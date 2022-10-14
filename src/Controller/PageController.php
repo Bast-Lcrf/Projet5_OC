@@ -194,10 +194,8 @@ class PageController
         $nbComForModeration = $this->commentsManager->nbCommentModeration();
 
         if($commentForModeration) {
-            if($nbComForModeration) {
-                require('public/templates/dashboard.php');
-                return true;
-            }
+            require('public/templates/dashboard.php');
+            return true;
         }
         else {
             throw new Exception('Une erreur est survenue, veuillez réessayer.');
