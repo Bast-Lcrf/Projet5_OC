@@ -54,7 +54,7 @@ class PageController
     }
 
     /**
-     * Supprime un objet article via son identifiant
+     * Supprime un objet Articles via son identifiant
      * et supprime aussi les commentaires associés.
      * 
      * @param int $idArticle    identifiant de l'article
@@ -75,6 +75,36 @@ class PageController
             }
         } else {
             throw new Exception('Une erreur est survenue, l\'article n\'a pas été supprimé');
+        }
+    }
+
+    /**
+     * Met à jour un objet Articles via son identifiant
+     * 
+     * @param string $updateTitle
+     * @param string $updateHeader
+     * @param string $updateArticle
+     * @param int $idArticle 
+     * 
+     * @return bool     True en cas de succés -> affiche la page de succés, false en cas d'erreur
+     */
+    public function updateArticle(string $updateTitle, string $updateHeader, string $updateArticle, int $idArticle) {
+        $this->articles->setIdUser($_SESSION['idUser']);
+        $this->articles->setTitle($updateTitle);
+        $this->articles->setAuthor($_SESSION['pseudo']);
+        $this->articles->setHeaderPost($updateHeader);
+        $this->articles->setArticle($updateArticle);
+        $this->articles->setIdArticle($idArticle);
+
+        $updateIsOk = $this->articleManager->updateArticle($this->articles);
+
+        if($updateIsOk) {
+            $messageSuccess = 'L\'article a bien été mis à jours !';
+            require('public/templates/success.php');
+            return true;
+        }
+        else {
+            throw new Exception('Une erreur est survenue, l\'article n\'pas été mis à jour, veuillez réessayer');
         }
     }
 

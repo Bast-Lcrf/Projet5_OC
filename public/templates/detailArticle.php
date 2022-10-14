@@ -18,7 +18,30 @@ $this->globals = new Globals;
                 <h4><?php echo $detailArticle['author']; ?> - le <?php echo $detailArticle['dateArticleFr'] ?></h4>
                 <?php if(!isset($_SESSION['pseudo'])): ?>
                 <?php elseif($_SESSION['statut'] == 'ROLE_ADMIN'): ?>
-                        <a href="">Modifier Article</a>
+                    <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseModifyArticle" aria-expanded="false" aria-controls="collapseModifyArticle">
+                        Modifier Article
+                    </button>
+                    <div class="collapse" id="collapseModifyArticle">
+                        <div class="card card-body">
+                            <form action="index.php?updateArticle&amp;id=<?php echo $detailArticle['idArticle']; ?>" method="POST">
+                                <div class="form-floating">
+                                    <input name="updateTitleArticle" type="text" class="form-control" id="floatingTitle" placeholder="text" value="<?php echo $detailArticle['title']; ?>">
+                                    <label for="floatingTitle">Modifier Titre</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input name="updateHeaderArticle" type="text" class="form-control" id="floatingHeader" placeholder="text" value="<?php echo $detailArticle['headerPost']; ?>">
+                                    <label for="floatingHeader">Modifier Chapô</label>
+                                </div>
+                                <div class="form-floating">
+                                    <textarea style="height: 300px;" name="updateTextArticle" id="floatingArticle" class="form-control" placeholder="Leave a comment here"><?php echo $detailArticle['article']; ?></textarea>
+                                    <label for="floatingArticle">Modifier Article</label>
+                                </div>
+                                <div class="buttonUpdateArticle">
+                                    <button style="width: 200px;" class="btn btn-success" type="submit">Envoyer</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div> 
                         <form action="index.php?deleteArticle&amp;id=<?=$this->globals->getGET('id');?>" method="POST">
                             <button class="btn btn-danger" type="submit" style="width: 150px;">Supprimer Article</button>
                         </form>  

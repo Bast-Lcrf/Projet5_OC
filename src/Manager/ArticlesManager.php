@@ -106,9 +106,17 @@ class ArticlesManager extends Manager
      * 
      * @return bool     True en cas de succés, false en cas d'erreur
      */
-    public function updateArticle()
+    public function updateArticle(Articles $articles)
     {
         $this->pdo = $this->dbConnect();
+        $this->pdoStatement = $this->pdo->prepare('UPDATE Articles SET idUser = ?, title = ?, author = ?, headerPost = ?, article = ?, dateArticle = NOW()
+                                                        WHERE idArticle = ?');
+        return $this->pdoStatement->execute(array($articles->getIdUser(),
+                                                    $articles->getTitle(),
+                                                    $articles->getAuthor(),
+                                                    $articles->getHeaderPost(),
+                                                    $articles->getArticle(),
+                                                    $articles->getIdArticle()));
 
     }
 

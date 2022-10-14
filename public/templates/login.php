@@ -12,7 +12,7 @@
                     <label for="floatingPseudo">Pseudo</label>
                 </div>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingPass" placeholder="Password" name="pwd">
+                    <input type="password" class="form-control" id="floatingPass" placeholder="Password" name="pwd">
                     <label for="floatingPass">Mot de passe</label>
                 </div>
                 <div class="row">

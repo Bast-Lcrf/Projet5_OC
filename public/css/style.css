@@ -472,6 +472,7 @@ body {
 .list_articles .card_article p {
     text-align: center;
     font-size: 25px;
+    font-family: 'Bad Script', sans-serif;
 }
 
 .list_articles .card_article .card_link {
@@ -504,8 +505,8 @@ body {
 
 .home_content .detailArticle {
     background: url('../images/digitalBack.jpeg');
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-repeat: repeat;
+    background-attachment: fixed;
     background-size: cover;
     min-height: 100vh;
     width: 90%;
@@ -566,10 +567,37 @@ body {
     border-bottom: 2px solid lightcoral;
 }
 
+.detailArticle .container .btn-info {
+    margin-left: 10%;
+}
+
+#collapseModifyArticle .card-body {
+    background: #00213A;
+    color: #11101d;
+    max-height: 580px;
+}
+
+.card-body input {
+    margin-bottom: 2%;
+    min-height: 80px;
+}
+
+.card-body textarea {
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+}
+
+.card-body .buttonUpdateArticle {
+    width: 100px;
+    margin-top: 1%;
+}
+
 .detailArticle .container button {
     margin-left: 80%;
     margin-bottom: 2%;
+    margin-top: 1%;
 }
+
 
 /* ---------------------------------------- Commentaire de l'article ---------------------------------------- */
 .commentsArticle {

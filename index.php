@@ -41,6 +41,12 @@ class Index
                 } else {
                     throw new Exception('L\'article demandé n\'existe pas');
                 }
+            } elseif(isset($get['updateArticle'])) {
+                if(!empty($post['updateTitleArticle']) && !empty($post['updateHeaderArticle']) && !empty($post['updateTextArticle']) && !empty($get['id'])) {
+                    $this->pageController->updateArticle($post['updateTitleArticle'], $post['updateHeaderArticle'], $post['updateTextArticle'], $get['id']);
+                } else {
+                    throw new Exception('Tous les champs pour update l\'article ne sont pas remplis !');
+                }
             } elseif(isset($get['deleteArticle'])) {
                 $this->pageController->deleteArticle($get['id']);
             } elseif(isset($get['addNewComment'])) {
