@@ -1,5 +1,5 @@
-# - Blog_PHP / P5 - [![SymfonyInsight](https://insight.symfony.com/projects/e14c5bcb-8095-49f8-8449-8f9f6b5c6df3/big.svg)](https://insight.symfony.com/projects/e14c5bcb-8095-49f8-8449-8f9f6b5c6df3)
-Blog project as part of my symfony/php training with OpenClassrooms.
+# - Blog_PHP / P5 - [![SymfonyInsight](https://insight.symfony.com/projects/e14c5bcb-8095-49f8-8449-8f9f6b5c6df3/small.svg)](https://insight.symfony.com/projects/e14c5bcb-8095-49f8-8449-8f9f6b5c6df3)
+Blog project as part of my symfony/php formation with OpenClassrooms.
 
 ## Table of contents
 1. [General Info](#general-info)
