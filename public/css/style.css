@@ -18,6 +18,12 @@ body {
     overflow: hidden;
 }
 
+@media screen and (max-width: 992px) {
+    * {
+        max-width: 992px;
+    }
+}
+
 /* ---------------------------------------- Barre de navigation ---------------------------------------- */ 
 
 .sidebar {
@@ -370,6 +376,22 @@ body {
     overflow: hidden;
 }
 
+@media screen and (max-width: 992px) {
+    .home_content .welcome {
+        background: url('../images/welcomeOnBoard.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 91%;
+        height: 30vh;
+        width: 90%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-top: 0px;
+        overflow: hidden;
+    }
+}
+
 .content .backgroundChefWord {
     width: 90%;
     margin-top: 1%;
@@ -380,6 +402,120 @@ body {
     background-attachment: scroll;
     background-size: cover;
     height: 80%;
+}
+@media screen and (max-width: 1025px) { /* Nest Hub */
+    .content .backgroundChefWord {
+        width: 89%;
+        margin-top: 1%;
+        margin-left: 10px;
+        padding: 2% 5%;
+        background: black;
+        height: 80%;
+    }
+}
+@media screen and (max-width: 992px) {
+    .content .backgroundChefWord {
+        width: 90%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 2% 5%;
+        background: black;
+        background-attachment: scroll;
+        background-size: 50%;
+        height: 70vh;
+    }
+}
+@media screen and (max-width: 800px) {
+    .content .backgroundChefWord {
+        width: 88.5%;
+        margin-top: 1%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 2% 5%;
+        background: black;
+        background-attachment: scroll;
+        background-size: 50%;
+        height: 80vh;
+    }
+}
+@media screen and (max-width: 667px) {
+    .content .backgroundChefWord {
+        width: 86.5%;
+        margin-top: 1%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 2% 5%;
+        background: black;
+        background-attachment: scroll;
+        background-size: 50%;
+        height: 60vh;
+    }
+}
+@media screen and (max-width: 550px) {
+    .content .backgroundChefWord {
+        width: 86.5%;
+        margin-top: 1%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 2% 5%;
+        background: black;
+        background-attachment: scroll;
+        background-size: 50%;
+        height: 65vh;
+    }
+}
+@media screen and (max-width: 450px) {
+    .content .backgroundChefWord {
+        width: 86.5%;
+        margin-top: 1%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 2% 5%;
+        background: black;
+        background-attachment: scroll;
+        background-size: 50%;
+        height: 60vh;
+    }
+}
+@media screen and (max-width: 399px) {
+    .content .backgroundChefWord {
+        width: 86.5%;
+        margin-top: 1%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 2% 5%;
+        background: black;
+        background-attachment: scroll;
+        background-size: 50%;
+        height: 70vh;
+    }
+}
+@media screen and (max-width: 379px) {
+    .content .backgroundChefWord {
+        width: 86.5%;
+        margin-top: 1%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 2% 5%;
+        background: black;
+        background-attachment: scroll;
+        background-size: 50%;
+        height: 90vh;
+    }
+}
+@media screen and (max-width: 299px) {
+    .content .backgroundChefWord {
+        width: 84.5%;
+        margin-top: 1%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 2% 5%;
+        background: black;
+        background-attachment: scroll;
+        background-size: 50%;
+        height: 110vh;
+    }
 }
 
 .chefWord {
@@ -418,6 +554,70 @@ body {
     font-size: 30px;
 }
 
+@media screen and (max-width: 992px) {
+    .chefWord {
+        margin-top: 10%;
+        margin-left: 5%;
+        margin-right: 10%;
+        padding-left: 5%;
+        padding-bottom: 1%;
+        color: burlywood;
+    }
+
+    .chefWord h2 {
+        margin-top: 6%;
+        padding-bottom: 3%;
+        margin-left: 20%;
+        font-size: 40px;
+    }
+
+    .chefWord h6 {
+        padding-right: 15%;
+        padding-top: 5%;
+        margin-bottom: 0%;
+        text-align: right;
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 667px) {
+    .chefWord {
+        margin-top: 10%;
+        margin-left: 4%;
+        margin-right: 10%;
+        padding-left: 5%;
+        padding-bottom: 10%;
+        color: burlywood;
+    }
+    
+    .chefWord h2 {
+        margin-top: 6%;
+        padding-bottom: 5%;
+        margin-left: 15%;
+        font-size: 25px;
+    }
+    
+    .chefWord h3 {
+        font-size: 20px;
+        padding-bottom: 5%;
+    }
+    
+    .chefWord p {
+        padding-left: 5%;
+        padding-right: 8%;
+        font-size: 15px;
+        text-align: justify;
+    }
+    
+    .chefWord h6 {
+        padding-right: 15%;
+        padding-top: 5%;
+        margin-bottom: 5%;
+        text-align: right;
+        font-size: 20px;
+    }
+}
+
 /* ---------------------------------------- Liste des articles ---------------------------------------- */
 
 .home_content .listBackground {
@@ -431,7 +631,19 @@ body {
     margin-left: 10px;
     margin-bottom: 1%;
 }
-
+@media screen and (max-width: 1025px) { /* Nest Hub */
+    .home_content .listBackground {
+        background: url('../images/bureauCafe.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 100vh;
+        width: 88.5%;
+        margin-top: 0.5%;
+        margin-left: 10px;
+        margin-bottom: 1%;
+    }
+}
 .listBackground h1 {
     padding-top: 13%;
     padding-left: 50%;
@@ -449,6 +661,18 @@ body {
     margin-left: 10px;
     padding-top: 10%;
     padding-bottom: 10%;
+}
+@media screen and (max-width: 1025px) { /* Nest Hub */
+    .list_articles {
+        background: url('../images/textureBois.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        width: 88.5%;
+        margin-left: 10px;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
 }
 
 .list_articles .card_article {
@@ -507,7 +731,7 @@ body {
     background: url('../images/digitalBack.jpeg');
     background-repeat: repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: 115%;
     min-height: 100vh;
     width: 90%;
     margin-left: 10px;
@@ -516,14 +740,14 @@ body {
 }
 
 .detailArticle .container {
-    color: lightblue;
+    color: burlywood;
     padding-top: 2%;
     margin-bottom: 5%;
     margin-left: 0%;
     margin-right: 25%;
     border-radius: 12px;
-    box-shadow: 10px 10px 20px black,
-                -10px -10px 20px black;
+    box-shadow: 10px -10px 20px black,
+                -5px 10px 20px black;
 }
 
 .detailArticle .container .row h1 {
@@ -600,6 +824,20 @@ body {
 
 
 /* ---------------------------------------- Commentaire de l'article ---------------------------------------- */
+
+.alert-warning {
+    max-width: 80%;
+    max-height: 80px;
+    margin-left: 15%;
+}
+
+.alert-warning p {
+    color: #11101d;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    text-align: center;
+}
+
 .commentsArticle {
     margin: 5% 15%;
     color: lightblue;
@@ -710,7 +948,7 @@ body {
     background-size: cover;
     height: 80%;
     width: 90%;
-    margin-top: 1%;
+    margin-top: 0.5%;
     margin-left: 10px;
     padding-top: 125px;
     overflow: hidden;
@@ -733,10 +971,6 @@ body {
     padding: 2% 5%;
     margin-left: 19%;
     margin-bottom: 10%;
-}
-
-.sidebar.active .form_frost {
-    margin-right: 50%;
 }
 
 .form_frost:before {
@@ -980,12 +1214,14 @@ body {
 }
 
 .buttonAddArticle button {
-    width: 250px;
-    margin-left: 2%;
+    width: 200px;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .buttonAddArticle .btn-success {
-    margin-left: 0%;
+    
 }
 
 /* ---------------------------------------- Footer ---------------------------------------- */
@@ -999,6 +1235,66 @@ footer {
     margin-top: 0.5%;
     width: 90%;
     margin-left: 10px;
+}
+@media screen and (max-width: 1025px) { /* Nest Hub */
+    footer {
+        background: url('../images/nightSky.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: 100%;
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 88.5%;
+        margin-left: 10px;
+    }
+    .nav_social h3 {
+        margin-left: 15%;
+    }
+    .nav_social ul {
+        margin-top: 10%;
+        margin-left: 20%;
+    }
+    .links_footer h3 {
+        margin-left: 15%;
+    }
+    .links_footer ul {
+        margin-top: 10%;
+        margin-left: 20%;
+    }
+}
+
+@media screen and (max-width: 992px) { /* Surface Pro 7 */
+    footer {
+        background: rgb(0, 25, 46);
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 90%;
+        margin-left: 5px;
+    }
+    .nav_social h3 {
+        margin-left: 15%;
+    }
+    .nav_social ul {
+        margin-top: 10%;
+        margin-left: 20%;
+    }
+    .links_footer h3 {
+        margin-left: 15%;
+    }
+    .links_footer ul {
+        margin-top: 10%;
+        margin-left: 20%;
+    }
+}
+
+@media screen and (max-width: 667px) {
+    footer {
+        background: rgb(0, 25, 46);
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 86.5%;
+        margin-left: 5px;
+    }
 }
 
 .sidebar.active ~ footer {
@@ -1017,6 +1313,7 @@ footer .container .row {
 
 .container .row h3 {
     font-size: 35px;
+    font-family: 'Bad Script', sans-serif;
 }
 
 .container .row li {
@@ -1059,6 +1356,16 @@ footer .container .row {
 .row .nav_social a:hover {
     border-bottom: 2px solid burlywood;
 }
+
+@media screen and (max-width: 992px) {
+    .nav_social {
+        width: 300px;
+        height: 350px;
+        margin-left: 25%;
+        margin-bottom: 5%;
+    }
+}
+
 
 /* ---------------------------------------- Form contact footer ---------------------------------------- */
 
@@ -1140,6 +1447,15 @@ footer .container .row {
     border-bottom: 2px solid burlywood;
 }
 
+@media screen and (max-width: 992px) {
+    .links_footer {
+        width: 300px;
+        height: 350px;
+        margin-left: 30%;
+        margin-top: 25%;
+    }
+}
+
 /* ---------------------------------------- Copyright ---------------------------------------- */
 
 footer .copyright {
@@ -1147,4 +1463,190 @@ footer .copyright {
     margin-top: 10%;
     margin-left: 24%;
     font-size: 17px;
+}
+
+@media screen and (max-width: 992px) {
+    footer .copyright {
+        color: burlywood;
+        margin-top: 10%;
+        margin-left: 5%;
+        font-size: 15px;
+    }
+}
+
+/* ---------------------------------------- Media Query ---------------------------------------- */
+
+@media screen and (max-width: 1281px) { /* Nest Hub Max */
+    * {
+        max-width: 1281px;
+    }
+    .home_content .welcome {
+        background: url('../images/welcomeOnBoard.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+        height: 90vh;
+        width: 99%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-top: 0px;
+        overflow: hidden;
+    }
+    .content .backgroundChefWord {
+        width: 99%;
+        margin-top: 1%;
+        margin-left: 5px;
+        padding: 2% 5%;
+        background: url('../images/blackboard.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        height: 80%;
+    }
+    .home_content .listBackground {
+        background: url('../images/bureauCafe.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 90vh;
+        width: 99%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-bottom: 0.5%;
+    }
+    .list_articles {
+        background: url('../images/textureBois.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        width: 99%;
+        margin-left: 5px;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .home_content .detailArticle {
+        background: url('../images/digitalBack.jpeg');
+        background-repeat: repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+        min-height: 95vh;
+        width: 99%;
+        margin-left: 5px;
+        margin-top: 0.5%;
+        padding: 5% 5%;
+    }
+    .home_content .register {
+        background: url('../images/inscription.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 80%;
+        width: 99%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 125px;
+        overflow: hidden;
+    }
+    .home_content .login {
+        background: url('../images/inscription.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 80%;
+        width: 99%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 125px;
+        overflow: hidden;
+    }
+    .form_frost {
+        margin-left: 15%;
+    }
+    .errorBackground {
+        background: url('../images/Danger-Wallpaper-Background.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        height: 99vh;
+        width: 99%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 125px;
+        overflow: hidden;
+    }
+    .successBackground {
+        background: url('../images/successBackground.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        height: 99vh;
+        width: 99%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 125px;
+        overflow: hidden;
+    }
+    .successBackground .alert-success {
+        margin-left: 40%;
+        margin-right: 10%;
+    }
+    .home_content .dashboard {
+        background: url('../images/dashboard.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        height: 100vh;
+        width: 99%;
+        margin-left: 5px;
+        margin-top: 0.5%;
+    }
+    .backgroundCommentsAdmin {
+        background: url('../images/moderation.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        min-height: 50vh;
+        width: 99%;
+        margin-left: 5px;
+        margin-top: 1%;
+    }
+    .backgroundNewArticle {
+        background: url('../images/globeDigital.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        min-height: 100vh;
+        width: 99%;
+        margin-left: 5px;
+        margin-top: 1%;
+    }
+    footer {
+        background: url('../images/nightSky.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: 100%;
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 99%;
+        margin-left: 5px;
+    }
+    .nav_social ul {
+        margin-left: 0%;
+    }
+    .form_contact {
+        margin-left: 0%;
+        width: 550px;
+        height: 350px;
+    }
+    .links_footer h3, ul {
+        margin-left: 15%;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    * {
+        max-width: 992px;
+    }
 }
