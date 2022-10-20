@@ -18,12 +18,6 @@ body {
     overflow: hidden;
 }
 
-@media screen and (max-width: 992px) {
-    * {
-        max-width: 992px;
-    }
-}
-
 /* ---------------------------------------- Barre de navigation ---------------------------------------- */ 
 
 .sidebar {
@@ -60,7 +54,7 @@ body {
 .logo_content .logo i {
     font-size: 32px;
     margin-top: 5px;
-    margin-left: 15px;
+    margin-left: 0px;
 }
 
 .logo_content .logo .logo_name {
@@ -376,21 +370,6 @@ body {
     overflow: hidden;
 }
 
-@media screen and (max-width: 992px) {
-    .home_content .welcome {
-        background: url('../images/welcomeOnBoard.jpeg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 91%;
-        height: 30vh;
-        width: 90%;
-        margin-top: 0.5%;
-        margin-left: 5px;
-        margin-right: 5px;
-        padding-top: 0px;
-        overflow: hidden;
-    }
-}
 
 .content .backgroundChefWord {
     width: 90%;
@@ -411,19 +390,6 @@ body {
         padding: 2% 5%;
         background: black;
         height: 80%;
-    }
-}
-@media screen and (max-width: 992px) {
-    .content .backgroundChefWord {
-        width: 90%;
-        margin-top: 0.5%;
-        margin-left: 5px;
-        margin-right: 5px;
-        padding: 2% 5%;
-        background: black;
-        background-attachment: scroll;
-        background-size: 50%;
-        height: 70vh;
     }
 }
 @media screen and (max-width: 800px) {
@@ -554,31 +520,6 @@ body {
     font-size: 30px;
 }
 
-@media screen and (max-width: 992px) {
-    .chefWord {
-        margin-top: 10%;
-        margin-left: 5%;
-        margin-right: 10%;
-        padding-left: 5%;
-        padding-bottom: 1%;
-        color: burlywood;
-    }
-
-    .chefWord h2 {
-        margin-top: 6%;
-        padding-bottom: 3%;
-        margin-left: 20%;
-        font-size: 40px;
-    }
-
-    .chefWord h6 {
-        padding-right: 15%;
-        padding-top: 5%;
-        margin-bottom: 0%;
-        text-align: right;
-        font-size: 30px;
-    }
-}
 
 @media screen and (max-width: 667px) {
     .chefWord {
@@ -661,18 +602,6 @@ body {
     margin-left: 10px;
     padding-top: 10%;
     padding-bottom: 10%;
-}
-@media screen and (max-width: 1025px) { /* Nest Hub */
-    .list_articles {
-        background: url('../images/textureBois.jpeg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        width: 88.5%;
-        margin-left: 10px;
-        padding-top: 10%;
-        padding-bottom: 10%;
-    }
 }
 
 .list_articles .card_article {
@@ -1172,6 +1101,10 @@ body {
     margin-top: 5%;
 }
 
+.commentsAdmin .commentButtonModeration button {
+    width: 200px;
+}
+
 .commentsAdmin .commentButtonModeration .btn-success {
     margin-left: 24%;
 }
@@ -1217,11 +1150,7 @@ body {
     width: 200px;
     margin-top: 2%;
     display: flex;
-    justify-content: space-between;
-}
-
-.buttonAddArticle .btn-success {
-    
+    justify-content: space-between;  
 }
 
 /* ---------------------------------------- Footer ---------------------------------------- */
@@ -1235,56 +1164,6 @@ footer {
     margin-top: 0.5%;
     width: 90%;
     margin-left: 10px;
-}
-@media screen and (max-width: 1025px) { /* Nest Hub */
-    footer {
-        background: url('../images/nightSky.jpeg');
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-        background-size: 100%;
-        color: burlywood;
-        margin-top: 0.5%;
-        width: 88.5%;
-        margin-left: 10px;
-    }
-    .nav_social h3 {
-        margin-left: 15%;
-    }
-    .nav_social ul {
-        margin-top: 10%;
-        margin-left: 20%;
-    }
-    .links_footer h3 {
-        margin-left: 15%;
-    }
-    .links_footer ul {
-        margin-top: 10%;
-        margin-left: 20%;
-    }
-}
-
-@media screen and (max-width: 992px) { /* Surface Pro 7 */
-    footer {
-        background: rgb(0, 25, 46);
-        color: burlywood;
-        margin-top: 0.5%;
-        width: 90%;
-        margin-left: 5px;
-    }
-    .nav_social h3 {
-        margin-left: 15%;
-    }
-    .nav_social ul {
-        margin-top: 10%;
-        margin-left: 20%;
-    }
-    .links_footer h3 {
-        margin-left: 15%;
-    }
-    .links_footer ul {
-        margin-top: 10%;
-        margin-left: 20%;
-    }
 }
 
 @media screen and (max-width: 667px) {
@@ -1356,16 +1235,6 @@ footer .container .row {
 .row .nav_social a:hover {
     border-bottom: 2px solid burlywood;
 }
-
-@media screen and (max-width: 992px) {
-    .nav_social {
-        width: 300px;
-        height: 350px;
-        margin-left: 25%;
-        margin-bottom: 5%;
-    }
-}
-
 
 /* ---------------------------------------- Form contact footer ---------------------------------------- */
 
@@ -1447,15 +1316,6 @@ footer .container .row {
     border-bottom: 2px solid burlywood;
 }
 
-@media screen and (max-width: 992px) {
-    .links_footer {
-        width: 300px;
-        height: 350px;
-        margin-left: 30%;
-        margin-top: 25%;
-    }
-}
-
 /* ---------------------------------------- Copyright ---------------------------------------- */
 
 footer .copyright {
@@ -1465,18 +1325,10 @@ footer .copyright {
     font-size: 17px;
 }
 
-@media screen and (max-width: 992px) {
-    footer .copyright {
-        color: burlywood;
-        margin-top: 10%;
-        margin-left: 5%;
-        font-size: 15px;
-    }
-}
+/* --------------------------------------------- Media Query --------------------------------------------- */
 
-/* ---------------------------------------- Media Query ---------------------------------------- */
-
-@media screen and (max-width: 1281px) { /* Nest Hub Max */
+/* -------------------- Media Query 1281px ---------- Nest Hub Max -------------------- */
+@media screen and (max-width: 1281px) { 
     * {
         max-width: 1281px;
     }
@@ -1643,10 +1495,463 @@ footer .copyright {
         margin-left: 15%;
     }
 }
-
+/* -------------------- Media Query 1025px ---------- Nest Hub -------------------- */
+@media screen and (max-width: 1025px) { 
+    * {
+        max-width: 1024px;
+    }
+    .home_content {
+        position: absolute;
+        height: 100%;
+        width: calc(100% - 78px);
+        left: 78px;
+        transition: all 0.5s ease;
+        overflow: scroll;
+    }
+    .sidebar.active ~ .home_content {
+        width: calc(100% - 240px);
+        left: 240px;
+        width: 84%;
+    }
+    .home_content .welcome {
+        background: url('../images/welcomeOnBoard.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+        height: 90vh;
+        width: 99%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-top: 0px;
+        overflow: hidden;
+    }
+    .content .backgroundChefWord {
+        width: 99%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding: 2% 5%;
+        background: black;
+        height: 80%;
+    }
+    .home_content .listBackground {
+        background: url('../images/bureauCafe.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 90vh;
+        width: 99%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-bottom: 0.5%;
+    }
+    .list_articles {
+        background: url('../images/textureBois.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        width: 99%;
+        margin-left: 5px;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .home_content .detailArticle {
+        background: url('../images/digitalBack.jpeg');
+        background-repeat: repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+        min-height: 95vh;
+        width: 99%;
+        margin-left: 5px;
+        margin-top: 0.5%;
+        padding: 5% 5%;
+    }
+    .home_content .register {
+        background: url('../images/inscription.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 80%;
+        width: 99%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 125px;
+        overflow: hidden;
+    }
+    .home_content .login {
+        background: url('../images/inscription.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 80%;
+        width: 99%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 125px;
+        overflow: hidden;
+    }
+    .form_frost {
+        width: 700px;
+        height: 500px;
+        margin-left: 12%;
+    }
+    .errorBackground {
+        background: url('../images/Danger-Wallpaper-Background.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        height: 99vh;
+        width: 99%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 125px;
+        overflow: hidden;
+    }
+    .successBackground {
+        background: url('../images/successBackground.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        height: 99vh;
+        width: 99%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 125px;
+        overflow: hidden;
+    }
+    .successBackground .alert-success {
+        margin-left: 40%;
+        margin-right: 10%;
+    }
+    .home_content .dashboard {
+        background: url('../images/dashboard.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        height: 100vh;
+        width: 99%;
+        margin-left: 5px;
+        margin-top: 0.5%;
+    }
+    .commentsAdmin .commentButtonModeration button {
+        width: 139px;
+    }
+    .backgroundCommentsAdmin {
+        background: url('../images/moderation.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        min-height: 50vh;
+        width: 99%;
+        margin-left: 5px;
+        margin-top: 1%;
+    }
+    .backgroundNewArticle {
+        background: url('../images/globeDigital.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        min-height: 100vh;
+        width: 99%;
+        margin-left: 5px;
+        margin-top: 1%;
+    }
+    .alert-warning p {
+        font-size: 23px;
+        max-height: 60px;
+    }
+    footer {
+        background: rgb(0, 25, 46);
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 99%;
+        margin-left: 5px;
+    }
+    footer .container {
+        padding-top: 3%;
+        padding-bottom: 2%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .nav_social h3 {
+        margin-left: 0%;
+    }
+    .nav_social ul {
+        margin-top: 15%;
+        margin-left: 3%;
+    }
+    .form_contact {
+        margin-left: 16%;
+        width: 350px;
+        height: 350px;
+    }
+    .form_contact .form_FullName {
+        display: flex;
+        flex-direction: column;
+    }
+    .form_contact .form_FullName input {
+        width: 350px;
+    }
+    .links_footer h3 {
+        margin-left: 5%;
+    }
+    .links_footer ul {
+        margin-top: 10%;
+        margin-left: 5%;
+    }
+    footer .copyright {
+        color: burlywood;
+        margin-top: 24%;
+        margin-left: 15%;
+        font-size: 17px;
+    }
+}
+/* -------------------- Media Query 992px ---------- Surface Pro 7 -------------------- */
 
 @media screen and (max-width: 992px) {
     * {
         max-width: 992px;
+    }
+    .home_content .welcome {
+        background: url('../images/welcomeOnBoard.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 91%;
+        height: 30vh;
+        width: 90%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-top: 0px;
+        overflow: hidden;
+    }
+    .content .backgroundChefWord {
+        width: 90%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 2% 5%;
+        background: black;
+        background-attachment: scroll;
+        background-size: 50%;
+        height: 60vh;
+    }
+    .chefWord {
+        margin-top: 10%;
+        margin-left: 5%;
+        margin-right: 10%;
+        padding-left: 5%;
+        padding-bottom: 1%;
+        color: burlywood;
+    }
+    .chefWord h2 {
+        margin-top: 6%;
+        padding-bottom: 3%;
+        margin-left: 20%;
+        font-size: 40px;
+    }
+    .chefWord h6 {
+        padding-right: 15%;
+        padding-top: 5%;
+        margin-bottom: 0%;
+        text-align: right;
+        font-size: 30px;
+    }
+    .home_content .register {
+        background: url('../images/inscription.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 55vh;
+        width: 90.5%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 125px;
+        overflow: hidden;
+    }
+    .home_content .login {
+        background: url('../images/inscription.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 55vh;
+        width: 90.5%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 125px;
+        overflow: hidden;
+    }
+    .form_frost {
+        width: 600px;
+        height: 500px;
+        margin-left: 14%;
+    }
+    .home_content .listBackground {
+        background: url('../images/bureauCafe.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 103%;
+        height: 50vh;
+        width: 90%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-bottom: 0.5%;
+    }
+    .list_articles {
+        background: url('../images/textureBois.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        width: 90%;
+        margin-left: 5px;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .list_articles .card_article {
+        width: 450px;
+        height: 200px;
+        margin-left: 25%;
+    }
+    .list_articles .card_article:hover {
+        margin-left: 15%;
+        height: 260px;
+    }
+    .home_content .detailArticle {
+        background: #11101d;
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 89%;
+        margin-left: 5px;
+    }
+    .detailArticle .container h2 {
+        font-size: 35px;
+    }
+    .detailArticle .container button {
+        margin-left: 74%;
+        margin-bottom: 5%;
+    }
+    .home_content .dashboard {
+        background: url('../images/dashboard.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: 105%;
+        height: 37vh;
+        width: 90.5%;
+        margin-left: 5px;
+        margin-top: 0.5%;
+    }
+    .backgroundCommentsAdmin {
+        background: url('../images/moderation.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        min-height: 50vh;
+        width: 90.5%;
+        margin-left: 5px;
+        margin-top: 0.5%;
+    }
+    .commentsAdmin .commentButtonModeration button {
+        width: 122px;
+    }
+    .backgroundNewArticle {
+        background: url('../images/globeDigital.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: 140%;
+        min-height: 50vh;
+        width: 90.5%;
+        margin-left: 5px;
+        margin-top: 0.5%;
+    }
+    .successBackground {
+        background: url('../images/successBackground.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        height: 50vh;
+        width: 90.5%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 125px;
+        overflow: hidden;
+    }
+    .successBackground h1 {
+        margin-left: 45%;
+    }
+    .successBackground .alert-success {
+        margin-left: 50%;
+        margin-right: 2%;
+        font-size: 35px;
+    }
+    .errorBackground {
+        background: url('../images/Danger-Wallpaper-Background.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: 100%;
+        height: 34vh;
+        width: 90.5%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 125px;
+        overflow: hidden;
+    }
+    .errorBackground h1 {
+        margin-top: 0%;
+        margin-left: 20%;
+    }
+    .errorBackground .alert-danger {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    footer {
+        background: rgb(0, 25, 46);
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 90.5%;
+        margin-left: 5px;
+    }
+    .nav_social {
+        width: 300px;
+        height: 350px;
+        margin-left: 25%;
+        margin-bottom: 5%;
+    }
+    .nav_social h3 {
+        margin-left: 15%;
+    }
+    .nav_social ul {
+        margin-top: 10%;
+        margin-left: 20%;
+    }
+    .form_contact {
+        margin-left: 8%;
+        width: 550px;
+        height: 350px;
+    }
+    .form_contact .form_FullName {
+        display: flex;
+        flex-direction: row;
+    }
+    .form_contact .form_FullName input {
+        width: 275px;
+    }
+    .links_footer {
+        width: 300px;
+        height: 350px;
+        margin-left: 30%;
+        margin-top: 25%;
+    }
+    .links_footer h3 {
+        margin-left: 15%;
+    }
+    .links_footer ul {
+        margin-top: 10%;
+        margin-left: 20%;
+    }
+    footer .copyright {
+        color: burlywood;
+        margin-top: 10%;
+        margin-left: 5%;
+        font-size: 15px;
     }
 }

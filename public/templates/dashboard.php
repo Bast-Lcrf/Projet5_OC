@@ -41,8 +41,8 @@
                 <h4>Commentaire pour <a target="blank" href="index.php?detailArticle&id=<?php echo $data['idArticle']; ?>">l'article </a>Nº : <?php echo $data['idArticle']; ?></h4>
                 <div class="commentButtonModeration">
                     <form action="index.php?validCom&amp;idCom=<?= $data['idComment']; ?>" method="POST">
-                        <button style="width: 200px;" class="btn btn-danger" type="submit" value="supprimer" name="delete">Supprimer</button>
-                        <button style="width: 200px;" class="btn btn-success" type="submit" value="valider" name="valid">Valider</button>
+                        <button class="btn btn-danger" type="submit" value="supprimer" name="delete">Supprimer</button>
+                        <button class="btn btn-success" type="submit" value="valider" name="valid">Valider</button>
                     </form>
                 </div>
             </div>
