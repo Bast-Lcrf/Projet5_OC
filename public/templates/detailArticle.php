@@ -77,8 +77,8 @@ $this->globals = new Globals;
                                                     <label for="floatingModifyCom"></label>
                                                 </div>
                                                 <div class="btn">
-                                                    <button class="btn btn-warning" type="reset" style="width: 100px;">Reset</button>
-                                                    <button class="btn btn-success" type="submit" style="width: 100px;">Envoyer</button>
+                                                    <button class="btn btn-warning" type="reset">Reset</button>
+                                                    <button class="btn btn-success" type="submit">Envoyer</button>
                                                 </div>
                                             </form>
                                         </div>

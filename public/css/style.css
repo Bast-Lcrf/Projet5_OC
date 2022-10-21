@@ -2462,3 +2462,554 @@ footer .copyright {
         text-align: justify;
     }
 }
+/* -------------------- Media Query 415px ----- Samsung galaxy(S20 Ultra / A51/71) / Iphone XR -------------------- */
+@media screen and (max-width: 415px) {
+    * {
+        max-width: 415px;
+    }
+    .home_content .welcome {
+        background: url('../images/welcomeOnBoard.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+        height: 25vh;
+        width: 97%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-top: 0px;
+        overflow: hidden;
+    }
+    .content .backgroundChefWord {
+        width: 97%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 2% 5%;
+        background: black;
+        background-attachment: scroll;
+        background-size: 100%;
+        height: 60vh;
+    }
+    .backgroundChefWord h2 {
+        font-size: 30px;
+    }
+    .backgroundChefWord h3 {
+        font-size: 18px;
+    }
+    .home_content .listBackground {
+        background: url('../images/bureauCafe.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 150%;
+        height: 40vh;
+        width: 97%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-bottom: 0.5%;
+    }
+    .listBackground h1 {
+        font-size: 30px;
+    }
+    .list_articles {
+        background: url('../images/textureBois.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        width: 97%;
+        margin-left: 5px;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .list_articles .card_article {
+        width: 250px;
+        height: 300px;
+        margin-left: 12%;
+        margin-bottom: 15%;
+    }
+    .list_articles .card_article:hover {
+        margin-left: 5%;
+        width: 250px;
+        height: 350px;
+    }
+    .home_content .detailArticle {
+        background: #11101d;
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 97%;
+        margin-left: 5px;
+    }
+    .detailArticle .row button {
+        margin-left: 45%;
+    }
+    .commentsArticle {
+        width: 300px;
+        margin-left: 0%;
+    }
+    .commentsArticle h4 {
+        font-size: 35px;
+        margin-left: 0%;
+    }
+    .form_comment {
+        width: 300px;
+        margin-left: 0%;
+        margin-right: 2%;
+    }
+    .formModifyComment {
+        margin-right: 0%;
+        width: 200px;
+    }
+    .formModifyComment .btn {
+        display: flex;
+        flex-direction: column;
+    }
+    .formModifyComment .btn button {
+        max-width: 130px;
+    }
+    .form_comment .formDeleteCom button {
+        width: 100px;
+        margin-left: 5%;
+    }
+    .formAddCom {
+        margin-left: 0%;
+        width: 399px;
+    }
+    .formAddCom .btn {
+        display: flex;
+        flex-direction: column;
+    }
+    .home_content .dashboard {
+        background: url('../images/dashboard.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: 200%;
+        height: 40vh;
+        width: 97%;
+        margin-left: 5px;
+        margin-top: 0.5%;
+    }
+    .backgroundCommentsAdmin {
+        background: url('../images/moderation.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        min-height: 50vh;
+        width: 97%;
+        margin-left: 5px;
+        margin-top: 0.5%;
+    }
+    .backgroundCommentsAdmin h1 {
+        font-size: 25px;
+    }
+    .backgroundCommentsAdmin .commentsAdmin {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    .commentsAdmin .commentButtonModeration button {
+        width: 105px;
+        margin-bottom: 2%;
+    }
+    .backgroundCommentsAdmin .alert-warning {
+        min-height: 120px;
+    }
+    .backgroundNewArticle {
+        background: url('../images/globeDigital.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        min-height: 50vh;
+        width: 97%;
+        margin-left: 5px;
+        margin-top: 0.5%;
+    }
+    .newArticle {
+        margin-right: 5%;
+    }
+    .newArticle button {
+        width: 298px;
+    }
+    .successBackground {
+        background: #11101d;
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 97%;
+        margin-left: 5px;
+        height: 70vh;
+    }
+    .successBackground h1 {
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+    .successBackground .alert-success {
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 30px;
+    }
+    .errorBackground {
+        background: #11101d;
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 97%;
+        margin-left: 5px;
+        height: 70vh;
+    }
+    .errorBackground h1 {
+        margin-top: 0%;
+        margin-left: 20%;
+    }
+    .errorBackground .alert-danger {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .home_content .register {
+        background: #7A2001; 
+        height: 65vh;
+        width: 97%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 30px;
+        overflow: hidden;
+    }
+    .home_content .login { 
+        background: #7A2001; 
+        height: 65vh;
+        width: 97%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 30px;
+        overflow: hidden;
+    }
+    .form_frost {
+        width: 250px;
+        height: 500px;
+        margin-left: 12%;
+    }
+    .form_frost h1 {
+        font-size: 22px;
+    }
+    .form_frost input {
+        width: 240px;
+    }
+    .form_frost .btnNewRegister button {
+        width: 100px;
+    }
+    .form_frost .btnLogin button {
+        width: 100px;
+    }
+    footer {
+        background: rgb(0, 25, 46);
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 97%;
+        margin-left: 5px;
+    }
+    .nav_social {
+        margin-left: 0%;
+    }
+    .nav_social ul {
+        margin-left: 10%;
+    }
+    .form_contact {
+        margin-left: 0%;
+        width: 280px;
+        height: 350px;
+        margin-bottom: 40%;
+    }
+    .form_contact .form_FullName {
+        display: flex;
+        flex-direction: column;
+    }
+    .form_contact .form_FullName input {
+        width: 280px;
+    }
+    .links_footer {
+        margin-left: 0%;
+    }
+    .links_footer h3 {
+        margin-left: 20%;
+    }
+    footer .copyright {
+        color: burlywood;
+        margin-top: 15%;
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 20px;
+        text-align: justify;
+    }
+}
+/* -------------------- Media Query 395px ----- Pixel 5 / Iphone 12 Pro ------------------------- */
+@media screen and (max-width: 395px) {
+    * {
+        max-width: 395px;
+    }
+    .home_content .welcome {
+        background: url('../images/welcomeOnBoard.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+        height: 30vh;
+        width: 97%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-top: 0px;
+        overflow: hidden;
+    }
+    .content .backgroundChefWord {
+        width: 97%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 2% 5%;
+        background: black;
+        background-attachment: scroll;
+        background-size: 100%;
+        height: 70vh;
+    }
+    .backgroundChefWord h2 {
+        font-size: 30px;
+    }
+    .backgroundChefWord h3 {
+        font-size: 18px;
+    }
+    .home_content .listBackground {
+        background: url('../images/bureauCafe.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 150%;
+        height: 40vh;
+        width: 97%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        margin-bottom: 0.5%;
+    }
+    .listBackground h1 {
+        font-size: 30px;
+    }
+    .list_articles {
+        background: url('../images/textureBois.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        width: 97%;
+        margin-left: 5px;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .list_articles .card_article {
+        width: 250px;
+        height: 300px;
+        margin-left: 12%;
+        margin-bottom: 15%;
+    }
+    .list_articles .card_article:hover {
+        margin-left: 5%;
+        width: 250px;
+        height: 350px;
+    }
+    .home_content .detailArticle {
+        background: #11101d;
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 97%;
+        margin-left: 5px;
+    }
+    .detailArticle .row button {
+        margin-left: 45%;
+    }
+    .commentsArticle {
+        width: 300px;
+        margin-left: 0%;
+    }
+    .commentsArticle h4 {
+        font-size: 35px;
+        margin-left: 0%;
+    }
+    .form_comment {
+        width: 300px;
+        margin-left: 0%;
+        margin-right: 2%;
+    }
+    .formModifyComment {
+        margin-right: 0%;
+        width: 180px;
+    }
+    .formModifyComment .btn {
+        display: flex;
+        flex-direction: column;
+    }
+    .formModifyComment .btn button {
+        max-width: 100px;
+    }
+    .form_comment .formDeleteCom button {
+        width: 80px;
+        margin-left: 0%;
+    }
+    .formAddCom {
+        margin-left: 0%;
+        width: 380px;
+    }
+    .formAddCom .btn {
+        display: flex;
+        flex-direction: column;
+    }
+    .home_content .dashboard {
+        background: url('../images/dashboard.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: 200%;
+        height: 40vh;
+        width: 97%;
+        margin-left: 5px;
+        margin-top: 0.5%;
+    }
+    .backgroundCommentsAdmin {
+        background: url('../images/moderation.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        min-height: 50vh;
+        width: 97%;
+        margin-left: 5px;
+        margin-top: 0.5%;
+    }
+    .backgroundCommentsAdmin h1 {
+        font-size: 25px;
+    }
+    .backgroundCommentsAdmin .commentsAdmin {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    .commentsAdmin .commentButtonModeration button {
+        width: 100px;
+        margin-bottom: 2%;
+    }
+    .backgroundCommentsAdmin .alert-warning {
+        min-height: 120px;
+    }
+    .backgroundNewArticle {
+        background: url('../images/globeDigital.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        min-height: 50vh;
+        width: 97%;
+        margin-left: 5px;
+        margin-top: 0.5%;
+    }
+    .newArticle {
+        margin-right: 5%;
+    }
+    .newArticle button {
+        width: 274px;
+        margin-bottom: 2%;
+    }
+    .successBackground {
+        background: #11101d;
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 97%;
+        margin-left: 5px;
+        height: 70vh;
+    }
+    .successBackground h1 {
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+    .successBackground .alert-success {
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 30px;
+    }
+    .errorBackground {
+        background: #11101d;
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 97%;
+        margin-left: 5px;
+        height: 70vh;
+    }
+    .errorBackground h1 {
+        margin-top: 0%;
+        margin-left: 20%;
+    }
+    .errorBackground .alert-danger {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .home_content .register {
+        background: #7A2001; 
+        height: 70vh;
+        width: 97%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 30px;
+        overflow: hidden;
+    }
+    .home_content .login { 
+        background: #7A2001; 
+        height: 70vh;
+        width: 97%;
+        margin-top: 0.5%;
+        margin-left: 5px;
+        padding-top: 30px;
+        overflow: hidden;
+    }
+    .form_frost {
+        width: 250px;
+        height: 500px;
+        margin-left: 10%;
+    }
+    .form_frost h1 {
+        font-size: 22px;
+    }
+    .form_frost input {
+        width: 240px;
+    }
+    .form_frost .btnNewRegister button {
+        width: 100px;
+    }
+    .form_frost .btnLogin button {
+        width: 100px;
+    }
+    footer {
+        background: rgb(0, 25, 46);
+        color: burlywood;
+        margin-top: 0.5%;
+        width: 97%;
+        margin-left: 5px;
+    }
+    .nav_social {
+        margin-left: 0%;
+    }
+    .nav_social ul {
+        margin-left: 10%;
+    }
+    .form_contact {
+        margin-left: 0%;
+        width: 270px;
+        height: 350px;
+        margin-bottom: 60%;
+    }
+    .form_contact .form_FullName {
+        display: flex;
+        flex-direction: column;
+    }
+    .form_contact .form_FullName input {
+        width: 270px;
+    }
+    .links_footer {
+        margin-left: 0%;
+    }
+    .links_footer h3 {
+        margin-left: 20%;
+    }
+    footer .copyright {
+        color: burlywood;
+        margin-top: 15%;
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 15px;
+        text-align: justify;
+    }
+}
