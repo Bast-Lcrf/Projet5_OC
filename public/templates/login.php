@@ -15,13 +15,9 @@
                     <input type="password" class="form-control" id="floatingPass" placeholder="Password" name="pwd">
                     <label for="floatingPass">Mot de passe</label>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <button class="btn btn-warning" type="reset" style="width: 100%;">Reset</button>
-                    </div>
-                    <div class="col-md-6">
-                    <button class="btn btn-success" type="submit" style="width: 100%;">S'inscrire</button>
-                    </div>
+                <div class="btnLogin">
+                    <button class="btn btn-warning" type="reset">Reset</button>
+                    <button class="btn btn-success" type="submit">S'inscrire</button>
                 </div>
             </div>
         </form>

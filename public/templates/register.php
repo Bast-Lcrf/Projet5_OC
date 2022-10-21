@@ -30,13 +30,9 @@
                 <div>
                     <input type="hidden" value="ROLE_USER" id="statut" name="statut">
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <button class="btn btn-warning" type="reset" style="width: 100%;">Reset</button>
-                    </div>
-                    <div class="col-md-6">
-                    <button class="btn btn-success" type="submit" style="width: 100%;">S'inscrire</button>
-                    </div>
+                <div class="btnNewRegister">
+                    <button class="btn btn-warning" type="reset">Reset</button>
+                    <button class="btn btn-success" type="submit">S'inscrire</button>
                 </div>
             </div>
         </form>

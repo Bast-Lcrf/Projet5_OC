@@ -92,7 +92,12 @@ class Index
                     $this->pageController->deleteCom($get['idCom']); // suppression commentaire
                 }
             } elseif(isset($get['newArticle'])) {
-                $this->pageController->addNewArticle($post['title'], $post['headerPost'], $post['article']);
+                if(!empty($post['title'] && !empty($post['headerPost']) && !empty($post['article']))) {
+                    $this->pageController->addNewArticle($post['title'], $post['headerPost'], $post['article']);
+                } else {
+                    throw new Exception('Tu est admin, remplis les champs avant de valider enfin !');
+                }
+                
             } elseif (isset($get['contact'])) {
                 if(!empty($post['lastName'] && !empty($post['firstName']) && !empty($post['email']) && !empty($post['messageContact']))) {
                     $this->contactController->getContactForm($post['lastName'], $post['firstName'], $post['email'], $post['messageContact']);

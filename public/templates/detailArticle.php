@@ -74,7 +74,7 @@ $this->globals = new Globals;
                                             <form action="index.php?updateCom&amp;idCom=<?= $comments['idComment']; ?>&amp;id=<?= $_GET['id']; ?>" method="POST">
                                                 <div class="form-floating">
                                                     <textarea class="form-control" placeholder="Leave a comment here" id="floatingModifyCom" name="textUpdateCom" style="height: 150px;"></textarea>
-                                                    <label for="floatingModifyCom">Modifier Commentaire ici</label>
+                                                    <label for="floatingModifyCom"></label>
                                                 </div>
                                                 <div class="btn">
                                                     <button class="btn btn-warning" type="reset" style="width: 100px;">Reset</button>
