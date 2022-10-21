@@ -115,7 +115,7 @@ $this->globals = new Globals;
                         <form action="index.php?addNewComment&amp;id=<?= $detailArticle['idArticle'];?>" method="POST">
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a comment here" id="floatingAdd" name="comment" style="height: 150px;"></textarea>
-                                <label for="floatingAdd">Rédiger votre commentaire ici</label>
+                                <label for="floatingAdd"></label>
                             </div>
                             <div class="btn">
                                 <button class="btn btn-warning" type="reset">Reset</button>
