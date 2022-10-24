@@ -36,22 +36,32 @@ When they create an account, they are logged in and their statut is ROLE_USER.
 
 if you want to change this value, you have to go into phpmyadmin and change it directly on the database.
 
-
 ## Technologies
 A list of technologies used within the project :
 * [PHP 7.4.12](https://www.php.net/)
 * [Apache 2.0](https://www.apachelounge.com/download/VC15/)
 * [MySQL 5.7.32](https://downloads.mysql.com/archives/installer/)
 * [Bootstrap 5.2.1](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+* [Composer](https://getcomposer.org/download/)
+* Server : For the server, you can use [MAMP](https://www.mamp.info/en/mac/)like me, or whichever you want.
 
 ## Installation
 * **Clone or download the repository**, and put files into your environment,
 ```
 git clone https://github.com/Bast-Lcrf/Projet5_OC
 ```
+* Install libraries with composer,
+'''
+php composer.phar install
+'''
 * Import database with datas : file _'database.sql'_,
-* Connect you : 
+* Connect you as an Admin : 
 ```
 Pseudo : admin
 Password : pass
+```
+* Connect you as a User : 
+```
+Pseudo : test
+Password : test
 ```
