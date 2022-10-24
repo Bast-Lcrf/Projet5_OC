@@ -51,9 +51,9 @@ A list of technologies used within the project :
 git clone https://github.com/Bast-Lcrf/Projet5_OC
 ```
 * Install libraries with composer,
-'''
+```
 php composer.phar install
-'''
+```
 * Import database with datas : file _'database.sql'_,
 * Connect you as an Admin : 
 ```
