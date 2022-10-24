@@ -1,10 +1,11 @@
 {
     "name": "bastienlecerf/projet_5",
-    "autoload": {
-        "psr-4": {
-            "Bastienlecerf\\Projet5\\": "src/"
+    "license": "B.L",
+    "authors": [
+        {
+            "name": "Bastien Lecerf",
+            "email": "lecerf.bastien@me.com"
         }
-    },
-    "minimum-stability": "stable",
+    ],
     "require": {}
 }
