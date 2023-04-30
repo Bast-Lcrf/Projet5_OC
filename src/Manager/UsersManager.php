@@ -73,23 +73,6 @@ class UsersManager extends Manager
         }
     }
 
-    /*public function session($pseudo, $pwd)
-    {
-        $usersManager = new UsersManager;
-        $sessionStart = $usersManager->setUser($pseudo, $pwd);
-        
-        $user = new Users;
-
-        $user->setId($sessionStart[0]);
-        $user->setPseudo($sessionStart[1]);
-        $user->setLastName($sessionStart[3]);
-        $user->setFirstName($sessionStart[4]);
-        $user->setStatut($sessionStart[5]);
-        var_dump($user);
-        return $user;
-    }*/
-
-
     /**
      * Récupère tous les objets Users de la bdd
      * 
